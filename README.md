@@ -24,6 +24,7 @@ El chat objetivo vive en `.env.local`, que esta gitignored.
 
 ```bash
 npm run export    # sincroniza wacrawl y genera public/data/babe-chat.json
+npm run publish   # exporta, versiona el resumen publico y lo empuja a main
 npm run dev       # abre la app local
 npm run build     # build seguro para GitHub Pages/demo
 npm run harness   # fixtures + validacion local privada si hay DB
@@ -50,6 +51,19 @@ El export:
 - vuelve a generar `public/published/babe-chat-public.json` para GitHub Pages con conteos reales y sin transcript privado
 
 Asi puedes ir trayendo exports nuevos sin perder lo que ya se habia consolidado antes.
+
+Si quieres actualizar tambien GitHub Pages con los contadores nuevos, puedes usar:
+
+```bash
+npm run publish
+```
+
+Ese comando:
+
+- corre `npm run export`
+- hace `git add public/published/babe-chat-public.json`
+- crea el commit `Update published story data` si hubo cambios
+- hace `git push origin main`
 
 ## Privacidad antes de subir
 

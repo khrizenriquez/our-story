@@ -8,6 +8,7 @@
     "build": "tsc -p tsconfig.app.json && tsc -p tsconfig.node.json --noEmit && vite build",
     "preview": "vite preview",
     "export": "tsx scripts/export-babe-chat.ts",
+    "publish": "tsx scripts/publish-story.ts",
     "harness": "tsx scripts/harness.ts",
     "test": "node --import tsx --test src/test/*.test.ts"
   },
