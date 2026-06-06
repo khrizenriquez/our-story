@@ -179,31 +179,77 @@ function App() {
     );
   }
 
-  const monthLabels = story.monthlyCounts.map((entry) => entry.month);
-  const monthlyPoints = story.monthlyCounts.map((entry, index) => ({ x: index, y: entry.count }));
-  const topMonth = [...story.monthlyCounts].sort((left, right) => right.count - left.count)[0] ?? null;
+  const monthlySeries = data.metrics.daily.reduce<Array<{ month: string; total: number; me: number; them: number }>>((accumulator, entry) => {
+    const month = entry.day.slice(0, 7);
+    const current = accumulator[accumulator.length - 1];
+    if (current && current.month === month) {
+      current.total += entry.total;
+      current.me += entry.fromMe;
+      current.them += entry.fromThem;
+      return accumulator;
+    }
+    accumulator.push({
+      month,
+      total: entry.total,
+      me: entry.fromMe,
+      them: entry.fromThem,
+    });
+    return accumulator;
+  }, []);
+
+  const monthLabels = monthlySeries.map((entry) => entry.month);
+  const monthlyTotalPoints = monthlySeries.map((entry, index) => ({ x: index, y: entry.total }));
+  const monthlyMePoints = monthlySeries.map((entry, index) => ({ x: index, y: entry.me }));
+  const monthlyThemPoints = monthlySeries.map((entry, index) => ({ x: index, y: entry.them }));
+  const topMonth = [...monthlySeries].sort((left, right) => right.total - left.total)[0] ?? null;
   const topYear = [...story.yearlyCounts].sort((left, right) => right.count - left.count)[0] ?? null;
-  const averageMonthlyMessages = story.monthlyCounts.length > 0 ? Math.round(totalMessages / story.monthlyCounts.length) : 0;
+  const averageMonthlyMessages = monthlySeries.length > 0 ? Math.round(totalMessages / monthlySeries.length) : 0;
   const meMessages = data.metrics.bySender.me.messages;
   const themMessages = data.metrics.bySender.them.messages;
   const messageGap = Math.abs(meMessages - themMessages);
-  const lineEasing = (value: number) => 1 - (1 - value) ** 4;
-  const totalDuration = 3150;
-  const progressiveDuration = (ctx: { index: number }) => lineEasing(ctx.index / Math.max(monthlyPoints.length, 1)) * totalDuration / Math.max(monthlyPoints.length, 1);
-  const progressiveDelay = (ctx: { index: number }) => lineEasing(ctx.index / Math.max(monthlyPoints.length, 1)) * totalDuration;
+  const totalDuration = 5400;
+  const perPointDuration = totalDuration / Math.max(monthlySeries.length, 1);
+  const progressiveDuration = () => perPointDuration;
+  const progressiveDelay = (ctx: { index: number }) => ctx.index * perPointDuration;
   const previousY = (ctx: { index: number; chart: any; datasetIndex: number }) =>
     ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(0) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
 
   const monthlyChart = {
     datasets: [
       {
-        label: 'Mensajes',
-        data: monthlyPoints,
-        borderColor: theme === 'dark' ? '#ff8fb0' : '#8f314b',
-        backgroundColor: theme === 'dark' ? 'rgba(255, 143, 176, 0.14)' : 'rgba(143, 49, 75, 0.14)',
+        label: 'Mensajes totales',
+        data: monthlyTotalPoints,
+        borderColor: theme === 'dark' ? '#d8ff45' : '#7a9e00',
+        backgroundColor: theme === 'dark' ? 'rgba(216, 255, 69, 0.12)' : 'rgba(122, 158, 0, 0.12)',
         fill: true,
-        tension: 0.42,
+        tension: 0.38,
         pointRadius: 0,
+        pointHoverRadius: 5,
+        pointHitRadius: 18,
+        borderWidth: 4,
+      },
+      {
+        label: `Mensajes de ${story.themLabel}`,
+        data: monthlyThemPoints,
+        borderColor: theme === 'dark' ? '#ff8fb0' : '#b43b68',
+        backgroundColor: 'transparent',
+        fill: false,
+        tension: 0.38,
+        pointRadius: 0,
+        pointHoverRadius: 5,
+        pointHitRadius: 18,
+        borderWidth: 3,
+      },
+      {
+        label: `Mensajes de ${story.meLabel}`,
+        data: monthlyMePoints,
+        borderColor: theme === 'dark' ? '#7ab8eb' : '#355c7d',
+        backgroundColor: 'transparent',
+        fill: false,
+        tension: 0.38,
+        pointRadius: 0,
+        pointHoverRadius: 5,
+        pointHitRadius: 18,
         borderWidth: 3,
       },
     ],
@@ -411,7 +457,7 @@ function App() {
           <div className="chart-stat-strip">
             <article className="chart-insight-card chart-insight-card-rose">
               <p className="story-kicker">Pico del ritmo</p>
-              <strong>{topMonth ? formatNumber(topMonth.count) : formatNumber(0)}</strong>
+              <strong>{topMonth ? formatNumber(topMonth.total) : formatNumber(0)}</strong>
               <p>{topMonth ? `El mes más intenso fue ${formatMonthLabel(topMonth.month)}.` : 'La historia sigue esperando su mes más intenso.'}</p>
             </article>
             <article className="chart-insight-card chart-insight-card-neutral">
