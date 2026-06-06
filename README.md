@@ -30,6 +30,7 @@ npm run test      # unit tests
 
 Los datos reales y media se escriben en `public/data/` y `public/private-media/`; no deben versionarse.
 El historial maestro incremental se guarda localmente en `.private/babe-chat-master.json`; tampoco debe versionarse.
+El resumen publico para GitHub Pages se genera en `public/published/babe-chat-public.json`; ese si puede versionarse.
 
 ## Flujo incremental recomendado
 
@@ -44,6 +45,7 @@ El export:
 - conserva el historial previo guardado en `.private/babe-chat-master.json`
 - suma solo los mensajes que todavia no existan
 - vuelve a generar `public/data/babe-chat.json` para la web local
+- vuelve a generar `public/published/babe-chat-public.json` para GitHub Pages con conteos reales y sin transcript privado
 
 Asi puedes ir trayendo exports nuevos sin perder lo que ya se habia consolidado antes.
 

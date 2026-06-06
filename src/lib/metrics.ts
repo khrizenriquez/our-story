@@ -9,7 +9,7 @@ import type {
   SenderMetric,
 } from '../types';
 import { DEFAULT_RELATIONSHIP, phaseForDay, timestampToDay } from './dates';
-import { phraseMatchesForText } from './phrases';
+import { normalizeText, phraseMatchesForText } from './phrases';
 
 const DEFAULT_ME_LABEL = 'Yo';
 const DEFAULT_THEM_LABEL = 'La otra persona';
@@ -45,6 +45,12 @@ export function enrichMessage(
 
 export function normalizeExport(input: ChatExport): ChatExport {
   const relationship = input.relationship ?? DEFAULT_RELATIONSHIP;
+  if (input.messages.length === 0 && input.metrics?.totals?.messages > 0) {
+    return {
+      ...input,
+      relationship,
+    };
+  }
   const messages = input.messages.map((message) => enrichMessage(message, relationship));
   const participantLabels = input.chat.participantLabels ?? resolveSenderLabels(messages);
   return {
@@ -72,6 +78,7 @@ export function calculateMetrics(
     mediaMessages: 0,
     imageMessages: 0,
     teAmoCount: 0,
+    wordCount: 0,
   });
 
   const bySender: Record<SenderKey, SenderMetric> = {
@@ -100,6 +107,7 @@ export function calculateMetrics(
     sender.mediaMessages += hasMedia ? 1 : 0;
     sender.imageMessages += isImage ? 1 : 0;
     sender.teAmoCount += teAmoCount;
+    sender.wordCount += normalizeText(message.text).split(' ').filter(Boolean).length;
 
     const daily = dailyMap.get(message.day) ?? {
       day: message.day,

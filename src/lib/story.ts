@@ -127,6 +127,7 @@ export function deriveStoryModel(data: ChatExport): StoryModel {
   const meLabel = data.chat.participantLabels?.me || 'Chris';
   const themLabel = data.chat.participantLabels?.them || data.chat.name;
   const meaningfulMessages = data.messages.filter(isMeaningful);
+  const activityRows = data.metrics.daily;
   const firstMeaningfulMessage = meaningfulMessages.find(isStoryworthyText) ?? meaningfulMessages[0] ?? data.messages[0] ?? null;
   const lastMeaningfulMessage = [...meaningfulMessages].reverse().find(isStoryworthyText) ?? [...meaningfulMessages].reverse().find(Boolean) ?? data.messages[data.messages.length - 1] ?? null;
   const firstPhotoMessage = meaningfulMessages.find((message) => normalizeMediaKey(message.mediaType) === 'photo' && message.mediaPath) ?? null;
@@ -138,16 +139,31 @@ export function deriveStoryModel(data: ChatExport): StoryModel {
   const wordsBySender = new Map<string, number>();
   const mediaCounts = new Map<string, number>();
 
-  for (const message of meaningfulMessages) {
-    dayCounts.set(message.day, (dayCounts.get(message.day) ?? 0) + 1);
-    const month = message.day.slice(0, 7);
-    monthCounts.set(month, (monthCounts.get(month) ?? 0) + 1);
-    const year = message.day.slice(0, 4);
-    yearCounts.set(year, (yearCounts.get(year) ?? 0) + 1);
-    wordsBySender.set(message.senderLabel, (wordsBySender.get(message.senderLabel) ?? 0) + approximateWordCount(message));
-    if (message.mediaType || message.mediaPath) {
-      const key = normalizeMediaKey(message.mediaType);
-      mediaCounts.set(key, (mediaCounts.get(key) ?? 0) + 1);
+  if (meaningfulMessages.length > 0) {
+    for (const message of meaningfulMessages) {
+      dayCounts.set(message.day, (dayCounts.get(message.day) ?? 0) + 1);
+      const month = message.day.slice(0, 7);
+      monthCounts.set(month, (monthCounts.get(month) ?? 0) + 1);
+      const year = message.day.slice(0, 4);
+      yearCounts.set(year, (yearCounts.get(year) ?? 0) + 1);
+      wordsBySender.set(message.senderLabel, (wordsBySender.get(message.senderLabel) ?? 0) + approximateWordCount(message));
+      if (message.mediaType || message.mediaPath) {
+        const key = normalizeMediaKey(message.mediaType);
+        mediaCounts.set(key, (mediaCounts.get(key) ?? 0) + 1);
+      }
+    }
+  } else {
+    for (const daily of activityRows) {
+      dayCounts.set(daily.day, daily.total);
+      const month = daily.day.slice(0, 7);
+      monthCounts.set(month, (monthCounts.get(month) ?? 0) + daily.total);
+      const year = daily.day.slice(0, 4);
+      yearCounts.set(year, (yearCounts.get(year) ?? 0) + daily.total);
+    }
+    wordsBySender.set(meLabel, data.metrics.bySender.me.wordCount ?? 0);
+    wordsBySender.set(themLabel, data.metrics.bySender.them.wordCount ?? 0);
+    for (const [type, count] of Object.entries(data.metrics.mediaByType)) {
+      mediaCounts.set(normalizeMediaKey(type), (mediaCounts.get(normalizeMediaKey(type)) ?? 0) + count);
     }
   }
 
@@ -156,7 +172,11 @@ export function deriveStoryModel(data: ChatExport): StoryModel {
 
   const firstTs = meaningfulMessages[0]?.ts ?? data.messages[0]?.ts ?? 0;
   const lastTs = meaningfulMessages[meaningfulMessages.length - 1]?.ts ?? data.messages[data.messages.length - 1]?.ts ?? 0;
-  const totalSpanDays = firstTs && lastTs ? Math.floor((lastTs - firstTs) / 86400) + 1 : data.metrics.totals.activeDays;
+  const fallbackSpanDays =
+    data.chat.dateRange.start && data.chat.dateRange.end
+      ? Math.floor((new Date(`${data.chat.dateRange.end}T00:00:00Z`).getTime() - new Date(`${data.chat.dateRange.start}T00:00:00Z`).getTime()) / 86400000) + 1
+      : data.metrics.totals.activeDays;
+  const totalSpanDays = firstTs && lastTs ? Math.floor((lastTs - firstTs) / 86400) + 1 : fallbackSpanDays;
   const meMessages = data.metrics.bySender.me.messages;
   const themMessages = data.metrics.bySender.them.messages;
   const leadIsMe = meMessages >= themMessages;
@@ -195,6 +215,16 @@ export function deriveStoryModel(data: ChatExport): StoryModel {
     makeMoment('Primera nota de voz', 'Una voz tambien cuenta la historia.', firstAudioMessage),
     makeMoment('Mensaje mas reciente', 'La historia sigue viva.', lastMeaningfulMessage),
   ].filter((moment): moment is StoryMoment => Boolean(moment));
+
+  if (moments.length === 0 && data.metrics.firstTeAmo) {
+    moments.push({
+      label: 'Primer te amo',
+      detail: 'La primera vez que quedo escrito.',
+      ts: data.metrics.firstTeAmo.ts,
+      text: 'La primera vez que eso quedo por escrito.',
+      senderLabel: data.metrics.firstTeAmo.senderLabel,
+    });
+  }
 
   const mediaCards: StoryMediaCard[] = [
     { label: 'Fotos', count: mediaCounts.get('photo') ?? 0, tone: 'rose' },

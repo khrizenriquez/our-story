@@ -15,6 +15,11 @@ export async function loadChatExport(): Promise<LoadedChatExport> {
     return { ...normalizeExport(privateExport), source: 'private' };
   }
 
+  const publicExport = await fetchJson('published/babe-chat-public.json').catch(() => null);
+  if (publicExport) {
+    return { ...normalizeExport(publicExport), source: 'public' };
+  }
+
   const demoExport = await fetchJson('demo/babe-chat-demo.json');
   if (!demoExport) {
     throw new Error('No se pudo cargar la data de demo.');

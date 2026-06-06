@@ -68,6 +68,7 @@ export interface SenderMetric {
   mediaMessages: number;
   imageMessages: number;
   teAmoCount: number;
+  wordCount: number;
 }
 
 export interface DailyMetric {
@@ -113,13 +114,36 @@ export interface ChatMetrics {
   firstTeAmo: FirstPhraseMetric | null;
 }
 
+export interface StorySnapshot {
+  meLabel: string;
+  themLabel: string;
+  poeticTitle: string;
+  subtitle: string;
+  totalSpanDays: number;
+  activeDays: number;
+  messageLeadLabel: string;
+  messageLeadPercent: number;
+  messageLeadSentence: string;
+  wordsBySender: Array<{ label: string; value: number }>;
+  yearlyCounts: Array<{ year: string; count: number }>;
+  monthlyCounts: Array<{ month: string; count: number }>;
+  chapters: Array<{ id: string; label: string; range: string; messages: number; summary: string }>;
+  gallery: Array<{ src: string; alt: string; messageId: string }>;
+  heroImages: Array<{ src: string; alt: string; messageId: string }>;
+  moments: Array<{ label: string; detail: string; ts: number; text: string; senderLabel: string }>;
+  topDay: { day: string; count: number } | null;
+  mediaCards: Array<{ label: string; count: number; tone: string }>;
+  firstMeaningful: { label: string; detail: string; ts: number; text: string; senderLabel: string } | null;
+}
+
 export interface ChatExport {
   chat: ChatSummary;
   relationship: RelationshipConfig;
   messages: ChatMessage[];
   metrics: ChatMetrics;
+  story?: StorySnapshot;
 }
 
 export interface LoadedChatExport extends ChatExport {
-  source: 'private' | 'demo';
+  source: 'private' | 'public' | 'demo';
 }

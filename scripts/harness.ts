@@ -66,6 +66,14 @@ function runPrivacyHarness(): void {
     assert(!leakedNeedle, `Private identifier leaked in versioned file: ${file}`);
   }
 
+  const publicSummaryPath = 'public/published/babe-chat-public.json';
+  if (files.includes(publicSummaryPath) && existsSync(publicSummaryPath)) {
+    const publicSummary = JSON.parse(readFileSync(publicSummaryPath, 'utf8')) as ChatExport;
+    assert(publicSummary.messages.length === 0, 'Published summary must not include raw messages.');
+    assert(publicSummary.chat.phone === '', 'Published summary must not include a phone number.');
+    assert(publicSummary.chat.jid !== privateConfig.chatJid, 'Published summary must not include the private chat JID.');
+  }
+
   console.log('Privacy harness passed.');
 }
 

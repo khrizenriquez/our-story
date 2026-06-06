@@ -112,7 +112,7 @@ function App() {
     return () => observer.disconnect();
   }, [data]);
 
-  const story = useMemo(() => (data ? deriveStoryModel(data) : null), [data]);
+  const story = useMemo(() => (data ? data.story ?? deriveStoryModel(data) : null), [data]);
 
   if (error) {
     return (

@@ -1,0 +1,3260 @@
+{
+  "chat": {
+    "jid": "published-story",
+    "name": "Patty",
+    "phone": "",
+    "exportedAt": "2026-06-06T04:46:04.278Z",
+    "messageCount": 9330,
+    "authorSignature": "Christofer Enríquez",
+    "participantLabels": {
+      "me": "Chris",
+      "them": "Patty"
+    },
+    "archive": {
+      "primarySource": "hybrid",
+      "backupFound": true,
+      "backupMessageCount": 7848,
+      "wacrawlMessageCount": 6154,
+      "mergedExtraCount": 1482
+    },
+    "dateRange": {
+      "start": "2020-05-22",
+      "end": "2026-06-05"
+    }
+  },
+  "relationship": {
+    "timezone": "America/Guatemala",
+    "milestones": {
+      "courtingStarted": "2025-12-27",
+      "officialStarted": "2026-02-08"
+    },
+    "phases": [
+      {
+        "id": "before",
+        "label": "Antes de pretenderla",
+        "start": "0000-01-01",
+        "end": "2025-12-26"
+      },
+      {
+        "id": "courting",
+        "label": "Pretendiendola",
+        "start": "2025-12-27",
+        "end": "2026-02-07"
+      },
+      {
+        "id": "official",
+        "label": "Novios",
+        "start": "2026-02-08",
+        "end": null
+      }
+    ]
+  },
+  "messages": [],
+  "metrics": {
+    "totals": {
+      "messages": 9330,
+      "textMessages": 8381,
+      "mediaMessages": 2111,
+      "imageMessages": 0,
+      "teAmoCount": 42,
+      "activeDays": 341
+    },
+    "bySender": {
+      "me": {
+        "label": "Chris",
+        "messages": 4751,
+        "textMessages": 4136,
+        "mediaMessages": 1364,
+        "imageMessages": 0,
+        "teAmoCount": 22,
+        "wordCount": 31422
+      },
+      "them": {
+        "label": "Patty",
+        "messages": 4579,
+        "textMessages": 4245,
+        "mediaMessages": 747,
+        "imageMessages": 0,
+        "teAmoCount": 20,
+        "wordCount": 23780
+      }
+    },
+    "daily": [
+      {
+        "day": "2020-05-22",
+        "total": 5,
+        "fromMe": 0,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-09-15",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-09-22",
+        "total": 18,
+        "fromMe": 12,
+        "fromThem": 6,
+        "media": 6,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-10-15",
+        "total": 3,
+        "fromMe": 3,
+        "fromThem": 0,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-10-27",
+        "total": 20,
+        "fromMe": 9,
+        "fromThem": 11,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-11-02",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-11-03",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-11-12",
+        "total": 3,
+        "fromMe": 2,
+        "fromThem": 1,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-11-18",
+        "total": 7,
+        "fromMe": 3,
+        "fromThem": 4,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-12-23",
+        "total": 16,
+        "fromMe": 6,
+        "fromThem": 10,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-12-24",
+        "total": 4,
+        "fromMe": 2,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-12-26",
+        "total": 25,
+        "fromMe": 14,
+        "fromThem": 11,
+        "media": 5,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-12-27",
+        "total": 6,
+        "fromMe": 2,
+        "fromThem": 4,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-12-28",
+        "total": 4,
+        "fromMe": 1,
+        "fromThem": 3,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-12-29",
+        "total": 14,
+        "fromMe": 5,
+        "fromThem": 9,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-12-30",
+        "total": 32,
+        "fromMe": 15,
+        "fromThem": 17,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-12-31",
+        "total": 5,
+        "fromMe": 2,
+        "fromThem": 3,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-01-01",
+        "total": 7,
+        "fromMe": 7,
+        "fromThem": 0,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-01-02",
+        "total": 14,
+        "fromMe": 7,
+        "fromThem": 7,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-02-04",
+        "total": 14,
+        "fromMe": 8,
+        "fromThem": 6,
+        "media": 5,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-02-11",
+        "total": 25,
+        "fromMe": 11,
+        "fromThem": 14,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-02-20",
+        "total": 10,
+        "fromMe": 5,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-03-25",
+        "total": 5,
+        "fromMe": 2,
+        "fromThem": 3,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-04-30",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-05-12",
+        "total": 6,
+        "fromMe": 2,
+        "fromThem": 4,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-06-02",
+        "total": 9,
+        "fromMe": 5,
+        "fromThem": 4,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-06-04",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-06-05",
+        "total": 1,
+        "fromMe": 1,
+        "fromThem": 0,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-06-14",
+        "total": 18,
+        "fromMe": 9,
+        "fromThem": 9,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-06-28",
+        "total": 12,
+        "fromMe": 5,
+        "fromThem": 7,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-06-30",
+        "total": 27,
+        "fromMe": 12,
+        "fromThem": 15,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-07-01",
+        "total": 49,
+        "fromMe": 23,
+        "fromThem": 26,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-07-02",
+        "total": 5,
+        "fromMe": 1,
+        "fromThem": 4,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-07-24",
+        "total": 49,
+        "fromMe": 20,
+        "fromThem": 29,
+        "media": 8,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-07-25",
+        "total": 6,
+        "fromMe": 3,
+        "fromThem": 3,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-07-31",
+        "total": 9,
+        "fromMe": 5,
+        "fromThem": 4,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-08-04",
+        "total": 40,
+        "fromMe": 17,
+        "fromThem": 23,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-08-10",
+        "total": 42,
+        "fromMe": 17,
+        "fromThem": 25,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-09-14",
+        "total": 35,
+        "fromMe": 10,
+        "fromThem": 25,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-09-15",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-10-14",
+        "total": 40,
+        "fromMe": 18,
+        "fromThem": 22,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-02",
+        "total": 90,
+        "fromMe": 45,
+        "fromThem": 45,
+        "media": 14,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-03",
+        "total": 21,
+        "fromMe": 8,
+        "fromThem": 13,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-04",
+        "total": 10,
+        "fromMe": 3,
+        "fromThem": 7,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-08",
+        "total": 18,
+        "fromMe": 8,
+        "fromThem": 10,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-11",
+        "total": 5,
+        "fromMe": 3,
+        "fromThem": 2,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-14",
+        "total": 7,
+        "fromMe": 2,
+        "fromThem": 5,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-15",
+        "total": 20,
+        "fromMe": 14,
+        "fromThem": 6,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-23",
+        "total": 31,
+        "fromMe": 14,
+        "fromThem": 17,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-25",
+        "total": 4,
+        "fromMe": 1,
+        "fromThem": 3,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-26",
+        "total": 4,
+        "fromMe": 0,
+        "fromThem": 4,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-11-27",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-12-13",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-12-24",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-12-25",
+        "total": 20,
+        "fromMe": 13,
+        "fromThem": 7,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-12-26",
+        "total": 13,
+        "fromMe": 6,
+        "fromThem": 7,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-12-29",
+        "total": 29,
+        "fromMe": 14,
+        "fromThem": 15,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-12-31",
+        "total": 4,
+        "fromMe": 2,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-01-01",
+        "total": 6,
+        "fromMe": 2,
+        "fromThem": 4,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-01-13",
+        "total": 18,
+        "fromMe": 7,
+        "fromThem": 11,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-01-26",
+        "total": 12,
+        "fromMe": 4,
+        "fromThem": 8,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-01-27",
+        "total": 1,
+        "fromMe": 1,
+        "fromThem": 0,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-02-04",
+        "total": 5,
+        "fromMe": 2,
+        "fromThem": 3,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-02-11",
+        "total": 28,
+        "fromMe": 12,
+        "fromThem": 16,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-03-04",
+        "total": 16,
+        "fromMe": 7,
+        "fromThem": 9,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-03-23",
+        "total": 11,
+        "fromMe": 6,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-03-24",
+        "total": 32,
+        "fromMe": 14,
+        "fromThem": 18,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-03-27",
+        "total": 35,
+        "fromMe": 19,
+        "fromThem": 16,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-04-13",
+        "total": 1,
+        "fromMe": 0,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-04-17",
+        "total": 13,
+        "fromMe": 4,
+        "fromThem": 9,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-04-19",
+        "total": 53,
+        "fromMe": 26,
+        "fromThem": 27,
+        "media": 7,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-04-20",
+        "total": 37,
+        "fromMe": 19,
+        "fromThem": 18,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-04-21",
+        "total": 10,
+        "fromMe": 3,
+        "fromThem": 7,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-04-28",
+        "total": 7,
+        "fromMe": 4,
+        "fromThem": 3,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-05-18",
+        "total": 47,
+        "fromMe": 21,
+        "fromThem": 26,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-05-25",
+        "total": 5,
+        "fromMe": 3,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-06-05",
+        "total": 14,
+        "fromMe": 6,
+        "fromThem": 8,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-06-06",
+        "total": 1,
+        "fromMe": 0,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-07-05",
+        "total": 9,
+        "fromMe": 2,
+        "fromThem": 7,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-07-06",
+        "total": 26,
+        "fromMe": 13,
+        "fromThem": 13,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-07-07",
+        "total": 21,
+        "fromMe": 8,
+        "fromThem": 13,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-07-09",
+        "total": 5,
+        "fromMe": 3,
+        "fromThem": 2,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-07-13",
+        "total": 11,
+        "fromMe": 5,
+        "fromThem": 6,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-07-20",
+        "total": 45,
+        "fromMe": 23,
+        "fromThem": 22,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-07-22",
+        "total": 15,
+        "fromMe": 8,
+        "fromThem": 7,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-07-27",
+        "total": 5,
+        "fromMe": 1,
+        "fromThem": 4,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-08-03",
+        "total": 24,
+        "fromMe": 13,
+        "fromThem": 11,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-09-15",
+        "total": 8,
+        "fromMe": 4,
+        "fromThem": 4,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-09-16",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-10-12",
+        "total": 25,
+        "fromMe": 11,
+        "fromThem": 14,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-10-13",
+        "total": 19,
+        "fromMe": 8,
+        "fromThem": 11,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-10-30",
+        "total": 8,
+        "fromMe": 4,
+        "fromThem": 4,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-12-08",
+        "total": 4,
+        "fromMe": 2,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-12-13",
+        "total": 1,
+        "fromMe": 0,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-12-21",
+        "total": 7,
+        "fromMe": 2,
+        "fromThem": 5,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-12-22",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-12-25",
+        "total": 8,
+        "fromMe": 3,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-12-26",
+        "total": 7,
+        "fromMe": 3,
+        "fromThem": 4,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-12-29",
+        "total": 10,
+        "fromMe": 6,
+        "fromThem": 4,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-02-10",
+        "total": 13,
+        "fromMe": 5,
+        "fromThem": 8,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-02-15",
+        "total": 35,
+        "fromMe": 17,
+        "fromThem": 18,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-03-03",
+        "total": 5,
+        "fromMe": 3,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-03-05",
+        "total": 11,
+        "fromMe": 6,
+        "fromThem": 5,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-03-15",
+        "total": 38,
+        "fromMe": 18,
+        "fromThem": 20,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-03-16",
+        "total": 5,
+        "fromMe": 2,
+        "fromThem": 3,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-04-14",
+        "total": 1,
+        "fromMe": 0,
+        "fromThem": 1,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-04-15",
+        "total": 16,
+        "fromMe": 8,
+        "fromThem": 8,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-04-17",
+        "total": 15,
+        "fromMe": 8,
+        "fromThem": 7,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-04-18",
+        "total": 31,
+        "fromMe": 18,
+        "fromThem": 13,
+        "media": 6,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-04-19",
+        "total": 7,
+        "fromMe": 3,
+        "fromThem": 4,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-05-17",
+        "total": 18,
+        "fromMe": 7,
+        "fromThem": 11,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-05-31",
+        "total": 1,
+        "fromMe": 0,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-06-14",
+        "total": 37,
+        "fromMe": 13,
+        "fromThem": 24,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-06-15",
+        "total": 35,
+        "fromMe": 17,
+        "fromThem": 18,
+        "media": 6,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-06-16",
+        "total": 12,
+        "fromMe": 6,
+        "fromThem": 6,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-13",
+        "total": 19,
+        "fromMe": 10,
+        "fromThem": 9,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-14",
+        "total": 14,
+        "fromMe": 7,
+        "fromThem": 7,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-16",
+        "total": 43,
+        "fromMe": 20,
+        "fromThem": 23,
+        "media": 12,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-20",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-21",
+        "total": 26,
+        "fromMe": 13,
+        "fromThem": 13,
+        "media": 6,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-22",
+        "total": 29,
+        "fromMe": 19,
+        "fromThem": 10,
+        "media": 16,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-25",
+        "total": 26,
+        "fromMe": 13,
+        "fromThem": 13,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-26",
+        "total": 26,
+        "fromMe": 14,
+        "fromThem": 12,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-27",
+        "total": 8,
+        "fromMe": 3,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-07-29",
+        "total": 22,
+        "fromMe": 10,
+        "fromThem": 12,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-05",
+        "total": 12,
+        "fromMe": 3,
+        "fromThem": 9,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-06",
+        "total": 10,
+        "fromMe": 4,
+        "fromThem": 6,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-07",
+        "total": 25,
+        "fromMe": 11,
+        "fromThem": 14,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-08",
+        "total": 58,
+        "fromMe": 37,
+        "fromThem": 21,
+        "media": 16,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-09",
+        "total": 26,
+        "fromMe": 12,
+        "fromThem": 14,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-10",
+        "total": 31,
+        "fromMe": 13,
+        "fromThem": 18,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-11",
+        "total": 14,
+        "fromMe": 8,
+        "fromThem": 6,
+        "media": 10,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-18",
+        "total": 28,
+        "fromMe": 9,
+        "fromThem": 19,
+        "media": 8,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-20",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-26",
+        "total": 16,
+        "fromMe": 7,
+        "fromThem": 9,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-30",
+        "total": 27,
+        "fromMe": 11,
+        "fromThem": 16,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-08-31",
+        "total": 9,
+        "fromMe": 5,
+        "fromThem": 4,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-01",
+        "total": 26,
+        "fromMe": 16,
+        "fromThem": 10,
+        "media": 5,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-03",
+        "total": 10,
+        "fromMe": 5,
+        "fromThem": 5,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-04",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-05",
+        "total": 39,
+        "fromMe": 18,
+        "fromThem": 21,
+        "media": 12,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-06",
+        "total": 21,
+        "fromMe": 11,
+        "fromThem": 10,
+        "media": 3,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-07",
+        "total": 26,
+        "fromMe": 12,
+        "fromThem": 14,
+        "media": 10,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-08",
+        "total": 30,
+        "fromMe": 9,
+        "fromThem": 21,
+        "media": 10,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-10",
+        "total": 20,
+        "fromMe": 12,
+        "fromThem": 8,
+        "media": 6,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-13",
+        "total": 7,
+        "fromMe": 4,
+        "fromThem": 3,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-15",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-24",
+        "total": 16,
+        "fromMe": 5,
+        "fromThem": 11,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-26",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-27",
+        "total": 28,
+        "fromMe": 13,
+        "fromThem": 15,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-28",
+        "total": 5,
+        "fromMe": 1,
+        "fromThem": 4,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-09-30",
+        "total": 11,
+        "fromMe": 5,
+        "fromThem": 6,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-01",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-02",
+        "total": 3,
+        "fromMe": 2,
+        "fromThem": 1,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-05",
+        "total": 15,
+        "fromMe": 8,
+        "fromThem": 7,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-08",
+        "total": 21,
+        "fromMe": 11,
+        "fromThem": 10,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-10",
+        "total": 11,
+        "fromMe": 5,
+        "fromThem": 6,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-11",
+        "total": 28,
+        "fromMe": 13,
+        "fromThem": 15,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-12",
+        "total": 10,
+        "fromMe": 8,
+        "fromThem": 2,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-14",
+        "total": 11,
+        "fromMe": 5,
+        "fromThem": 6,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-17",
+        "total": 6,
+        "fromMe": 3,
+        "fromThem": 3,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-18",
+        "total": 12,
+        "fromMe": 7,
+        "fromThem": 5,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-19",
+        "total": 74,
+        "fromMe": 35,
+        "fromThem": 39,
+        "media": 16,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-10-20",
+        "total": 4,
+        "fromMe": 2,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-07",
+        "total": 14,
+        "fromMe": 8,
+        "fromThem": 6,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-08",
+        "total": 15,
+        "fromMe": 6,
+        "fromThem": 9,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-09",
+        "total": 6,
+        "fromMe": 3,
+        "fromThem": 3,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-12",
+        "total": 38,
+        "fromMe": 12,
+        "fromThem": 26,
+        "media": 8,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-13",
+        "total": 24,
+        "fromMe": 9,
+        "fromThem": 15,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-14",
+        "total": 28,
+        "fromMe": 11,
+        "fromThem": 17,
+        "media": 4,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-18",
+        "total": 7,
+        "fromMe": 4,
+        "fromThem": 3,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-21",
+        "total": 9,
+        "fromMe": 4,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-22",
+        "total": 14,
+        "fromMe": 6,
+        "fromThem": 8,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-11-23",
+        "total": 24,
+        "fromMe": 11,
+        "fromThem": 13,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-05",
+        "total": 2,
+        "fromMe": 2,
+        "fromThem": 0,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-06",
+        "total": 18,
+        "fromMe": 7,
+        "fromThem": 11,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-07",
+        "total": 20,
+        "fromMe": 5,
+        "fromThem": 15,
+        "media": 5,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-08",
+        "total": 42,
+        "fromMe": 15,
+        "fromThem": 27,
+        "media": 7,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-12",
+        "total": 21,
+        "fromMe": 12,
+        "fromThem": 9,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-13",
+        "total": 19,
+        "fromMe": 10,
+        "fromThem": 9,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-18",
+        "total": 10,
+        "fromMe": 5,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-19",
+        "total": 19,
+        "fromMe": 7,
+        "fromThem": 12,
+        "media": 2,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-20",
+        "total": 40,
+        "fromMe": 18,
+        "fromThem": 22,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-23",
+        "total": 7,
+        "fromMe": 4,
+        "fromThem": 3,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-24",
+        "total": 15,
+        "fromMe": 8,
+        "fromThem": 7,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-25",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-26",
+        "total": 11,
+        "fromMe": 6,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-12-27",
+        "total": 22,
+        "fromMe": 12,
+        "fromThem": 10,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2025-12-28",
+        "total": 7,
+        "fromMe": 4,
+        "fromThem": 3,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2025-12-29",
+        "total": 3,
+        "fromMe": 1,
+        "fromThem": 2,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2025-12-31",
+        "total": 23,
+        "fromMe": 10,
+        "fromThem": 13,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-01",
+        "total": 29,
+        "fromMe": 14,
+        "fromThem": 15,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-02",
+        "total": 5,
+        "fromMe": 2,
+        "fromThem": 3,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-03",
+        "total": 10,
+        "fromMe": 5,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-04",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-05",
+        "total": 12,
+        "fromMe": 3,
+        "fromThem": 9,
+        "media": 4,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-06",
+        "total": 14,
+        "fromMe": 6,
+        "fromThem": 8,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-09",
+        "total": 8,
+        "fromMe": 4,
+        "fromThem": 4,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-10",
+        "total": 22,
+        "fromMe": 11,
+        "fromThem": 11,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-11",
+        "total": 20,
+        "fromMe": 8,
+        "fromThem": 12,
+        "media": 4,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-15",
+        "total": 64,
+        "fromMe": 29,
+        "fromThem": 35,
+        "media": 2,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-16",
+        "total": 16,
+        "fromMe": 8,
+        "fromThem": 8,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-17",
+        "total": 22,
+        "fromMe": 11,
+        "fromThem": 11,
+        "media": 2,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-18",
+        "total": 26,
+        "fromMe": 13,
+        "fromThem": 13,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-19",
+        "total": 2,
+        "fromMe": 1,
+        "fromThem": 1,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-20",
+        "total": 22,
+        "fromMe": 12,
+        "fromThem": 10,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-21",
+        "total": 19,
+        "fromMe": 10,
+        "fromThem": 9,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-22",
+        "total": 9,
+        "fromMe": 6,
+        "fromThem": 3,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-23",
+        "total": 10,
+        "fromMe": 4,
+        "fromThem": 6,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-24",
+        "total": 19,
+        "fromMe": 10,
+        "fromThem": 9,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-25",
+        "total": 47,
+        "fromMe": 21,
+        "fromThem": 26,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-26",
+        "total": 41,
+        "fromMe": 20,
+        "fromThem": 21,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-27",
+        "total": 13,
+        "fromMe": 8,
+        "fromThem": 5,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-28",
+        "total": 25,
+        "fromMe": 11,
+        "fromThem": 14,
+        "media": 2,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-29",
+        "total": 17,
+        "fromMe": 9,
+        "fromThem": 8,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-30",
+        "total": 31,
+        "fromMe": 14,
+        "fromThem": 17,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-01-31",
+        "total": 16,
+        "fromMe": 8,
+        "fromThem": 8,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-02-01",
+        "total": 66,
+        "fromMe": 30,
+        "fromThem": 36,
+        "media": 2,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-02-02",
+        "total": 23,
+        "fromMe": 10,
+        "fromThem": 13,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-02-03",
+        "total": 25,
+        "fromMe": 12,
+        "fromThem": 13,
+        "media": 4,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-02-04",
+        "total": 21,
+        "fromMe": 13,
+        "fromThem": 8,
+        "media": 2,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-02-05",
+        "total": 35,
+        "fromMe": 21,
+        "fromThem": 14,
+        "media": 0,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-02-06",
+        "total": 53,
+        "fromMe": 31,
+        "fromThem": 22,
+        "media": 9,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-02-07",
+        "total": 36,
+        "fromMe": 18,
+        "fromThem": 18,
+        "media": 5,
+        "phaseId": "courting"
+      },
+      {
+        "day": "2026-02-08",
+        "total": 24,
+        "fromMe": 7,
+        "fromThem": 17,
+        "media": 8,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-09",
+        "total": 23,
+        "fromMe": 11,
+        "fromThem": 12,
+        "media": 1,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-10",
+        "total": 43,
+        "fromMe": 23,
+        "fromThem": 20,
+        "media": 3,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-11",
+        "total": 46,
+        "fromMe": 23,
+        "fromThem": 23,
+        "media": 0,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-12",
+        "total": 46,
+        "fromMe": 22,
+        "fromThem": 24,
+        "media": 4,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-13",
+        "total": 30,
+        "fromMe": 14,
+        "fromThem": 16,
+        "media": 2,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-14",
+        "total": 10,
+        "fromMe": 4,
+        "fromThem": 6,
+        "media": 0,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-15",
+        "total": 18,
+        "fromMe": 6,
+        "fromThem": 12,
+        "media": 10,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-16",
+        "total": 17,
+        "fromMe": 11,
+        "fromThem": 6,
+        "media": 4,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-17",
+        "total": 64,
+        "fromMe": 38,
+        "fromThem": 26,
+        "media": 12,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-18",
+        "total": 40,
+        "fromMe": 20,
+        "fromThem": 20,
+        "media": 2,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-19",
+        "total": 39,
+        "fromMe": 18,
+        "fromThem": 21,
+        "media": 8,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-20",
+        "total": 36,
+        "fromMe": 16,
+        "fromThem": 20,
+        "media": 4,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-21",
+        "total": 35,
+        "fromMe": 18,
+        "fromThem": 17,
+        "media": 8,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-22",
+        "total": 22,
+        "fromMe": 12,
+        "fromThem": 10,
+        "media": 1,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-23",
+        "total": 61,
+        "fromMe": 32,
+        "fromThem": 29,
+        "media": 12,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-24",
+        "total": 63,
+        "fromMe": 31,
+        "fromThem": 32,
+        "media": 13,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-25",
+        "total": 35,
+        "fromMe": 16,
+        "fromThem": 19,
+        "media": 4,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-26",
+        "total": 36,
+        "fromMe": 14,
+        "fromThem": 22,
+        "media": 2,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-27",
+        "total": 13,
+        "fromMe": 8,
+        "fromThem": 5,
+        "media": 7,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-02-28",
+        "total": 23,
+        "fromMe": 11,
+        "fromThem": 12,
+        "media": 5,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-01",
+        "total": 14,
+        "fromMe": 9,
+        "fromThem": 5,
+        "media": 2,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-02",
+        "total": 48,
+        "fromMe": 26,
+        "fromThem": 22,
+        "media": 18,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-03",
+        "total": 32,
+        "fromMe": 15,
+        "fromThem": 17,
+        "media": 7,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-04",
+        "total": 46,
+        "fromMe": 19,
+        "fromThem": 27,
+        "media": 7,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-05",
+        "total": 65,
+        "fromMe": 34,
+        "fromThem": 31,
+        "media": 12,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-06",
+        "total": 21,
+        "fromMe": 9,
+        "fromThem": 12,
+        "media": 3,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-07",
+        "total": 42,
+        "fromMe": 34,
+        "fromThem": 8,
+        "media": 28,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-08",
+        "total": 28,
+        "fromMe": 28,
+        "fromThem": 0,
+        "media": 26,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-09",
+        "total": 73,
+        "fromMe": 30,
+        "fromThem": 43,
+        "media": 10,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-10",
+        "total": 35,
+        "fromMe": 17,
+        "fromThem": 18,
+        "media": 9,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-11",
+        "total": 33,
+        "fromMe": 17,
+        "fromThem": 16,
+        "media": 4,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-12",
+        "total": 44,
+        "fromMe": 22,
+        "fromThem": 22,
+        "media": 3,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-13",
+        "total": 35,
+        "fromMe": 21,
+        "fromThem": 14,
+        "media": 6,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-14",
+        "total": 60,
+        "fromMe": 33,
+        "fromThem": 27,
+        "media": 4,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-15",
+        "total": 12,
+        "fromMe": 6,
+        "fromThem": 6,
+        "media": 0,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-16",
+        "total": 6,
+        "fromMe": 6,
+        "fromThem": 0,
+        "media": 1,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-17",
+        "total": 51,
+        "fromMe": 20,
+        "fromThem": 31,
+        "media": 11,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-18",
+        "total": 26,
+        "fromMe": 11,
+        "fromThem": 15,
+        "media": 7,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-19",
+        "total": 52,
+        "fromMe": 25,
+        "fromThem": 27,
+        "media": 7,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-20",
+        "total": 46,
+        "fromMe": 25,
+        "fromThem": 21,
+        "media": 13,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-21",
+        "total": 89,
+        "fromMe": 65,
+        "fromThem": 24,
+        "media": 44,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-22",
+        "total": 39,
+        "fromMe": 12,
+        "fromThem": 27,
+        "media": 12,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-23",
+        "total": 24,
+        "fromMe": 11,
+        "fromThem": 13,
+        "media": 6,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-24",
+        "total": 7,
+        "fromMe": 3,
+        "fromThem": 4,
+        "media": 2,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-25",
+        "total": 55,
+        "fromMe": 43,
+        "fromThem": 12,
+        "media": 31,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-26",
+        "total": 41,
+        "fromMe": 27,
+        "fromThem": 14,
+        "media": 10,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-27",
+        "total": 59,
+        "fromMe": 31,
+        "fromThem": 28,
+        "media": 10,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-28",
+        "total": 33,
+        "fromMe": 15,
+        "fromThem": 18,
+        "media": 11,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-29",
+        "total": 24,
+        "fromMe": 13,
+        "fromThem": 11,
+        "media": 12,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-30",
+        "total": 18,
+        "fromMe": 9,
+        "fromThem": 9,
+        "media": 6,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-03-31",
+        "total": 33,
+        "fromMe": 17,
+        "fromThem": 16,
+        "media": 15,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-01",
+        "total": 22,
+        "fromMe": 10,
+        "fromThem": 12,
+        "media": 3,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-02",
+        "total": 54,
+        "fromMe": 25,
+        "fromThem": 29,
+        "media": 8,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-03",
+        "total": 19,
+        "fromMe": 17,
+        "fromThem": 2,
+        "media": 16,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-04",
+        "total": 15,
+        "fromMe": 11,
+        "fromThem": 4,
+        "media": 4,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-05",
+        "total": 32,
+        "fromMe": 28,
+        "fromThem": 4,
+        "media": 23,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-06",
+        "total": 64,
+        "fromMe": 28,
+        "fromThem": 36,
+        "media": 9,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-07",
+        "total": 7,
+        "fromMe": 2,
+        "fromThem": 5,
+        "media": 1,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-08",
+        "total": 15,
+        "fromMe": 12,
+        "fromThem": 3,
+        "media": 2,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-09",
+        "total": 47,
+        "fromMe": 23,
+        "fromThem": 24,
+        "media": 7,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-10",
+        "total": 41,
+        "fromMe": 20,
+        "fromThem": 21,
+        "media": 20,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-11",
+        "total": 33,
+        "fromMe": 12,
+        "fromThem": 21,
+        "media": 4,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-12",
+        "total": 55,
+        "fromMe": 26,
+        "fromThem": 29,
+        "media": 15,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-13",
+        "total": 7,
+        "fromMe": 3,
+        "fromThem": 4,
+        "media": 1,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-15",
+        "total": 29,
+        "fromMe": 14,
+        "fromThem": 15,
+        "media": 7,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-16",
+        "total": 30,
+        "fromMe": 13,
+        "fromThem": 17,
+        "media": 3,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-17",
+        "total": 25,
+        "fromMe": 11,
+        "fromThem": 14,
+        "media": 2,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-18",
+        "total": 42,
+        "fromMe": 17,
+        "fromThem": 25,
+        "media": 1,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-19",
+        "total": 40,
+        "fromMe": 24,
+        "fromThem": 16,
+        "media": 20,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-20",
+        "total": 11,
+        "fromMe": 6,
+        "fromThem": 5,
+        "media": 3,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-21",
+        "total": 34,
+        "fromMe": 17,
+        "fromThem": 17,
+        "media": 11,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-22",
+        "total": 50,
+        "fromMe": 25,
+        "fromThem": 25,
+        "media": 13,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-23",
+        "total": 7,
+        "fromMe": 3,
+        "fromThem": 4,
+        "media": 3,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-24",
+        "total": 18,
+        "fromMe": 7,
+        "fromThem": 11,
+        "media": 2,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-25",
+        "total": 57,
+        "fromMe": 34,
+        "fromThem": 23,
+        "media": 19,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-26",
+        "total": 56,
+        "fromMe": 31,
+        "fromThem": 25,
+        "media": 18,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-27",
+        "total": 31,
+        "fromMe": 12,
+        "fromThem": 19,
+        "media": 8,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-28",
+        "total": 8,
+        "fromMe": 3,
+        "fromThem": 5,
+        "media": 4,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-29",
+        "total": 9,
+        "fromMe": 2,
+        "fromThem": 7,
+        "media": 5,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-04-30",
+        "total": 21,
+        "fromMe": 13,
+        "fromThem": 8,
+        "media": 6,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-01",
+        "total": 41,
+        "fromMe": 30,
+        "fromThem": 11,
+        "media": 24,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-02",
+        "total": 27,
+        "fromMe": 10,
+        "fromThem": 17,
+        "media": 0,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-03",
+        "total": 43,
+        "fromMe": 26,
+        "fromThem": 17,
+        "media": 20,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-04",
+        "total": 36,
+        "fromMe": 15,
+        "fromThem": 21,
+        "media": 11,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-05",
+        "total": 67,
+        "fromMe": 30,
+        "fromThem": 37,
+        "media": 20,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-06",
+        "total": 25,
+        "fromMe": 14,
+        "fromThem": 11,
+        "media": 10,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-07",
+        "total": 47,
+        "fromMe": 26,
+        "fromThem": 21,
+        "media": 12,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-08",
+        "total": 57,
+        "fromMe": 23,
+        "fromThem": 34,
+        "media": 15,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-09",
+        "total": 58,
+        "fromMe": 31,
+        "fromThem": 27,
+        "media": 17,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-10",
+        "total": 267,
+        "fromMe": 203,
+        "fromThem": 64,
+        "media": 190,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-11",
+        "total": 15,
+        "fromMe": 6,
+        "fromThem": 9,
+        "media": 3,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-12",
+        "total": 98,
+        "fromMe": 53,
+        "fromThem": 45,
+        "media": 38,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-13",
+        "total": 31,
+        "fromMe": 15,
+        "fromThem": 16,
+        "media": 11,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-14",
+        "total": 42,
+        "fromMe": 24,
+        "fromThem": 18,
+        "media": 14,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-15",
+        "total": 61,
+        "fromMe": 29,
+        "fromThem": 32,
+        "media": 18,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-16",
+        "total": 84,
+        "fromMe": 55,
+        "fromThem": 29,
+        "media": 34,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-17",
+        "total": 231,
+        "fromMe": 129,
+        "fromThem": 102,
+        "media": 88,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-18",
+        "total": 122,
+        "fromMe": 63,
+        "fromThem": 59,
+        "media": 52,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-19",
+        "total": 79,
+        "fromMe": 44,
+        "fromThem": 35,
+        "media": 23,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-20",
+        "total": 118,
+        "fromMe": 66,
+        "fromThem": 52,
+        "media": 42,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-21",
+        "total": 47,
+        "fromMe": 28,
+        "fromThem": 19,
+        "media": 14,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-22",
+        "total": 33,
+        "fromMe": 16,
+        "fromThem": 17,
+        "media": 7,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-23",
+        "total": 48,
+        "fromMe": 24,
+        "fromThem": 24,
+        "media": 16,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-24",
+        "total": 41,
+        "fromMe": 20,
+        "fromThem": 21,
+        "media": 16,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-25",
+        "total": 36,
+        "fromMe": 17,
+        "fromThem": 19,
+        "media": 12,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-26",
+        "total": 100,
+        "fromMe": 41,
+        "fromThem": 59,
+        "media": 60,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-27",
+        "total": 96,
+        "fromMe": 40,
+        "fromThem": 56,
+        "media": 52,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-28",
+        "total": 88,
+        "fromMe": 42,
+        "fromThem": 46,
+        "media": 44,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-29",
+        "total": 123,
+        "fromMe": 77,
+        "fromThem": 46,
+        "media": 41,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-30",
+        "total": 41,
+        "fromMe": 21,
+        "fromThem": 20,
+        "media": 8,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-05-31",
+        "total": 61,
+        "fromMe": 32,
+        "fromThem": 29,
+        "media": 16,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-06-01",
+        "total": 20,
+        "fromMe": 16,
+        "fromThem": 4,
+        "media": 8,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-06-02",
+        "total": 80,
+        "fromMe": 56,
+        "fromThem": 24,
+        "media": 34,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-06-03",
+        "total": 83,
+        "fromMe": 44,
+        "fromThem": 39,
+        "media": 8,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-06-04",
+        "total": 68,
+        "fromMe": 34,
+        "fromThem": 34,
+        "media": 8,
+        "phaseId": "official"
+      },
+      {
+        "day": "2026-06-05",
+        "total": 85,
+        "fromMe": 46,
+        "fromThem": 39,
+        "media": 30,
+        "phaseId": "official"
+      }
+    ],
+    "phases": [
+      {
+        "phaseId": "before",
+        "label": "Antes de pretenderla",
+        "total": 3102,
+        "fromMe": 1437,
+        "fromThem": 1665,
+        "teAmoCount": 0
+      },
+      {
+        "phaseId": "courting",
+        "label": "Pretendiendola",
+        "total": 835,
+        "fromMe": 411,
+        "fromThem": 424,
+        "teAmoCount": 0
+      },
+      {
+        "phaseId": "official",
+        "label": "Novios",
+        "total": 5393,
+        "fromMe": 2903,
+        "fromThem": 2490,
+        "teAmoCount": 42
+      }
+    ],
+    "mediaByType": {
+      "photo": 1207,
+      "sticker": 166,
+      "video": 285,
+      "document": 28,
+      "audio": 352,
+      "contact": 6,
+      "link": 44,
+      "gif": 22,
+      "spreadsheet": 1
+    },
+    "firstTeAmo": {
+      "messageId": "published-first-te-amo",
+      "ts": 1773910973,
+      "day": "2026-03-19",
+      "fromMe": false,
+      "senderLabel": "Patty",
+      "text": ""
+    }
+  },
+  "story": {
+    "meLabel": "Chris",
+    "themLabel": "Patty",
+    "poeticTitle": "Nuestra historia, la que se escribe día a día",
+    "subtitle": "2020-05-22 - 2026-06-05",
+    "totalSpanDays": 1360,
+    "activeDays": 341,
+    "messageLeadLabel": "Chris",
+    "messageLeadPercent": 4,
+    "messageLeadSentence": "Chris escribio 4% mas mensajes que Patty.",
+    "wordsBySender": [
+      {
+        "label": "Chris",
+        "value": 31422
+      },
+      {
+        "label": "Patty",
+        "value": 23676
+      }
+    ],
+    "yearlyCounts": [
+      {
+        "year": "2022",
+        "count": 159
+      },
+      {
+        "year": "2023",
+        "count": 679
+      },
+      {
+        "year": "2024",
+        "count": 586
+      },
+      {
+        "year": "2025",
+        "count": 1614
+      },
+      {
+        "year": "2026",
+        "count": 5908
+      }
+    ],
+    "monthlyCounts": [
+      {
+        "month": "2022-09",
+        "count": 20
+      },
+      {
+        "month": "2022-10",
+        "count": 22
+      },
+      {
+        "month": "2022-11",
+        "count": 13
+      },
+      {
+        "month": "2022-12",
+        "count": 104
+      },
+      {
+        "month": "2023-01",
+        "count": 21
+      },
+      {
+        "month": "2023-02",
+        "count": 49
+      },
+      {
+        "month": "2023-03",
+        "count": 5
+      },
+      {
+        "month": "2023-04",
+        "count": 3
+      },
+      {
+        "month": "2023-05",
+        "count": 5
+      },
+      {
+        "month": "2023-06",
+        "count": 65
+      },
+      {
+        "month": "2023-07",
+        "count": 115
+      },
+      {
+        "month": "2023-08",
+        "count": 75
+      },
+      {
+        "month": "2023-09",
+        "count": 34
+      },
+      {
+        "month": "2023-10",
+        "count": 37
+      },
+      {
+        "month": "2023-11",
+        "count": 202
+      },
+      {
+        "month": "2023-12",
+        "count": 68
+      },
+      {
+        "month": "2024-01",
+        "count": 36
+      },
+      {
+        "month": "2024-02",
+        "count": 31
+      },
+      {
+        "month": "2024-03",
+        "count": 93
+      },
+      {
+        "month": "2024-04",
+        "count": 116
+      },
+      {
+        "month": "2024-05",
+        "count": 49
+      },
+      {
+        "month": "2024-06",
+        "count": 15
+      },
+      {
+        "month": "2024-07",
+        "count": 127
+      },
+      {
+        "month": "2024-08",
+        "count": 23
+      },
+      {
+        "month": "2024-09",
+        "count": 9
+      },
+      {
+        "month": "2024-10",
+        "count": 49
+      },
+      {
+        "month": "2024-12",
+        "count": 38
+      },
+      {
+        "month": "2025-02",
+        "count": 47
+      },
+      {
+        "month": "2025-03",
+        "count": 57
+      },
+      {
+        "month": "2025-04",
+        "count": 66
+      },
+      {
+        "month": "2025-05",
+        "count": 18
+      },
+      {
+        "month": "2025-06",
+        "count": 80
+      },
+      {
+        "month": "2025-07",
+        "count": 208
+      },
+      {
+        "month": "2025-08",
+        "count": 252
+      },
+      {
+        "month": "2025-09",
+        "count": 240
+      },
+      {
+        "month": "2025-10",
+        "count": 193
+      },
+      {
+        "month": "2025-11",
+        "count": 174
+      },
+      {
+        "month": "2025-12",
+        "count": 279
+      },
+      {
+        "month": "2026-01",
+        "count": 513
+      },
+      {
+        "month": "2026-02",
+        "count": 937
+      },
+      {
+        "month": "2026-03",
+        "count": 1132
+      },
+      {
+        "month": "2026-04",
+        "count": 830
+      },
+      {
+        "month": "2026-05",
+        "count": 2175
+      },
+      {
+        "month": "2026-06",
+        "count": 321
+      }
+    ],
+    "chapters": [
+      {
+        "id": "2022",
+        "label": "2022",
+        "range": "2022",
+        "messages": 159,
+        "summary": "159 mensajes cuando la historia empezo a tomar forma."
+      },
+      {
+        "id": "2023",
+        "label": "2023",
+        "range": "2023",
+        "messages": 679,
+        "summary": "679 momentos en los que hablarse ya era parte del dia a dia."
+      },
+      {
+        "id": "2024",
+        "label": "2024",
+        "range": "2024",
+        "messages": 586,
+        "summary": "586 mensajes para seguir cerca durante todo el anio."
+      },
+      {
+        "id": "2025",
+        "label": "2025",
+        "range": "2025",
+        "messages": 1614,
+        "summary": "1614 mensajes en un tramo que fue agarrando mas ritmo."
+      },
+      {
+        "id": "2026",
+        "label": "2026",
+        "range": "2026",
+        "messages": 5908,
+        "summary": "5908 mensajes en la etapa mas intensa de la conversacion."
+      }
+    ],
+    "gallery": [
+      {
+        "src": "private-media/chat_bk/00000007-PHOTO-2022-09-15-16-22-20.jpg",
+        "alt": "Recuerdo 1",
+        "messageId": "backup-7"
+      },
+      {
+        "src": "private-media/chat_bk/00001795-PHOTO-2025-07-14-12-01-06.jpg",
+        "alt": "Recuerdo 2",
+        "messageId": "backup-1793"
+      },
+      {
+        "src": "private-media/chat_bk/00002684-PHOTO-2025-11-23-01-13-41.jpg",
+        "alt": "Recuerdo 3",
+        "messageId": "backup-2681"
+      },
+      {
+        "src": "private-media/chat_bk/00004407-PHOTO-2026-03-07-17-40-55.jpg",
+        "alt": "Recuerdo 4",
+        "messageId": "backup-4404"
+      },
+      {
+        "src": "private-media/chat_bk/00005143-PHOTO-2026-03-31-15-23-48.jpg",
+        "alt": "Recuerdo 5",
+        "messageId": "backup-5140"
+      },
+      {
+        "src": "private-media/chat_bk/00005950-PHOTO-2026-05-03-19-23-45.jpg",
+        "alt": "Recuerdo 6",
+        "messageId": "backup-5947"
+      },
+      {
+        "src": "private-media/chat_bk/00006279-PHOTO-2026-05-10-17-42-10.jpg",
+        "alt": "Recuerdo 7",
+        "messageId": "backup-6276"
+      },
+      {
+        "src": "private-media/chat_bk/00006612-PHOTO-2026-05-17-10-50-28.jpg",
+        "alt": "Recuerdo 8",
+        "messageId": "backup-6609"
+      },
+      {
+        "src": "private-media/chat_bk/00007250-PHOTO-2026-05-26-18-51-41.jpg",
+        "alt": "Recuerdo 9",
+        "messageId": "backup-7247"
+      },
+      {
+        "src": "private-media/chat_bk/00007839-PHOTO-2026-06-05-13-39-29.jpg",
+        "alt": "Recuerdo 10",
+        "messageId": "backup-7836"
+      }
+    ],
+    "heroImages": [
+      {
+        "src": "private-media/chat_bk/00000007-PHOTO-2022-09-15-16-22-20.jpg",
+        "alt": "Recuerdo 1",
+        "messageId": "backup-7"
+      },
+      {
+        "src": "private-media/chat_bk/00001795-PHOTO-2025-07-14-12-01-06.jpg",
+        "alt": "Recuerdo 2",
+        "messageId": "backup-1793"
+      },
+      {
+        "src": "private-media/chat_bk/00002684-PHOTO-2025-11-23-01-13-41.jpg",
+        "alt": "Recuerdo 3",
+        "messageId": "backup-2681"
+      },
+      {
+        "src": "private-media/chat_bk/00004407-PHOTO-2026-03-07-17-40-55.jpg",
+        "alt": "Recuerdo 4",
+        "messageId": "backup-4404"
+      }
+    ],
+    "moments": [
+      {
+        "label": "Primer mensaje guardado",
+        "detail": "La primera huella de esta conversacion que sigue viva aqui.",
+        "ts": 1663258941,
+        "text": "El inicio de esta historia.",
+        "senderLabel": "Patty"
+      },
+      {
+        "label": "Primer te amo",
+        "detail": "La primera vez que quedo escrito.",
+        "ts": 1773910973,
+        "text": "La primera vez que eso quedo por escrito.",
+        "senderLabel": "Patty"
+      },
+      {
+        "label": "Primera foto guardada",
+        "detail": "Uno de los primeros recuerdos visuales.",
+        "ts": 1663258941,
+        "text": "Uno de los primeros recuerdos que quedo guardado.",
+        "senderLabel": "Patty"
+      },
+      {
+        "label": "Primera nota de voz",
+        "detail": "Una voz tambien cuenta la historia.",
+        "ts": 1688136958,
+        "text": "Una voz que tambien forma parte de la historia.",
+        "senderLabel": "Patty"
+      },
+      {
+        "label": "Mensaje mas reciente",
+        "detail": "La historia sigue viva.",
+        "ts": 1780688369,
+        "text": "La historia sigue viva.",
+        "senderLabel": "Chris"
+      }
+    ],
+    "topDay": {
+      "day": "2026-05-10",
+      "count": 251
+    },
+    "mediaCards": [
+      {
+        "label": "Fotos",
+        "count": 1191,
+        "tone": "rose"
+      },
+      {
+        "label": "Audios",
+        "count": 352,
+        "tone": "teal"
+      },
+      {
+        "label": "Videos y gifs",
+        "count": 306,
+        "tone": "gold"
+      },
+      {
+        "label": "Stickers",
+        "count": 166,
+        "tone": "plum"
+      }
+    ],
+    "firstMeaningful": {
+      "label": "Primer mensaje guardado",
+      "detail": "La primera huella de esta conversacion que sigue viva aqui.",
+      "ts": 1663258941,
+      "text": "Gracias",
+      "senderLabel": "Patty"
+    }
+  }
+}

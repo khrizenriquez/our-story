@@ -6,6 +6,7 @@ import type { ChatExport, ChatMessage } from '../src/types';
 import { DEFAULT_RELATIONSHIP } from '../src/lib/dates';
 import { normalizeText, phraseMatchesForText } from '../src/lib/phrases';
 import { enrichMessage, normalizeExport } from '../src/lib/metrics';
+import { deriveStoryModel } from '../src/lib/story';
 import { readPrivateConfig } from './env';
 import { commandExists, sqliteJson, sqlString } from './sqlite';
 
@@ -36,6 +37,7 @@ const args = new Set(process.argv.slice(2));
 const skipSync = args.has('--skip-sync') || process.env.WACRAWL_SKIP_SYNC === '1';
 const dbPath = resolvePath(process.env.WACRAWL_DB ?? '~/.wacrawl/wacrawl.db');
 const outPath = resolve(process.env.BABE_EXPORT_PATH ?? 'public/data/babe-chat.json');
+const publicOutPath = resolve(process.env.BABE_PUBLIC_EXPORT_PATH ?? 'public/published/babe-chat-public.json');
 const mediaOutDir = resolve(process.env.BABE_MEDIA_DIR ?? 'public/private-media');
 const archiveCachePath = resolve(process.env.BABE_ARCHIVE_CACHE_PATH ?? '.private/babe-chat-master.json');
 const backupDir = resolve(process.env.BABE_BACKUP_DIR ?? 'chat_bk/WhatsApp Chat - Babe');
@@ -385,6 +387,45 @@ function buildChatExport(): ChatExport {
   return normalized;
 }
 
+function buildPublishedSummary(exportData: ChatExport): ChatExport {
+  const story = deriveStoryModel(exportData);
+  return {
+    chat: {
+      ...exportData.chat,
+      jid: 'published-story',
+      phone: '',
+    },
+    relationship: exportData.relationship,
+    messages: [],
+    metrics: {
+      ...exportData.metrics,
+      firstTeAmo: exportData.metrics.firstTeAmo
+        ? {
+            ...exportData.metrics.firstTeAmo,
+            messageId: 'published-first-te-amo',
+            text: '',
+          }
+        : null,
+    },
+    story: {
+      ...story,
+      moments: story.moments.map((moment) => ({
+        ...moment,
+        text:
+          moment.label === 'Primer te amo'
+            ? 'La primera vez que eso quedo por escrito.'
+            : moment.label === 'Primer mensaje guardado'
+              ? 'El inicio de esta historia.'
+              : moment.label === 'Primera foto guardada'
+                ? 'Uno de los primeros recuerdos que quedo guardado.'
+                : moment.label === 'Primera nota de voz'
+                  ? 'Una voz que tambien forma parte de la historia.'
+                  : 'La historia sigue viva.',
+      })),
+    },
+  } as ChatExport;
+}
+
 function main(): void {
   if (!commandExists('sqlite3')) {
     throw new Error('sqlite3 CLI is required to read the local WhatsApp archives.');
@@ -392,14 +433,18 @@ function main(): void {
 
   syncWacrawl();
   const exportData = buildChatExport();
+  const publicSummary = buildPublishedSummary(exportData);
 
   mkdirSync(resolve('.private'), { recursive: true });
   mkdirSync(resolve('public/data'), { recursive: true });
+  mkdirSync(resolve('public/published'), { recursive: true });
   writeFileSync(archiveCachePath, `${JSON.stringify(exportData, null, 2)}\n`);
   writeFileSync(outPath, `${JSON.stringify(exportData, null, 2)}\n`);
+  writeFileSync(publicOutPath, `${JSON.stringify(publicSummary, null, 2)}\n`);
 
   const archive = exportData.chat.archive;
   console.log(`Exported ${exportData.messages.length} story messages to ${outPath}.`);
+  console.log(`Published safe summary to ${publicOutPath}.`);
   console.log(`Updated local archive cache at ${archiveCachePath}.`);
   if (archive) {
     console.log(
