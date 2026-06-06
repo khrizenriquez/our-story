@@ -63,6 +63,7 @@ function isStoryworthyText(message: ChatMessage): boolean {
   if (raw.length > 180) return false;
   if (raw.split('\n').length > 2) return false;
   if (/^\d[\d\s+\-()]{6,}/.test(raw)) return false;
+  if (/^[A-Za-z0-9+/=]{24,}$/.test(raw)) return false;
   if (/\.(jpg|jpeg|png|gif|mp4|mov|opus|mp3|pdf)$/i.test(raw)) return false;
   return /[A-Za-zÁÉÍÓÚáéíóúÑñ]/.test(raw);
 }

@@ -132,6 +132,45 @@ p {
   padding: 20px;
 }
 
+.story-section {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0) scale(0.985);
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.8s ease;
+}
+
+.story-section.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.story-section::after {
+  content: '';
+  position: absolute;
+  inset: -8% -6%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(143, 49, 75, 0.08), transparent 22%),
+    radial-gradient(circle at 82% 78%, rgba(53, 92, 125, 0.08), transparent 26%);
+  transform: translate3d(0, calc(var(--scroll-px) * 0.008), 0) scale(1.02);
+  transition: transform 0.18s linear;
+}
+
+.story-section.depth-soft::after {
+  transform: translate3d(0, calc(var(--scroll-px) * 0.01), 0) scale(1.02);
+}
+
+.story-section.depth-mid::after {
+  transform: translate3d(0, calc(var(--scroll-px) * -0.012), 0) scale(1.04);
+}
+
+.story-section.depth-strong::after {
+  transform: translate3d(0, calc(var(--scroll-px) * 0.016), 0) scale(1.05);
+}
+
 .hero-story {
   min-height: 88vh;
 }
@@ -145,6 +184,50 @@ p {
     radial-gradient(circle at top right, rgba(197, 139, 63, 0.18), transparent 24%),
     radial-gradient(circle at bottom left, rgba(143, 49, 75, 0.08), transparent 28%);
   pointer-events: none;
+}
+
+.story-section.is-visible .section-heading,
+.story-section.is-visible .chapter-band-copy,
+.story-section.is-visible .closing-copy,
+.story-section.is-visible .hero-copy {
+  animation: float-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.story-section.is-visible .hero-floating-card,
+.story-section.is-visible .hero-metric,
+.story-section.is-visible .compare-card,
+.story-section.is-visible .impact-card,
+.story-section.is-visible .chapter-card,
+.story-section.is-visible .media-summary-card,
+.story-section.is-visible .moment-card,
+.story-section.is-visible .closing-chart {
+  animation: settle-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.story-section.is-visible .hero-floating-card:nth-child(2),
+.story-section.is-visible .hero-metric:nth-child(2),
+.story-section.is-visible .compare-card:nth-child(2),
+.story-section.is-visible .impact-card:nth-child(2),
+.story-section.is-visible .chapter-card:nth-child(2),
+.story-section.is-visible .media-summary-card:nth-child(2),
+.story-section.is-visible .moment-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.story-section.is-visible .hero-floating-card:nth-child(3),
+.story-section.is-visible .hero-metric:nth-child(3),
+.story-section.is-visible .compare-card:nth-child(3),
+.story-section.is-visible .impact-card:nth-child(3),
+.story-section.is-visible .chapter-card:nth-child(3),
+.story-section.is-visible .media-summary-card:nth-child(3),
+.story-section.is-visible .moment-card:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.story-section.is-visible .chapter-card:nth-child(4),
+.story-section.is-visible .media-summary-card:nth-child(4),
+.story-section.is-visible .moment-card:nth-child(4) {
+  animation-delay: 0.24s;
 }
 
 .story-kicker {
@@ -205,6 +288,7 @@ p {
 .hero-visual {
   min-height: 300px;
   margin-top: 16px;
+  transform: translate3d(0, calc(var(--scroll-px) * -0.012), 0);
 }
 
 .hero-floating-card {
@@ -436,6 +520,7 @@ p {
   position: relative;
   min-height: 260px;
   margin-top: 12px;
+  transform: translate3d(0, calc(var(--scroll-px) * -0.004), 0);
 }
 
 .chapter-card span,
@@ -505,6 +590,28 @@ p {
   font-size: 0.98rem;
   font-weight: 600;
   text-align: center;
+}
+
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes settle-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
 }
 
 .story-error {

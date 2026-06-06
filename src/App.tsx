@@ -85,6 +85,33 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    if (!sections.length) return;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      sections.forEach((section) => section.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        }
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [data]);
+
   const story = useMemo(() => (data ? deriveStoryModel(data) : null), [data]);
 
   if (error) {
@@ -150,7 +177,7 @@ function App() {
 
   return (
     <main ref={shellRef} className="story-shell">
-      <section className="hero-story">
+      <section className="hero-story story-section depth-strong" data-reveal>
         <div className="hero-copy">
           <p className="story-kicker">Nuestra historia en mensajes</p>
           <h1>{story.poeticTitle}</h1>
@@ -178,7 +205,7 @@ function App() {
         </div>
       </section>
 
-      <section className="chapter-band">
+      <section className="chapter-band story-section depth-soft" data-reveal>
         <div className="chapter-band-copy">
           <p className="story-kicker">Para empezar</p>
           <h2>Una conversacion que se volvio parte de la vida</h2>
@@ -195,7 +222,7 @@ function App() {
         </div>
       </section>
 
-      <section className="compare-section">
+      <section className="compare-section story-section depth-mid" data-reveal>
         <div className="section-heading">
           <p className="story-kicker">Lo que se ve al instante</p>
           <h2>Quien busca mas al otro y como se reparte la conversacion</h2>
@@ -231,7 +258,7 @@ function App() {
         </div>
       </section>
 
-      <section className="impact-section">
+      <section className="impact-section story-section depth-soft" data-reveal>
         <div className="impact-card te-amo-card">
           <p className="story-kicker">Lo mas importante</p>
           <h2>Nos dijimos “te amo”</h2>
@@ -259,7 +286,7 @@ function App() {
         </div>
       </section>
 
-      <section className="chapters-section">
+      <section className="chapters-section story-section depth-mid" data-reveal>
         <div className="section-heading">
           <p className="story-kicker">La historia por etapas</p>
           <h2>Capitulos faciles de leer a simple vista</h2>
@@ -275,7 +302,7 @@ function App() {
         </div>
       </section>
 
-      <section className="gallery-section">
+      <section className="gallery-section story-section depth-soft" data-reveal>
         <div className="section-heading narrow">
           <p className="story-kicker">Todo lo que se mandaron</p>
           <h2>No solo fueron textos</h2>
@@ -297,7 +324,7 @@ function App() {
         </div>
       </section>
 
-      <section className="moments-section">
+      <section className="moments-section story-section depth-strong" data-reveal>
         <div className="section-heading">
           <p className="story-kicker">Momentos que dicen mucho</p>
           <h2>Pequenas escenas para contar una historia grande</h2>
@@ -323,7 +350,7 @@ function App() {
         </div>
       </section>
 
-      <section className="closing-section">
+      <section className="closing-section story-section depth-mid" data-reveal>
         <div className="closing-copy">
           <p className="story-kicker">Y todavia sigue</p>
           <h2>Lo bonito de esta historia es que sigue creciendo.</h2>
