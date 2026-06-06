@@ -42,11 +42,20 @@ function formatMonthLabel(month: string): string {
   return new Intl.DateTimeFormat('es-GT', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${month}-01T00:00:00Z`));
 }
 
+function formatPreciseTimestamp(ts: number, timezone: string): string {
+  return new Intl.DateTimeFormat('es-GT', {
+    dateStyle: 'medium',
+    timeStyle: 'medium',
+    hour12: false,
+    timeZone: timezone,
+  }).format(new Date(ts * 1000));
+}
+
 function App() {
   const shellRef = useRef<HTMLElement | null>(null);
   const [data, setData] = useState<LoadedChatExport | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [theme, setTheme] = useState<ThemeMode>('light');
+  const [theme, setTheme] = useState<ThemeMode>('dark');
   const [visibleSections, setVisibleSections] = useState<Set<string>>(() => new Set(['hero']));
 
   useEffect(() => {
@@ -72,8 +81,7 @@ function App() {
       setTheme(stored);
       return;
     }
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(prefersDark ? 'dark' : 'light');
+    setTheme('dark');
   }, []);
 
   useEffect(() => {
@@ -180,7 +188,7 @@ function App() {
   const themMessages = data.metrics.bySender.them.messages;
   const messageGap = Math.abs(meMessages - themMessages);
   const lineEasing = (value: number) => 1 - (1 - value) ** 4;
-  const totalDuration = 2100;
+  const totalDuration = 3150;
   const progressiveDuration = (ctx: { index: number }) => lineEasing(ctx.index / Math.max(monthlyPoints.length, 1)) * totalDuration / Math.max(monthlyPoints.length, 1);
   const progressiveDelay = (ctx: { index: number }) => lineEasing(ctx.index / Math.max(monthlyPoints.length, 1)) * totalDuration;
   const previousY = (ctx: { index: number; chart: any; datasetIndex: number }) =>
@@ -343,7 +351,7 @@ function App() {
             <strong>{formatNumber(data.metrics.totals.teAmoCount)}</strong>
           </div>
           <p>
-            La primera vez que aparecio por escrito fue el {data.metrics.firstTeAmo ? formatDay(data.metrics.firstTeAmo.day) : 'dia que no pudimos identificar'}.
+            La primera vez que aparecio por escrito fue el {data.metrics.firstTeAmo ? formatPreciseTimestamp(data.metrics.firstTeAmo.ts, data.relationship.timezone) : 'dia que no pudimos identificar'}
           </p>
         </div>
       </section>
@@ -476,7 +484,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="story-footer">Con amor, hecho por {data.chat.authorSignature ?? story.meLabel} con Codex ❤️</footer>
+      <footer className="story-footer">{`Con  ❤️, hecho por ${data.chat.authorSignature ?? story.meLabel} con Codex`}</footer>
     </main>
   );
 }
@@ -590,7 +598,7 @@ const lineOptions = (
 const barOptions = (chartTextColor: string, chartTickColor: string, chartGridColor: string) => ({
   ...sharedChartOptions(chartTextColor),
   animation: {
-    duration: 1400,
+    duration: 2100,
     easing: 'easeOutQuart' as const,
     delay(ctx: any) {
       return ctx.type === 'data' ? ctx.dataIndex * 120 : 0;
@@ -607,7 +615,7 @@ const doughnutOptions = (chartTextColor: string) => ({
   animation: {
     animateRotate: true,
     animateScale: true,
-    duration: 1800,
+    duration: 2700,
     easing: 'easeOutExpo' as const,
   },
   cutout: '72%',

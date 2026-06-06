@@ -94,7 +94,28 @@ function cleanLine(line: string): string {
   return line.replace(/\u200e/g, '').trim();
 }
 
-function parseBackupDate(match: RegExpMatchArray): number {
+function offsetMinutesForZone(utcMs: number, timezone: string): number {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: timezone,
+    timeZoneName: 'shortOffset',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }).formatToParts(new Date(utcMs));
+  const zoneName = parts.find((part) => part.type === 'timeZoneName')?.value ?? 'GMT';
+  const match = zoneName.match(/^GMT([+-])(\d{1,2})(?::(\d{2}))?$/);
+  if (!match) return 0;
+
+  const sign = match[1] === '+' ? 1 : -1;
+  const hours = Number(match[2]);
+  const minutes = Number(match[3] ?? 0);
+  return sign * (hours * 60 + minutes);
+}
+
+function parseBackupDate(match: RegExpMatchArray, timezone: string): number {
   const day = Number(match[1]);
   const month = Number(match[2]);
   const rawYear = Number(match[3]);
@@ -107,7 +128,8 @@ function parseBackupDate(match: RegExpMatchArray): number {
   if (ampm === 'PM' && hour < 12) hour += 12;
   if (ampm === 'AM' && hour === 12) hour = 0;
 
-  return Date.UTC(year, month - 1, day, hour, minute, second);
+  const utcGuess = Date.UTC(year, month - 1, day, hour, minute, second);
+  return utcGuess - offsetMinutesForZone(utcGuess, timezone) * 60_000;
 }
 
 function detectAttachment(text: string): { fileName: string; mediaType: string } | null {
@@ -159,7 +181,7 @@ function parseBackupMessages(chatSourceName: string, chatDisplayName: string, me
     if (match) {
       current = {
         sender: match[8].trim(),
-        ts: parseBackupDate(match),
+        ts: parseBackupDate(match, relationship.timezone),
         text: match[9] ?? '',
       };
       rawMessages.push(current);

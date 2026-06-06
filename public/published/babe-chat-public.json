@@ -3,8 +3,8 @@
     "jid": "published-story",
     "name": "Patty",
     "phone": "",
-    "exportedAt": "2026-06-06T04:51:29.261Z",
-    "messageCount": 9330,
+    "exportedAt": "2026-06-06T15:49:51.012Z",
+    "messageCount": 9080,
     "authorSignature": "Christofer Enríquez",
     "participantLabels": {
       "me": "Chris",
@@ -15,7 +15,7 @@
       "backupFound": true,
       "backupMessageCount": 7848,
       "wacrawlMessageCount": 6154,
-      "mergedExtraCount": 1482
+      "mergedExtraCount": 1232
     },
     "dateRange": {
       "start": "2020-05-22",
@@ -52,31 +52,31 @@
   "messages": [],
   "metrics": {
     "totals": {
-      "messages": 9330,
-      "textMessages": 8381,
+      "messages": 9080,
+      "textMessages": 8130,
       "mediaMessages": 2111,
       "imageMessages": 0,
-      "teAmoCount": 42,
-      "activeDays": 341
+      "teAmoCount": 41,
+      "activeDays": 345
     },
     "bySender": {
       "me": {
         "label": "Chris",
-        "messages": 4751,
-        "textMessages": 4136,
+        "messages": 4615,
+        "textMessages": 3999,
         "mediaMessages": 1364,
         "imageMessages": 0,
-        "teAmoCount": 22,
-        "wordCount": 31422
+        "teAmoCount": 21,
+        "wordCount": 30627
       },
       "them": {
         "label": "Patty",
-        "messages": 4579,
-        "textMessages": 4245,
+        "messages": 4465,
+        "textMessages": 4131,
         "mediaMessages": 747,
         "imageMessages": 0,
         "teAmoCount": 20,
-        "wordCount": 23780
+        "wordCount": 23245
       }
     },
     "daily": [
@@ -105,7 +105,7 @@
         "phaseId": "before"
       },
       {
-        "day": "2022-10-15",
+        "day": "2022-10-16",
         "total": 3,
         "fromMe": 3,
         "fromThem": 0,
@@ -114,9 +114,17 @@
       },
       {
         "day": "2022-10-27",
-        "total": 20,
-        "fromMe": 9,
-        "fromThem": 11,
+        "total": 14,
+        "fromMe": 6,
+        "fromThem": 8,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2022-10-28",
+        "total": 6,
+        "fromMe": 3,
+        "fromThem": 3,
         "media": 1,
         "phaseId": "before"
       },
@@ -145,7 +153,7 @@
         "phaseId": "before"
       },
       {
-        "day": "2022-11-18",
+        "day": "2022-11-19",
         "total": 7,
         "fromMe": 3,
         "fromThem": 4,
@@ -170,10 +178,10 @@
       },
       {
         "day": "2022-12-26",
-        "total": 25,
-        "fromMe": 14,
+        "total": 24,
+        "fromMe": 13,
         "fromThem": 11,
-        "media": 5,
+        "media": 4,
         "phaseId": "before"
       },
       {
@@ -186,10 +194,10 @@
       },
       {
         "day": "2022-12-28",
-        "total": 4,
-        "fromMe": 1,
+        "total": 5,
+        "fromMe": 2,
         "fromThem": 3,
-        "media": 1,
+        "media": 2,
         "phaseId": "before"
       },
       {
@@ -330,17 +338,17 @@
       },
       {
         "day": "2023-07-01",
-        "total": 49,
-        "fromMe": 23,
-        "fromThem": 26,
+        "total": 39,
+        "fromMe": 20,
+        "fromThem": 19,
         "media": 1,
         "phaseId": "before"
       },
       {
         "day": "2023-07-02",
-        "total": 5,
-        "fromMe": 1,
-        "fromThem": 4,
+        "total": 15,
+        "fromMe": 4,
+        "fromThem": 11,
         "media": 2,
         "phaseId": "before"
       },
@@ -402,25 +410,33 @@
       },
       {
         "day": "2023-10-14",
-        "total": 40,
-        "fromMe": 18,
-        "fromThem": 22,
-        "media": 2,
+        "total": 31,
+        "fromMe": 13,
+        "fromThem": 18,
+        "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2023-10-15",
+        "total": 9,
+        "fromMe": 5,
+        "fromThem": 4,
+        "media": 1,
         "phaseId": "before"
       },
       {
         "day": "2023-11-02",
-        "total": 90,
-        "fromMe": 45,
-        "fromThem": 45,
+        "total": 83,
+        "fromMe": 41,
+        "fromThem": 42,
         "media": 14,
         "phaseId": "before"
       },
       {
         "day": "2023-11-03",
-        "total": 21,
-        "fromMe": 8,
-        "fromThem": 13,
+        "total": 28,
+        "fromMe": 12,
+        "fromThem": 16,
         "media": 0,
         "phaseId": "before"
       },
@@ -474,17 +490,17 @@
       },
       {
         "day": "2023-11-25",
-        "total": 4,
+        "total": 3,
         "fromMe": 1,
-        "fromThem": 3,
+        "fromThem": 2,
         "media": 1,
         "phaseId": "before"
       },
       {
         "day": "2023-11-26",
-        "total": 4,
+        "total": 5,
         "fromMe": 0,
-        "fromThem": 4,
+        "fromThem": 5,
         "media": 1,
         "phaseId": "before"
       },
@@ -505,25 +521,17 @@
         "phaseId": "before"
       },
       {
-        "day": "2023-12-24",
-        "total": 2,
-        "fromMe": 1,
-        "fromThem": 1,
-        "media": 0,
-        "phaseId": "before"
-      },
-      {
         "day": "2023-12-25",
-        "total": 20,
+        "total": 21,
         "fromMe": 13,
-        "fromThem": 7,
+        "fromThem": 8,
         "media": 0,
         "phaseId": "before"
       },
       {
         "day": "2023-12-26",
-        "total": 13,
-        "fromMe": 6,
+        "total": 14,
+        "fromMe": 7,
         "fromThem": 7,
         "media": 1,
         "phaseId": "before"
@@ -554,9 +562,17 @@
       },
       {
         "day": "2024-01-13",
-        "total": 18,
-        "fromMe": 7,
-        "fromThem": 11,
+        "total": 11,
+        "fromMe": 3,
+        "fromThem": 8,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-01-14",
+        "total": 7,
+        "fromMe": 4,
+        "fromThem": 3,
         "media": 0,
         "phaseId": "before"
       },
@@ -618,10 +634,18 @@
       },
       {
         "day": "2024-03-27",
-        "total": 35,
-        "fromMe": 19,
-        "fromThem": 16,
+        "total": 25,
+        "fromMe": 14,
+        "fromThem": 11,
         "media": 1,
+        "phaseId": "before"
+      },
+      {
+        "day": "2024-03-28",
+        "total": 10,
+        "fromMe": 5,
+        "fromThem": 5,
+        "media": 0,
         "phaseId": "before"
       },
       {
@@ -642,25 +666,25 @@
       },
       {
         "day": "2024-04-19",
-        "total": 53,
-        "fromMe": 26,
-        "fromThem": 27,
+        "total": 45,
+        "fromMe": 23,
+        "fromThem": 22,
         "media": 7,
         "phaseId": "before"
       },
       {
         "day": "2024-04-20",
-        "total": 37,
-        "fromMe": 19,
-        "fromThem": 18,
+        "total": 41,
+        "fromMe": 21,
+        "fromThem": 20,
         "media": 0,
         "phaseId": "before"
       },
       {
         "day": "2024-04-21",
-        "total": 10,
-        "fromMe": 3,
-        "fromThem": 7,
+        "total": 14,
+        "fromMe": 4,
+        "fromThem": 10,
         "media": 0,
         "phaseId": "before"
       },
@@ -681,7 +705,7 @@
         "phaseId": "before"
       },
       {
-        "day": "2024-05-25",
+        "day": "2024-05-26",
         "total": 5,
         "fromMe": 3,
         "fromThem": 2,
@@ -706,26 +730,26 @@
       },
       {
         "day": "2024-07-05",
-        "total": 9,
-        "fromMe": 2,
+        "total": 8,
+        "fromMe": 1,
         "fromThem": 7,
         "media": 0,
         "phaseId": "before"
       },
       {
         "day": "2024-07-06",
-        "total": 26,
-        "fromMe": 13,
-        "fromThem": 13,
-        "media": 2,
+        "total": 21,
+        "fromMe": 10,
+        "fromThem": 11,
+        "media": 1,
         "phaseId": "before"
       },
       {
         "day": "2024-07-07",
-        "total": 21,
-        "fromMe": 8,
-        "fromThem": 13,
-        "media": 2,
+        "total": 27,
+        "fromMe": 12,
+        "fromThem": 15,
+        "media": 3,
         "phaseId": "before"
       },
       {
@@ -882,9 +906,17 @@
       },
       {
         "day": "2025-02-15",
-        "total": 35,
-        "fromMe": 17,
-        "fromThem": 18,
+        "total": 32,
+        "fromMe": 15,
+        "fromThem": 17,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-02-16",
+        "total": 3,
+        "fromMe": 2,
+        "fromThem": 1,
         "media": 0,
         "phaseId": "before"
       },
@@ -906,17 +938,17 @@
       },
       {
         "day": "2025-03-15",
-        "total": 38,
-        "fromMe": 18,
-        "fromThem": 20,
+        "total": 31,
+        "fromMe": 16,
+        "fromThem": 15,
         "media": 0,
         "phaseId": "before"
       },
       {
         "day": "2025-03-16",
-        "total": 5,
-        "fromMe": 2,
-        "fromThem": 3,
+        "total": 12,
+        "fromMe": 4,
+        "fromThem": 8,
         "media": 2,
         "phaseId": "before"
       },
@@ -946,25 +978,33 @@
       },
       {
         "day": "2025-04-18",
-        "total": 31,
-        "fromMe": 18,
-        "fromThem": 13,
-        "media": 6,
-        "phaseId": "before"
-      },
-      {
-        "day": "2025-04-19",
-        "total": 7,
-        "fromMe": 3,
-        "fromThem": 4,
+        "total": 19,
+        "fromMe": 9,
+        "fromThem": 10,
         "media": 0,
         "phaseId": "before"
       },
       {
+        "day": "2025-04-19",
+        "total": 19,
+        "fromMe": 12,
+        "fromThem": 7,
+        "media": 6,
+        "phaseId": "before"
+      },
+      {
         "day": "2025-05-17",
-        "total": 18,
-        "fromMe": 7,
-        "fromThem": 11,
+        "total": 9,
+        "fromMe": 3,
+        "fromThem": 6,
+        "media": 0,
+        "phaseId": "before"
+      },
+      {
+        "day": "2025-05-18",
+        "total": 9,
+        "fromMe": 4,
+        "fromThem": 5,
         "media": 0,
         "phaseId": "before"
       },
@@ -1025,14 +1065,6 @@
         "phaseId": "before"
       },
       {
-        "day": "2025-07-20",
-        "total": 3,
-        "fromMe": 1,
-        "fromThem": 2,
-        "media": 0,
-        "phaseId": "before"
-      },
-      {
         "day": "2025-07-21",
         "total": 26,
         "fromMe": 13,
@@ -1058,9 +1090,9 @@
       },
       {
         "day": "2025-07-26",
-        "total": 26,
-        "fromMe": 14,
-        "fromThem": 12,
+        "total": 18,
+        "fromMe": 11,
+        "fromThem": 7,
         "media": 1,
         "phaseId": "before"
       },
@@ -1114,18 +1146,18 @@
       },
       {
         "day": "2025-08-09",
-        "total": 26,
-        "fromMe": 12,
-        "fromThem": 14,
-        "media": 2,
+        "total": 16,
+        "fromMe": 7,
+        "fromThem": 9,
+        "media": 0,
         "phaseId": "before"
       },
       {
         "day": "2025-08-10",
-        "total": 31,
-        "fromMe": 13,
+        "total": 33,
+        "fromMe": 15,
         "fromThem": 18,
-        "media": 4,
+        "media": 6,
         "phaseId": "before"
       },
       {
@@ -1162,18 +1194,18 @@
       },
       {
         "day": "2025-08-30",
-        "total": 27,
-        "fromMe": 11,
-        "fromThem": 16,
-        "media": 1,
+        "total": 21,
+        "fromMe": 8,
+        "fromThem": 13,
+        "media": 0,
         "phaseId": "before"
       },
       {
         "day": "2025-08-31",
-        "total": 9,
-        "fromMe": 5,
+        "total": 10,
+        "fromMe": 6,
         "fromThem": 4,
-        "media": 3,
+        "media": 4,
         "phaseId": "before"
       },
       {
@@ -1210,9 +1242,9 @@
       },
       {
         "day": "2025-09-06",
-        "total": 21,
-        "fromMe": 11,
-        "fromThem": 10,
+        "total": 10,
+        "fromMe": 5,
+        "fromThem": 5,
         "media": 3,
         "phaseId": "before"
       },
@@ -1274,9 +1306,9 @@
       },
       {
         "day": "2025-09-27",
-        "total": 28,
-        "fromMe": 13,
-        "fromThem": 15,
+        "total": 23,
+        "fromMe": 12,
+        "fromThem": 11,
         "media": 0,
         "phaseId": "before"
       },
@@ -1338,8 +1370,8 @@
       },
       {
         "day": "2025-10-11",
-        "total": 28,
-        "fromMe": 13,
+        "total": 26,
+        "fromMe": 11,
         "fromThem": 15,
         "media": 0,
         "phaseId": "before"
@@ -1458,18 +1490,18 @@
       },
       {
         "day": "2025-11-22",
-        "total": 14,
-        "fromMe": 6,
-        "fromThem": 8,
-        "media": 1,
+        "total": 7,
+        "fromMe": 3,
+        "fromThem": 4,
+        "media": 0,
         "phaseId": "before"
       },
       {
         "day": "2025-11-23",
-        "total": 24,
-        "fromMe": 11,
+        "total": 25,
+        "fromMe": 12,
         "fromThem": 13,
-        "media": 1,
+        "media": 2,
         "phaseId": "before"
       },
       {
@@ -1490,18 +1522,18 @@
       },
       {
         "day": "2025-12-07",
-        "total": 20,
-        "fromMe": 5,
-        "fromThem": 15,
-        "media": 5,
+        "total": 11,
+        "fromMe": 3,
+        "fromThem": 8,
+        "media": 0,
         "phaseId": "before"
       },
       {
         "day": "2025-12-08",
-        "total": 42,
+        "total": 47,
         "fromMe": 15,
-        "fromThem": 27,
-        "media": 7,
+        "fromThem": 32,
+        "media": 12,
         "phaseId": "before"
       },
       {
@@ -1546,17 +1578,17 @@
       },
       {
         "day": "2025-12-23",
-        "total": 7,
-        "fromMe": 4,
+        "total": 6,
+        "fromMe": 3,
         "fromThem": 3,
         "media": 0,
         "phaseId": "before"
       },
       {
         "day": "2025-12-24",
-        "total": 15,
-        "fromMe": 8,
-        "fromThem": 7,
+        "total": 13,
+        "fromMe": 7,
+        "fromThem": 6,
         "media": 0,
         "phaseId": "before"
       },
@@ -1602,9 +1634,9 @@
       },
       {
         "day": "2025-12-31",
-        "total": 23,
-        "fromMe": 10,
-        "fromThem": 13,
+        "total": 17,
+        "fromMe": 7,
+        "fromThem": 10,
         "media": 0,
         "phaseId": "courting"
       },
@@ -1626,9 +1658,9 @@
       },
       {
         "day": "2026-01-03",
-        "total": 10,
-        "fromMe": 5,
-        "fromThem": 5,
+        "total": 8,
+        "fromMe": 4,
+        "fromThem": 4,
         "media": 0,
         "phaseId": "courting"
       },
@@ -1666,9 +1698,9 @@
       },
       {
         "day": "2026-01-10",
-        "total": 22,
-        "fromMe": 11,
-        "fromThem": 11,
+        "total": 17,
+        "fromMe": 8,
+        "fromThem": 9,
         "media": 0,
         "phaseId": "courting"
       },
@@ -1698,16 +1730,16 @@
       },
       {
         "day": "2026-01-17",
-        "total": 22,
-        "fromMe": 11,
-        "fromThem": 11,
+        "total": 17,
+        "fromMe": 8,
+        "fromThem": 9,
         "media": 2,
         "phaseId": "courting"
       },
       {
         "day": "2026-01-18",
-        "total": 26,
-        "fromMe": 13,
+        "total": 27,
+        "fromMe": 14,
         "fromThem": 13,
         "media": 0,
         "phaseId": "courting"
@@ -1746,41 +1778,41 @@
       },
       {
         "day": "2026-01-23",
-        "total": 10,
-        "fromMe": 4,
+        "total": 9,
+        "fromMe": 3,
         "fromThem": 6,
         "media": 0,
         "phaseId": "courting"
       },
       {
         "day": "2026-01-24",
-        "total": 19,
-        "fromMe": 10,
-        "fromThem": 9,
+        "total": 7,
+        "fromMe": 4,
+        "fromThem": 3,
         "media": 0,
         "phaseId": "courting"
       },
       {
         "day": "2026-01-25",
-        "total": 47,
-        "fromMe": 21,
-        "fromThem": 26,
+        "total": 28,
+        "fromMe": 13,
+        "fromThem": 15,
         "media": 0,
         "phaseId": "courting"
       },
       {
         "day": "2026-01-26",
-        "total": 41,
-        "fromMe": 20,
-        "fromThem": 21,
+        "total": 32,
+        "fromMe": 14,
+        "fromThem": 18,
         "media": 0,
         "phaseId": "courting"
       },
       {
         "day": "2026-01-27",
-        "total": 13,
+        "total": 14,
         "fromMe": 8,
-        "fromThem": 5,
+        "fromThem": 6,
         "media": 0,
         "phaseId": "courting"
       },
@@ -1794,9 +1826,9 @@
       },
       {
         "day": "2026-01-29",
-        "total": 17,
-        "fromMe": 9,
-        "fromThem": 8,
+        "total": 6,
+        "fromMe": 3,
+        "fromThem": 3,
         "media": 0,
         "phaseId": "courting"
       },
@@ -1818,9 +1850,9 @@
       },
       {
         "day": "2026-02-01",
-        "total": 66,
-        "fromMe": 30,
-        "fromThem": 36,
+        "total": 59,
+        "fromMe": 27,
+        "fromThem": 32,
         "media": 2,
         "phaseId": "courting"
       },
@@ -1834,17 +1866,17 @@
       },
       {
         "day": "2026-02-03",
-        "total": 25,
-        "fromMe": 12,
+        "total": 22,
+        "fromMe": 9,
         "fromThem": 13,
         "media": 4,
         "phaseId": "courting"
       },
       {
         "day": "2026-02-04",
-        "total": 21,
-        "fromMe": 13,
-        "fromThem": 8,
+        "total": 13,
+        "fromMe": 8,
+        "fromThem": 5,
         "media": 2,
         "phaseId": "courting"
       },
@@ -1858,48 +1890,48 @@
       },
       {
         "day": "2026-02-06",
-        "total": 53,
-        "fromMe": 31,
-        "fromThem": 22,
-        "media": 9,
+        "total": 35,
+        "fromMe": 21,
+        "fromThem": 14,
+        "media": 8,
         "phaseId": "courting"
       },
       {
         "day": "2026-02-07",
-        "total": 36,
+        "total": 37,
         "fromMe": 18,
-        "fromThem": 18,
-        "media": 5,
+        "fromThem": 19,
+        "media": 6,
         "phaseId": "courting"
       },
       {
         "day": "2026-02-08",
-        "total": 24,
-        "fromMe": 7,
+        "total": 23,
+        "fromMe": 6,
         "fromThem": 17,
         "media": 8,
         "phaseId": "official"
       },
       {
         "day": "2026-02-09",
-        "total": 23,
-        "fromMe": 11,
-        "fromThem": 12,
-        "media": 1,
+        "total": 6,
+        "fromMe": 2,
+        "fromThem": 4,
+        "media": 0,
         "phaseId": "official"
       },
       {
         "day": "2026-02-10",
-        "total": 43,
+        "total": 44,
         "fromMe": 23,
-        "fromThem": 20,
-        "media": 3,
+        "fromThem": 21,
+        "media": 4,
         "phaseId": "official"
       },
       {
         "day": "2026-02-11",
-        "total": 46,
-        "fromMe": 23,
+        "total": 44,
+        "fromMe": 21,
         "fromThem": 23,
         "media": 0,
         "phaseId": "official"
@@ -1930,9 +1962,9 @@
       },
       {
         "day": "2026-02-15",
-        "total": 18,
-        "fromMe": 6,
-        "fromThem": 12,
+        "total": 15,
+        "fromMe": 4,
+        "fromThem": 11,
         "media": 10,
         "phaseId": "official"
       },
@@ -1946,9 +1978,9 @@
       },
       {
         "day": "2026-02-17",
-        "total": 64,
-        "fromMe": 38,
-        "fromThem": 26,
+        "total": 56,
+        "fromMe": 34,
+        "fromThem": 22,
         "media": 12,
         "phaseId": "official"
       },
@@ -1962,9 +1994,9 @@
       },
       {
         "day": "2026-02-19",
-        "total": 39,
-        "fromMe": 18,
-        "fromThem": 21,
+        "total": 35,
+        "fromMe": 16,
+        "fromThem": 19,
         "media": 8,
         "phaseId": "official"
       },
@@ -1978,34 +2010,34 @@
       },
       {
         "day": "2026-02-21",
-        "total": 35,
-        "fromMe": 18,
-        "fromThem": 17,
+        "total": 30,
+        "fromMe": 15,
+        "fromThem": 15,
         "media": 8,
         "phaseId": "official"
       },
       {
         "day": "2026-02-22",
-        "total": 22,
-        "fromMe": 12,
-        "fromThem": 10,
-        "media": 1,
+        "total": 14,
+        "fromMe": 8,
+        "fromThem": 6,
+        "media": 0,
         "phaseId": "official"
       },
       {
         "day": "2026-02-23",
-        "total": 61,
-        "fromMe": 32,
-        "fromThem": 29,
+        "total": 54,
+        "fromMe": 28,
+        "fromThem": 26,
         "media": 12,
         "phaseId": "official"
       },
       {
         "day": "2026-02-24",
-        "total": 63,
+        "total": 64,
         "fromMe": 31,
-        "fromThem": 32,
-        "media": 13,
+        "fromThem": 33,
+        "media": 14,
         "phaseId": "official"
       },
       {
@@ -2026,18 +2058,18 @@
       },
       {
         "day": "2026-02-27",
-        "total": 13,
+        "total": 12,
         "fromMe": 8,
-        "fromThem": 5,
-        "media": 7,
+        "fromThem": 4,
+        "media": 6,
         "phaseId": "official"
       },
       {
         "day": "2026-02-28",
-        "total": 23,
+        "total": 24,
         "fromMe": 11,
-        "fromThem": 12,
-        "media": 5,
+        "fromThem": 13,
+        "media": 6,
         "phaseId": "official"
       },
       {
@@ -2050,26 +2082,26 @@
       },
       {
         "day": "2026-03-02",
-        "total": 48,
-        "fromMe": 26,
+        "total": 47,
+        "fromMe": 25,
         "fromThem": 22,
         "media": 18,
         "phaseId": "official"
       },
       {
         "day": "2026-03-03",
-        "total": 32,
-        "fromMe": 15,
+        "total": 31,
+        "fromMe": 14,
         "fromThem": 17,
-        "media": 7,
+        "media": 6,
         "phaseId": "official"
       },
       {
         "day": "2026-03-04",
-        "total": 46,
-        "fromMe": 19,
+        "total": 47,
+        "fromMe": 20,
         "fromThem": 27,
-        "media": 7,
+        "media": 8,
         "phaseId": "official"
       },
       {
@@ -2082,18 +2114,18 @@
       },
       {
         "day": "2026-03-06",
-        "total": 21,
+        "total": 20,
         "fromMe": 9,
-        "fromThem": 12,
-        "media": 3,
+        "fromThem": 11,
+        "media": 2,
         "phaseId": "official"
       },
       {
         "day": "2026-03-07",
-        "total": 42,
+        "total": 43,
         "fromMe": 34,
-        "fromThem": 8,
-        "media": 28,
+        "fromThem": 9,
+        "media": 29,
         "phaseId": "official"
       },
       {
@@ -2114,33 +2146,33 @@
       },
       {
         "day": "2026-03-10",
-        "total": 35,
-        "fromMe": 17,
-        "fromThem": 18,
-        "media": 9,
+        "total": 26,
+        "fromMe": 12,
+        "fromThem": 14,
+        "media": 8,
         "phaseId": "official"
       },
       {
         "day": "2026-03-11",
-        "total": 33,
-        "fromMe": 17,
+        "total": 34,
+        "fromMe": 18,
         "fromThem": 16,
         "media": 4,
         "phaseId": "official"
       },
       {
         "day": "2026-03-12",
-        "total": 44,
+        "total": 45,
         "fromMe": 22,
-        "fromThem": 22,
-        "media": 3,
+        "fromThem": 23,
+        "media": 4,
         "phaseId": "official"
       },
       {
         "day": "2026-03-13",
-        "total": 35,
-        "fromMe": 21,
-        "fromThem": 14,
+        "total": 29,
+        "fromMe": 17,
+        "fromThem": 12,
         "media": 6,
         "phaseId": "official"
       },
@@ -2186,18 +2218,18 @@
       },
       {
         "day": "2026-03-19",
-        "total": 52,
-        "fromMe": 25,
-        "fromThem": 27,
-        "media": 7,
+        "total": 47,
+        "fromMe": 22,
+        "fromThem": 25,
+        "media": 6,
         "phaseId": "official"
       },
       {
         "day": "2026-03-20",
-        "total": 46,
+        "total": 47,
         "fromMe": 25,
-        "fromThem": 21,
-        "media": 13,
+        "fromThem": 22,
+        "media": 14,
         "phaseId": "official"
       },
       {
@@ -2234,16 +2266,16 @@
       },
       {
         "day": "2026-03-25",
-        "total": 55,
-        "fromMe": 43,
+        "total": 52,
+        "fromMe": 40,
         "fromThem": 12,
         "media": 31,
         "phaseId": "official"
       },
       {
         "day": "2026-03-26",
-        "total": 41,
-        "fromMe": 27,
+        "total": 42,
+        "fromMe": 28,
         "fromThem": 14,
         "media": 10,
         "phaseId": "official"
@@ -2546,18 +2578,18 @@
       },
       {
         "day": "2026-05-04",
-        "total": 36,
+        "total": 34,
         "fromMe": 15,
-        "fromThem": 21,
-        "media": 11,
+        "fromThem": 19,
+        "media": 10,
         "phaseId": "official"
       },
       {
         "day": "2026-05-05",
-        "total": 67,
+        "total": 69,
         "fromMe": 30,
-        "fromThem": 37,
-        "media": 20,
+        "fromThem": 39,
+        "media": 21,
         "phaseId": "official"
       },
       {
@@ -2618,18 +2650,18 @@
       },
       {
         "day": "2026-05-13",
-        "total": 31,
+        "total": 30,
         "fromMe": 15,
-        "fromThem": 16,
-        "media": 11,
+        "fromThem": 15,
+        "media": 10,
         "phaseId": "official"
       },
       {
         "day": "2026-05-14",
-        "total": 42,
+        "total": 43,
         "fromMe": 24,
-        "fromThem": 18,
-        "media": 14,
+        "fromThem": 19,
+        "media": 15,
         "phaseId": "official"
       },
       {
@@ -2650,9 +2682,9 @@
       },
       {
         "day": "2026-05-17",
-        "total": 231,
-        "fromMe": 129,
-        "fromThem": 102,
+        "total": 219,
+        "fromMe": 123,
+        "fromThem": 96,
         "media": 88,
         "phaseId": "official"
       },
@@ -2674,33 +2706,33 @@
       },
       {
         "day": "2026-05-20",
-        "total": 118,
-        "fromMe": 66,
-        "fromThem": 52,
-        "media": 42,
+        "total": 115,
+        "fromMe": 64,
+        "fromThem": 51,
+        "media": 41,
         "phaseId": "official"
       },
       {
         "day": "2026-05-21",
-        "total": 47,
-        "fromMe": 28,
+        "total": 48,
+        "fromMe": 29,
         "fromThem": 19,
-        "media": 14,
+        "media": 15,
         "phaseId": "official"
       },
       {
         "day": "2026-05-22",
-        "total": 33,
+        "total": 32,
         "fromMe": 16,
-        "fromThem": 17,
+        "fromThem": 16,
         "media": 7,
         "phaseId": "official"
       },
       {
         "day": "2026-05-23",
-        "total": 48,
+        "total": 49,
         "fromMe": 24,
-        "fromThem": 24,
+        "fromThem": 25,
         "media": 16,
         "phaseId": "official"
       },
@@ -2754,9 +2786,9 @@
       },
       {
         "day": "2026-05-30",
-        "total": 41,
-        "fromMe": 21,
-        "fromThem": 20,
+        "total": 36,
+        "fromMe": 18,
+        "fromThem": 18,
         "media": 8,
         "phaseId": "official"
       },
@@ -2813,26 +2845,26 @@
       {
         "phaseId": "before",
         "label": "Antes de pretenderla",
-        "total": 3102,
-        "fromMe": 1437,
-        "fromThem": 1665,
+        "total": 3047,
+        "fromMe": 1413,
+        "fromThem": 1634,
         "teAmoCount": 0
       },
       {
         "phaseId": "courting",
         "label": "Pretendiendola",
-        "total": 835,
-        "fromMe": 411,
-        "fromThem": 424,
+        "total": 732,
+        "fromMe": 354,
+        "fromThem": 378,
         "teAmoCount": 0
       },
       {
         "phaseId": "official",
         "label": "Novios",
-        "total": 5393,
-        "fromMe": 2903,
-        "fromThem": 2490,
-        "teAmoCount": 42
+        "total": 5301,
+        "fromMe": 2848,
+        "fromThem": 2453,
+        "teAmoCount": 41
       }
     ],
     "mediaByType": {
@@ -2848,7 +2880,7 @@
     },
     "firstTeAmo": {
       "messageId": "published-first-te-amo",
-      "ts": 1773910973,
+      "ts": 1773932573,
       "day": "2026-03-19",
       "fromMe": false,
       "senderLabel": "Patty",
@@ -2861,18 +2893,18 @@
     "poeticTitle": "Nuestra historia, la que se escribe día a día",
     "subtitle": "2020-05-22 - 2026-06-05",
     "totalSpanDays": 1360,
-    "activeDays": 341,
+    "activeDays": 345,
     "messageLeadLabel": "Chris",
-    "messageLeadPercent": 4,
-    "messageLeadSentence": "Chris escribio 4% mas mensajes que Patty.",
+    "messageLeadPercent": 3,
+    "messageLeadSentence": "Chris escribio 3% mas mensajes que Patty.",
     "wordsBySender": [
       {
         "label": "Chris",
-        "value": 31422
+        "value": 30627
       },
       {
         "label": "Patty",
-        "value": 23676
+        "value": 23141
       }
     ],
     "yearlyCounts": [
@@ -2890,11 +2922,11 @@
       },
       {
         "year": "2025",
-        "count": 1614
+        "count": 1554
       },
       {
         "year": "2026",
-        "count": 5908
+        "count": 5728
       }
     ],
     "monthlyCounts": [
@@ -3028,39 +3060,39 @@
       },
       {
         "month": "2025-07",
-        "count": 208
+        "count": 197
       },
       {
         "month": "2025-08",
-        "count": 252
+        "count": 239
       },
       {
         "month": "2025-09",
-        "count": 240
+        "count": 224
       },
       {
         "month": "2025-10",
-        "count": 193
+        "count": 192
       },
       {
         "month": "2025-11",
-        "count": 174
+        "count": 168
       },
       {
         "month": "2025-12",
-        "count": 279
+        "count": 266
       },
       {
         "month": "2026-01",
-        "count": 513
+        "count": 452
       },
       {
         "month": "2026-02",
-        "count": 937
+        "count": 853
       },
       {
         "month": "2026-03",
-        "count": 1132
+        "count": 1115
       },
       {
         "month": "2026-04",
@@ -3068,7 +3100,7 @@
       },
       {
         "month": "2026-05",
-        "count": 2175
+        "count": 2157
       },
       {
         "month": "2026-06",
@@ -3101,15 +3133,15 @@
         "id": "2025",
         "label": "2025",
         "range": "2025",
-        "messages": 1614,
-        "summary": "1614 mensajes en un tramo que fue agarrando mas ritmo."
+        "messages": 1554,
+        "summary": "1554 mensajes en un tramo que fue agarrando mas ritmo."
       },
       {
         "id": "2026",
         "label": "2026",
         "range": "2026",
-        "messages": 5908,
-        "summary": "5908 mensajes en la etapa mas intensa de la conversacion."
+        "messages": 5728,
+        "summary": "5728 mensajes en la etapa mas intensa de la conversacion."
       }
     ],
     "gallery": [
@@ -3190,35 +3222,35 @@
       {
         "label": "Primer mensaje guardado",
         "detail": "La primera huella de esta conversacion que sigue viva aqui.",
-        "ts": 1663258941,
+        "ts": 1663280541,
         "text": "El inicio de esta historia.",
         "senderLabel": "Patty"
       },
       {
         "label": "Primer te amo",
         "detail": "La primera vez que quedo escrito.",
-        "ts": 1773910973,
+        "ts": 1773932573,
         "text": "La primera vez que eso quedo por escrito.",
         "senderLabel": "Patty"
       },
       {
         "label": "Primera foto guardada",
         "detail": "Uno de los primeros recuerdos visuales.",
-        "ts": 1663258941,
+        "ts": 1663280541,
         "text": "Uno de los primeros recuerdos que quedo guardado.",
         "senderLabel": "Patty"
       },
       {
         "label": "Primera nota de voz",
         "detail": "Una voz tambien cuenta la historia.",
-        "ts": 1688136958,
+        "ts": 1688158558,
         "text": "Una voz que tambien forma parte de la historia.",
         "senderLabel": "Patty"
       },
       {
         "label": "Mensaje mas reciente",
         "detail": "La historia sigue viva.",
-        "ts": 1780688369,
+        "ts": 1780698298,
         "text": "La historia sigue viva.",
         "senderLabel": "Chris"
       }
@@ -3252,7 +3284,7 @@
     "firstMeaningful": {
       "label": "Primer mensaje guardado",
       "detail": "La primera huella de esta conversacion que sigue viva aqui.",
-      "ts": 1663258941,
+      "ts": 1663280541,
       "text": "Gracias",
       "senderLabel": "Patty"
     }
