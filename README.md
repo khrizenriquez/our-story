@@ -10,7 +10,7 @@ La idea no es hacer analitica “seria”, sino tomar mensajes, fechas y conteos
 npm install
 ```
 
-Instala `wacrawl` si quieres exportar datos reales:
+Instala `wacrawl` si quieres exportar datos reales desde tu entorno local:
 
 ```bash
 brew install steipete/tap/wacrawl
@@ -18,74 +18,27 @@ brew install steipete/tap/wacrawl
 go install github.com/steipete/wacrawl/cmd/wacrawl@latest
 ```
 
-El chat objetivo vive en `.env.local`, que esta gitignored.
+La configuracion privada y los insumos locales no forman parte del repositorio publico.
 
 ## Scripts
 
 ```bash
-npm run export    # sincroniza wacrawl y genera public/data/babe-chat.json
-npm run publish   # exporta, versiona el resumen publico y lo empuja a main
+npm run export    # actualiza la historia con datos locales
+npm run publish   # actualiza el resumen publico y lo empuja a main
 npm run dev       # abre la app local
-npm run build     # build seguro para GitHub Pages/demo
-npm run harness   # fixtures + validacion local privada si hay DB
+npm run build     # genera el build estatico
+npm run harness   # corre validaciones locales
 npm run test      # unit tests
 ```
 
-Los datos reales y media se escriben en `public/data/` y `public/private-media/`; no deben versionarse.
-El historial maestro incremental se guarda localmente en `.private/babe-chat-master.json`; tampoco debe versionarse.
-El resumen publico para GitHub Pages se genera en `public/published/babe-chat-public.json`; ese si puede versionarse.
-
 ## Flujo incremental recomendado
 
-Cuando exportes un nuevo chat de WhatsApp:
+`npm run export` mezcla la informacion historica disponible con los mensajes recientes sincronizados localmente y vuelve a calcular las metricas visibles de la historia.
 
-1. reemplaza o actualiza `chat_bk/WhatsApp Chat - Babe/_chat.txt` y su carpeta de media
-2. corre `npm run export`
-
-El export:
-
-- vuelve a leer el TXT actual
-- conserva el historial previo guardado en `.private/babe-chat-master.json`
-- suma solo los mensajes que todavia no existan
-- vuelve a generar `public/data/babe-chat.json` para la web local
-- vuelve a generar `public/published/babe-chat-public.json` para GitHub Pages con conteos reales y sin transcript privado
-
-Asi puedes ir trayendo exports nuevos sin perder lo que ya se habia consolidado antes.
-
-Si quieres actualizar tambien GitHub Pages con los contadores nuevos, puedes usar:
+Si quieres actualizar tambien GitHub Pages con los contadores nuevos, usa:
 
 ```bash
 npm run publish
 ```
 
-Ese comando:
-
-- corre `npm run export`
-- hace `git add public/published/babe-chat-public.json`
-- crea el commit `Update published story data` si hubo cambios
-- hace `git push origin main`
-
-## Privacidad antes de subir
-
-Este proyecto esta pensado para publicar codigo y demo, no tu chat real.
-
-No subas nunca:
-
-- `chat_bk/` ni zips del backup
-- `public/data/` ni `public/private-media/`
-- `.private/`
-- `.env*`
-- bases de datos `*.sqlite`, `*.sqlite3`, `*.db`
-
-Antes de hacer push, corre:
-
-```bash
-npm run harness
-```
-
-Si despues conectas esta carpeta a un repo git, revisa tambien:
-
-```bash
-git status --short
-git check-ignore -v .env.local chat_bk "public/data/babe-chat.json"
-```
+Ese comando corre el export, publica el resumen seguro del sitio y empuja el cambio a `main` cuando hay actualizaciones.
