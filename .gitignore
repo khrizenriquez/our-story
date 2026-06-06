@@ -8,6 +8,7 @@ public/data/
 public/private-media/
 data/
 media/
+.private/
 chat_bk/
 chat_bk*.zip
 *.sqlite

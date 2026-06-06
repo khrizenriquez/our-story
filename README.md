@@ -29,6 +29,23 @@ npm run test      # unit tests
 ```
 
 Los datos reales y media se escriben en `public/data/` y `public/private-media/`; no deben versionarse.
+El historial maestro incremental se guarda localmente en `.private/babe-chat-master.json`; tampoco debe versionarse.
+
+## Flujo incremental recomendado
+
+Cuando exportes un nuevo chat de WhatsApp:
+
+1. reemplaza o actualiza `chat_bk/WhatsApp Chat - Babe/_chat.txt` y su carpeta de media
+2. corre `npm run export`
+
+El export:
+
+- vuelve a leer el TXT actual
+- conserva el historial previo guardado en `.private/babe-chat-master.json`
+- suma solo los mensajes que todavia no existan
+- vuelve a generar `public/data/babe-chat.json` para la web local
+
+Asi puedes ir trayendo exports nuevos sin perder lo que ya se habia consolidado antes.
 
 ## Privacidad antes de subir
 
@@ -38,6 +55,7 @@ No subas nunca:
 
 - `chat_bk/` ni zips del backup
 - `public/data/` ni `public/private-media/`
+- `.private/`
 - `.env*`
 - bases de datos `*.sqlite`, `*.sqlite3`, `*.db`
 

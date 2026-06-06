@@ -4,7 +4,7 @@ import { join, resolve } from 'node:path';
 import { homedir } from 'node:os';
 import type { ChatExport, ChatMessage } from '../src/types';
 import { DEFAULT_RELATIONSHIP } from '../src/lib/dates';
-import { phraseMatchesForText } from '../src/lib/phrases';
+import { normalizeText, phraseMatchesForText } from '../src/lib/phrases';
 import { enrichMessage, normalizeExport } from '../src/lib/metrics';
 import { readPrivateConfig } from './env';
 import { commandExists, sqliteJson, sqlString } from './sqlite';
@@ -37,6 +37,7 @@ const skipSync = args.has('--skip-sync') || process.env.WACRAWL_SKIP_SYNC === '1
 const dbPath = resolvePath(process.env.WACRAWL_DB ?? '~/.wacrawl/wacrawl.db');
 const outPath = resolve(process.env.BABE_EXPORT_PATH ?? 'public/data/babe-chat.json');
 const mediaOutDir = resolve(process.env.BABE_MEDIA_DIR ?? 'public/private-media');
+const archiveCachePath = resolve(process.env.BABE_ARCHIVE_CACHE_PATH ?? '.private/babe-chat-master.json');
 const backupDir = resolve(process.env.BABE_BACKUP_DIR ?? 'chat_bk/WhatsApp Chat - Babe');
 const backupTextPath = join(backupDir, '_chat.txt');
 const backupLinkDir = join(mediaOutDir, 'chat_bk');
@@ -254,6 +255,78 @@ function normalizeWacrawlType(type: string): string {
   return lower;
 }
 
+function messageBaseSignature(message: ChatMessage): string {
+  const normalizedBody = normalizeText(message.text || '');
+  const title = normalizeText(message.mediaTitle || '');
+  return [
+    message.day,
+    message.fromMe ? 'me' : 'them',
+    message.type || 'text',
+    message.mediaType || '',
+    normalizedBody,
+    title,
+  ].join('|');
+}
+
+function messageRichness(message: ChatMessage): number {
+  return [
+    message.text.trim().length,
+    message.mediaPath ? 20 : 0,
+    message.mediaTitle ? 10 : 0,
+    message.mediaSize > 0 ? 5 : 0,
+  ].reduce((total, value) => total + value, 0);
+}
+
+function pickPreferredMessage(current: ChatMessage, candidate: ChatMessage): ChatMessage {
+  const currentScore = messageRichness(current);
+  const candidateScore = messageRichness(candidate);
+  if (candidateScore > currentScore) return candidate;
+  if (candidateScore < currentScore) return current;
+
+  const currentIsBackup = current.id.startsWith('backup-');
+  const candidateIsBackup = candidate.id.startsWith('backup-');
+  if (candidateIsBackup && !currentIsBackup) return candidate;
+  if (currentIsBackup && !candidateIsBackup) return current;
+  return current;
+}
+
+function loadExistingArchiveCache(): ChatMessage[] {
+  if (!existsSync(archiveCachePath)) return [];
+  const existing = JSON.parse(readFileSync(archiveCachePath, 'utf8')) as ChatExport;
+  const normalized = normalizeExport(existing);
+  return normalized.messages;
+}
+
+function mergeMessages(sources: ChatMessage[][]): { messages: ChatMessage[]; mergedExtraCount: number } {
+  const deduped = new Map<string, ChatMessage>();
+  let mergedExtraCount = 0;
+
+  for (const [sourceIndex, sourceMessages] of sources.entries()) {
+    const occurrences = new Map<string, number>();
+    for (const message of sourceMessages) {
+      const baseKey = messageBaseSignature(message);
+      const occurrence = (occurrences.get(baseKey) ?? 0) + 1;
+      occurrences.set(baseKey, occurrence);
+      const key = `${baseKey}#${occurrence}`;
+      const existing = deduped.get(key);
+      if (!existing) {
+        deduped.set(key, message);
+        if (sourceIndex > 0) mergedExtraCount += 1;
+        continue;
+      }
+      deduped.set(key, pickPreferredMessage(existing, message));
+    }
+  }
+
+  const messages = [...deduped.values()].sort((left, right) => {
+    if (left.ts !== right.ts) return left.ts - right.ts;
+    if (left.fromMe !== right.fromMe) return Number(left.fromMe) - Number(right.fromMe);
+    return left.id.localeCompare(right.id);
+  });
+
+  return { messages, mergedExtraCount };
+}
+
 function buildChatExport(): ChatExport {
   const config = readPrivateConfig();
   const relationship = {
@@ -263,25 +336,23 @@ function buildChatExport(): ChatExport {
 
   const backupLinked = ensureBackupMediaLink();
   const backup = parseBackupMessages(config.chatSourceName, config.chatDisplayName, config.meDisplayName, relationship);
+  const cacheMessages = loadExistingArchiveCache();
   const wacrawlMessages = readWacrawlMessages(config.chatJid, config.chatDisplayName, config.meDisplayName, relationship);
 
-  if (!backup && wacrawlMessages.length === 0) {
-    throw new Error('No private source was found. Expected chat_bk backup or a wacrawl archive.');
+  if (!backup && cacheMessages.length === 0 && wacrawlMessages.length === 0) {
+    throw new Error('No private source was found. Expected chat_bk backup, a local archive cache, or a wacrawl archive.');
   }
 
-  const merged = backup
-    ? {
-        messages: backup.messages,
-        mergedExtraCount: 0,
-      }
-    : {
-        messages: wacrawlMessages,
-        mergedExtraCount: 0,
-      };
+  const merged = mergeMessages([
+    backup?.messages ?? [],
+    cacheMessages,
+    wacrawlMessages,
+  ]);
   const participantLabels = {
     me: config.meDisplayName,
     them: config.chatDisplayName,
   };
+  const archivePrimarySource = backup ? (cacheMessages.length > 0 || wacrawlMessages.length > 0 ? 'hybrid' : 'backup') : cacheMessages.length > 0 ? 'hybrid' : 'wacrawl';
 
   const normalized = normalizeExport({
     chat: {
@@ -293,7 +364,7 @@ function buildChatExport(): ChatExport {
       authorSignature: config.authorSignature,
       participantLabels,
       archive: {
-        primarySource: backup ? 'backup' : 'wacrawl',
+        primarySource: archivePrimarySource,
         backupFound: backupLinked && Boolean(backup),
         backupMessageCount: backup?.messages.length ?? 0,
         wacrawlMessageCount: wacrawlMessages.length,
@@ -322,11 +393,14 @@ function main(): void {
   syncWacrawl();
   const exportData = buildChatExport();
 
+  mkdirSync(resolve('.private'), { recursive: true });
   mkdirSync(resolve('public/data'), { recursive: true });
+  writeFileSync(archiveCachePath, `${JSON.stringify(exportData, null, 2)}\n`);
   writeFileSync(outPath, `${JSON.stringify(exportData, null, 2)}\n`);
 
   const archive = exportData.chat.archive;
   console.log(`Exported ${exportData.messages.length} story messages to ${outPath}.`);
+  console.log(`Updated local archive cache at ${archiveCachePath}.`);
   if (archive) {
     console.log(
       `Source: ${archive.primarySource} (backup=${archive.backupMessageCount}, wacrawl=${archive.wacrawlMessageCount}, extras=${archive.mergedExtraCount}).`,

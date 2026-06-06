@@ -42,7 +42,7 @@ function trackedFiles(): string[] {
 
 function runPrivacyHarness(): void {
   const gitignore = readFileSync('.gitignore', 'utf8');
-  for (const pattern of ['public/data/', 'public/private-media/', '.env.local', 'chat_bk/', 'chat_bk*.zip', '*.sqlite', '*.sqlite3', '*.db']) {
+  for (const pattern of ['public/data/', 'public/private-media/', '.private/', '.env.local', 'chat_bk/', 'chat_bk*.zip', '*.sqlite', '*.sqlite3', '*.db']) {
     assert(gitignore.includes(pattern), `.gitignore must include ${pattern}.`);
   }
 
@@ -54,7 +54,7 @@ function runPrivacyHarness(): void {
   }
 
   const forbiddenPath =
-    /(^|\/)(public\/data|public\/private-media|data|media|chat_bk)(\/|$)|(^|\/)chat_bk[^/]*\.zip$|\.(sqlite|sqlite3|db)(-|$|\.)|(^|\/)\.env(\..*)?$/;
+    /(^|\/)(public\/data|public\/private-media|data|media|chat_bk|\.private)(\/|$)|(^|\/)chat_bk[^/]*\.zip$|\.(sqlite|sqlite3|db)(-|$|\.)|(^|\/)\.env(\..*)?$/;
   const leakedPath = files.find((file) => forbiddenPath.test(file));
   assert(!leakedPath, `Private artifact is tracked or staged: ${leakedPath}`);
 
