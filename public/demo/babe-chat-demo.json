@@ -1,0 +1,244 @@
+{
+  "chat": {
+    "jid": "demo@s.whatsapp.net",
+    "name": "Patty",
+    "phone": "",
+    "exportedAt": "2026-06-05T00:00:00.000Z",
+    "messageCount": 12,
+    "authorSignature": "Christofer Enríquez",
+    "participantLabels": {
+      "me": "Chris",
+      "them": "Patty"
+    },
+    "dateRange": {
+      "start": "2025-12-26",
+      "end": "2026-02-14"
+    }
+  },
+  "relationship": {
+    "timezone": "America/Guatemala",
+    "milestones": {
+      "courtingStarted": "2025-12-27",
+      "officialStarted": "2026-02-08"
+    },
+    "phases": [
+      {
+        "id": "before",
+        "label": "Antes de pretenderla",
+        "start": "0000-01-01",
+        "end": "2025-12-26"
+      },
+      {
+        "id": "courting",
+        "label": "Pretendiendola",
+        "start": "2025-12-27",
+        "end": "2026-02-07"
+      },
+      {
+        "id": "official",
+        "label": "Novios",
+        "start": "2026-02-08",
+        "end": null
+      }
+    ]
+  },
+  "messages": [
+    {
+      "id": "demo-001",
+      "ts": 1766786400,
+      "day": "2025-12-26",
+      "phaseId": "before",
+      "fromMe": true,
+      "senderLabel": "Chris",
+      "text": "Este es un mensaje de demo antes del primer hito.",
+      "type": "text",
+      "mediaType": "",
+      "mediaPath": "",
+      "mediaTitle": "",
+      "mediaSize": 0,
+      "phraseMatches": []
+    },
+    {
+      "id": "demo-002",
+      "ts": 1766872800,
+      "day": "2025-12-27",
+      "phaseId": "courting",
+      "fromMe": false,
+      "senderLabel": "Patty",
+      "text": "Que bonito hablar contigo.",
+      "type": "text",
+      "mediaType": "",
+      "mediaPath": "",
+      "mediaTitle": "",
+      "mediaSize": 0,
+      "phraseMatches": []
+    },
+    {
+      "id": "demo-003",
+      "ts": 1766959200,
+      "day": "2025-12-28",
+      "phaseId": "courting",
+      "fromMe": true,
+      "senderLabel": "Chris",
+      "text": "Yo tambien lo siento especial.",
+      "type": "text",
+      "mediaType": "",
+      "mediaPath": "",
+      "mediaTitle": "",
+      "mediaSize": 0,
+      "phraseMatches": []
+    },
+    {
+      "id": "demo-004",
+      "ts": 1767304800,
+      "day": "2026-01-01",
+      "phaseId": "courting",
+      "fromMe": false,
+      "senderLabel": "Patty",
+      "text": "Foto de anio nuevo",
+      "type": "media",
+      "mediaType": "image",
+      "mediaPath": "",
+      "mediaTitle": "Foto",
+      "mediaSize": 2048,
+      "phraseMatches": []
+    },
+    {
+      "id": "demo-005",
+      "ts": 1767996000,
+      "day": "2026-01-09",
+      "phaseId": "courting",
+      "fromMe": true,
+      "senderLabel": "Chris",
+      "text": "Te amooo",
+      "type": "text",
+      "mediaType": "",
+      "mediaPath": "",
+      "mediaTitle": "",
+      "mediaSize": 0,
+      "phraseMatches": [{ "phrase": "te amo", "count": 1 }]
+    },
+    {
+      "id": "demo-006",
+      "ts": 1768082400,
+      "day": "2026-01-10",
+      "phaseId": "courting",
+      "fromMe": false,
+      "senderLabel": "Patty",
+      "text": "Yo tambien te amo.",
+      "type": "text",
+      "mediaType": "",
+      "mediaPath": "",
+      "mediaTitle": "",
+      "mediaSize": 0,
+      "phraseMatches": [{ "phrase": "te amo", "count": 1 }]
+    },
+    {
+      "id": "demo-007",
+      "ts": 1770544800,
+      "day": "2026-02-08",
+      "phaseId": "official",
+      "fromMe": true,
+      "senderLabel": "Chris",
+      "text": "Hoy empieza otra etapa.",
+      "type": "text",
+      "mediaType": "",
+      "mediaPath": "",
+      "mediaTitle": "",
+      "mediaSize": 0,
+      "phraseMatches": []
+    },
+    {
+      "id": "demo-008",
+      "ts": 1770631200,
+      "day": "2026-02-09",
+      "phaseId": "official",
+      "fromMe": false,
+      "senderLabel": "Patty",
+      "text": "Me hace feliz ser tu novia.",
+      "type": "text",
+      "mediaType": "",
+      "mediaPath": "",
+      "mediaTitle": "",
+      "mediaSize": 0,
+      "phraseMatches": []
+    },
+    {
+      "id": "demo-009",
+      "ts": 1770717600,
+      "day": "2026-02-10",
+      "phaseId": "official",
+      "fromMe": true,
+      "senderLabel": "Chris",
+      "text": "Te amo mucho.",
+      "type": "text",
+      "mediaType": "",
+      "mediaPath": "",
+      "mediaTitle": "",
+      "mediaSize": 0,
+      "phraseMatches": [{ "phrase": "te amo", "count": 1 }]
+    },
+    {
+      "id": "demo-010",
+      "ts": 1770804000,
+      "day": "2026-02-11",
+      "phaseId": "official",
+      "fromMe": false,
+      "senderLabel": "Patty",
+      "text": "Audio bonito",
+      "type": "media",
+      "mediaType": "audio",
+      "mediaPath": "",
+      "mediaTitle": "Audio",
+      "mediaSize": 4096,
+      "phraseMatches": []
+    },
+    {
+      "id": "demo-011",
+      "ts": 1770890400,
+      "day": "2026-02-12",
+      "phaseId": "official",
+      "fromMe": false,
+      "senderLabel": "Patty",
+      "text": "Te amoooo.",
+      "type": "text",
+      "mediaType": "",
+      "mediaPath": "",
+      "mediaTitle": "",
+      "mediaSize": 0,
+      "phraseMatches": [{ "phrase": "te amo", "count": 1 }]
+    },
+    {
+      "id": "demo-012",
+      "ts": 1771063200,
+      "day": "2026-02-14",
+      "phaseId": "official",
+      "fromMe": true,
+      "senderLabel": "Chris",
+      "text": "Otra foto para guardar.",
+      "type": "media",
+      "mediaType": "image",
+      "mediaPath": "",
+      "mediaTitle": "Foto",
+      "mediaSize": 2048,
+      "phraseMatches": []
+    }
+  ],
+  "metrics": {
+    "totals": {
+      "messages": 0,
+      "textMessages": 0,
+      "mediaMessages": 0,
+      "imageMessages": 0,
+      "teAmoCount": 0
+    },
+    "bySender": {
+      "me": { "label": "Chris", "messages": 0, "textMessages": 0, "mediaMessages": 0, "imageMessages": 0, "teAmoCount": 0 },
+      "them": { "label": "Patty", "messages": 0, "textMessages": 0, "mediaMessages": 0, "imageMessages": 0, "teAmoCount": 0 }
+    },
+    "daily": [],
+    "phases": [],
+    "mediaByType": {},
+    "firstTeAmo": null
+  }
+}

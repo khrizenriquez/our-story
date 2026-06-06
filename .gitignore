@@ -1,0 +1,32 @@
+node_modules/
+dist/
+.vite/
+coverage/
+
+# Private WhatsApp exports. Never commit real chats or media.
+public/data/
+public/private-media/
+data/
+media/
+chat_bk/
+chat_bk*.zip
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3-shm
+*.sqlite3-wal
+*.db
+*.db-*
+
+# Local secrets and private target chat configuration.
+.env
+.env.local
+.env.*
+.env.*.local
+config/chat.local.json
+
+# OS/editor noise.
+.DS_Store
+.idea/
+.vscode/
