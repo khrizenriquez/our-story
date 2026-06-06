@@ -13,7 +13,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
-import { CalendarRange, Heart, Image as ImageIcon, MessageCircleMore, Mic, MoonStar, PlayCircle, Sticker, SunMedium } from 'lucide-react';
+import { ArrowDown, CalendarRange, Heart, Image as ImageIcon, MessageCircleMore, Mic, MoonStar, PlayCircle, Sparkles as SparklesIcon, Sticker, SunMedium } from 'lucide-react';
 import type { LoadedChatExport } from './types';
 import { loadChatExport } from './lib/data';
 import { timestampToDisplay } from './lib/dates';
@@ -242,57 +242,102 @@ function App() {
 
   return (
     <main ref={shellRef} className="story-shell">
-      <button
-        type="button"
-        className="theme-toggle"
-        onClick={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
-        aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-      >
-        {theme === 'dark' ? <SunMedium size={18} /> : <MoonStar size={18} />}
-        <span>{theme === 'dark' ? 'Claro' : 'Oscuro'}</span>
-      </button>
+      <section className="hero-story story-section depth-strong scene-panel story-stage" data-reveal data-section="hero">
+        <header className="story-nav">
+          <div className="story-brand">
+            <span className="story-brand-mark">
+              <SparklesIcon size={18} />
+            </span>
+            <div>
+              <strong>{story.meLabel} + {story.themLabel}</strong>
+              <span>Nuestra historia</span>
+            </div>
+          </div>
+          <div className="story-nav-actions">
+            <span className="story-nav-pill">{formatNumber(totalMessages)} mensajes</span>
+            <button
+              type="button"
+              className="theme-toggle"
+              onClick={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
+              aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+            >
+              {theme === 'dark' ? <SunMedium size={18} /> : <MoonStar size={18} />}
+              <span>{theme === 'dark' ? 'Claro' : 'Oscuro'}</span>
+            </button>
+          </div>
+        </header>
 
-      <section className="hero-story story-section depth-strong scene-panel" data-reveal data-section="hero">
-        <div className="hero-copy">
-          <p className="story-kicker">Nuestra historia en mensajes</p>
-          <h1>{story.poeticTitle}</h1>
-          <p className="hero-subtitle">
-            Una forma bonita y clara de mirar todo lo que se han dicho {story.meLabel} y {story.themLabel}, desde ese primer hola hasta lo que siguen construyendo hoy.
-          </p>
-          <div className="hero-meta">
-            <MetaPill icon={<CalendarRange size={15} />} label={formatRangeLabel(data.chat.dateRange.start, data.chat.dateRange.end)} />
-            <MetaPill icon={<MessageCircleMore size={15} />} label={`${formatNumber(totalMessages)} mensajes en total`} />
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <p className="story-kicker">Una historia contada en mensajes</p>
+            <div className="hero-display">
+              <div className="hero-display-line">
+                <span>Nuestra</span>
+                <span className="hero-shape hero-shape-heart" aria-hidden="true" />
+              </div>
+              <div className="hero-display-line">
+                <span>historia,</span>
+                <span className="hero-chip">
+                  la que
+                  <SparklesIcon size={18} />
+                </span>
+              </div>
+              <div className="hero-display-line hero-display-line-final">
+                <span>se escribe</span>
+              </div>
+              <div className="hero-display-line hero-display-line-final">
+                <span>día a día</span>
+              </div>
+            </div>
+            <p className="hero-subtitle">
+              Todo lo que se han dicho {story.meLabel} y {story.themLabel}, llevado a un formato grande, claro y emocional: ritmo, etapas, palabras importantes y la manera en que se han ido encontrando.
+            </p>
           </div>
-          <div className="hero-rhythm">
-            <p>Una historia que se puede leer en grande: quien hablo mas, cuando se intensifico, cuantas veces dijeron te amo y cuantos dias se siguieron buscando.</p>
+
+          <div className="hero-visual">
+            <div className="hero-object hero-object-helmet" aria-hidden="true" />
+            <div className="hero-object hero-object-loop" aria-hidden="true" />
+            <div className="hero-object hero-object-star" aria-hidden="true" />
+            <div className="hero-floating-card stat-card-large">
+              <span>mensajes entre los dos</span>
+              <strong>{formatNumber(totalMessages)}</strong>
+            </div>
+            <div className="hero-floating-card stat-card-small">
+              <span>días con algo que decir</span>
+              <strong>{formatNumber(story.activeDays)}</strong>
+            </div>
+            <div className="hero-floating-card stat-card-mid">
+              <span>años que abraza esta historia</span>
+              <strong>{story.yearlyCounts.length}</strong>
+            </div>
           </div>
         </div>
-        <div className="hero-visual">
-          <div className="hero-floating-card stat-card-large">
-            <span>mensajes entre los dos</span>
-            <strong>{formatNumber(totalMessages)}</strong>
+
+        <div className="hero-baseline">
+          <div className="hero-baseline-line" />
+          <div className="hero-baseline-grid">
+            <div className="hero-scroll-cue">
+              <ArrowDown size={16} />
+              <span>Desliza para seguir viendo</span>
+            </div>
+            <div className="hero-meta">
+              <MetaPill icon={<CalendarRange size={15} />} label={formatRangeLabel(data.chat.dateRange.start, data.chat.dateRange.end)} />
+              <MetaPill icon={<MessageCircleMore size={15} />} label={`${formatNumber(totalMessages)} mensajes en total`} />
+            </div>
+            <div className="hero-rhythm">
+              <p>Quién habló más, cuándo se intensificó todo, cuántas veces dijeron te amo y cómo se fue armando una historia real.</p>
+            </div>
           </div>
-          <div className="hero-floating-card stat-card-small">
-            <span>dias con algo que decir</span>
-            <strong>{formatNumber(story.activeDays)}</strong>
-          </div>
-          <div className="hero-floating-card stat-card-mid">
-            <span>años que abraza esta historia</span>
-            <strong>{story.yearlyCounts.length}</strong>
-          </div>
-        </div>
-        <div className="hero-scroll-cue">
-          <span>desliza y deja que la historia aparezca</span>
         </div>
       </section>
 
       <section className="chapter-band story-section depth-soft story-stage" data-reveal data-section="opening">
         <div className="chapter-band-copy">
           <p className="story-kicker">Para empezar</p>
-          <h2>Una conversacion que se volvio parte de la vida</h2>
+          <h2>Una conversación que se volvió parte de la vida</h2>
           <p>
-            Desde ese primer hola hasta el mensaje mas reciente pasaron {formatNumber(story.totalSpanDays)} dias. En {formatNumber(story.activeDays)} de
-            esos dias hubo palabras, fotos, audios o alguna manera de buscarse.
+            Desde ese primer hola hasta el mensaje más reciente pasaron {formatNumber(story.totalSpanDays)} días. En {formatNumber(story.activeDays)} de
+            esos días hubo palabras, fotos, audios o alguna manera de buscarse.
           </p>
         </div>
         <div className="chapter-band-grid">
@@ -306,9 +351,9 @@ function App() {
       <section className="compare-section story-section depth-mid story-stage" data-reveal data-section="compare">
         <div className="section-heading">
           <p className="story-kicker">Lo que se ve al instante</p>
-          <h2>Quien busca mas al otro y como se reparte la conversacion</h2>
+          <h2>Quién busca más al otro y cómo se reparte la conversación</h2>
           <p>
-            A simple vista: {story.meLabel} mando {formatNumber(meMessages)} mensajes y {story.themLabel} {formatNumber(themMessages)}. La diferencia fue de {formatNumber(messageGap)} mensajes.
+            A simple vista: {story.meLabel} mandó {formatNumber(meMessages)} mensajes y {story.themLabel} {formatNumber(themMessages)}. La diferencia fue de {formatNumber(messageGap)} mensajes.
           </p>
         </div>
         <div className="compare-grid">
@@ -344,35 +389,35 @@ function App() {
 
       <section className="impact-section story-section depth-soft story-stage single-panel-section" data-reveal data-section="love">
         <div className="impact-card te-amo-card spotlight-card">
-          <p className="story-kicker">Lo mas importante</p>
+          <p className="story-kicker">Lo más importante</p>
           <h2>Nos dijimos “te amo”</h2>
           <div className="heart-count">
             <Heart size={34} />
             <strong>{formatNumber(data.metrics.totals.teAmoCount)}</strong>
           </div>
           <p>
-            La primera vez que aparecio por escrito fue el {data.metrics.firstTeAmo ? formatPreciseTimestamp(data.metrics.firstTeAmo.ts, data.relationship.timezone) : 'dia que no pudimos identificar'}
+            La primera vez que apareció por escrito fue el {data.metrics.firstTeAmo ? formatPreciseTimestamp(data.metrics.firstTeAmo.ts, data.relationship.timezone) : 'día que no pudimos identificar'}
           </p>
         </div>
       </section>
 
       <section className="chart-section story-section depth-strong story-stage chart-stage-section" data-reveal data-section="monthly">
         <div className="section-heading chart-heading chart-heading-display">
-          <p className="story-kicker">Como se fue moviendo</p>
+          <p className="story-kicker">Cómo se fue moviendo</p>
           <h2>Mensajes por mes</h2>
-          <p>Una linea viva para ver como fue creciendo el ritmo de la conversacion a traves del tiempo.</p>
+          <p>Una línea viva para ver cómo fue creciendo el ritmo de la conversación a través del tiempo.</p>
         </div>
         <div className="chart-stage-layout">
           <div className="chart-stat-strip">
             <article className="chart-insight-card chart-insight-card-rose">
               <p className="story-kicker">Pico del ritmo</p>
               <strong>{topMonth ? formatNumber(topMonth.count) : formatNumber(0)}</strong>
-              <p>{topMonth ? `El mes mas intenso fue ${formatMonthLabel(topMonth.month)}.` : 'La historia sigue esperando su mes mas intenso.'}</p>
+              <p>{topMonth ? `El mes más intenso fue ${formatMonthLabel(topMonth.month)}.` : 'La historia sigue esperando su mes más intenso.'}</p>
             </article>
             <article className="chart-insight-card chart-insight-card-neutral">
               <p className="story-kicker">Promedio</p>
               <strong>{formatNumber(averageMonthlyMessages)}</strong>
-              <p>En promedio, cada mes dejo esta cantidad de mensajes entre los dos.</p>
+              <p>En promedio, cada mes dejó esta cantidad de mensajes entre los dos.</p>
             </article>
           </div>
           <div className="chart-stage-card line-stage">
@@ -383,16 +428,16 @@ function App() {
 
       <section className="chart-section story-section depth-mid story-stage chart-stage-section" data-reveal data-section="yearly">
         <div className="section-heading chart-heading chart-heading-display">
-          <p className="story-kicker">Los capitulos</p>
+          <p className="story-kicker">Los capítulos</p>
           <h2>Mensajes por año</h2>
-          <p>Un vistazo amplio para sentir en que momentos la historia se acelero, se sostuvo o tomo fuerza.</p>
+          <p>Un vistazo amplio para sentir en qué momentos la historia se aceleró, se sostuvo o tomó fuerza.</p>
         </div>
         <div className="chart-stage-layout chart-stage-layout-yearly">
           <div className="chart-stat-strip chart-stat-strip-yearly">
             <article className="chart-insight-card chart-insight-card-teal">
-              <p className="story-kicker">Año mas intenso</p>
+              <p className="story-kicker">Año más intenso</p>
               <strong>{topYear ? topYear.year : '—'}</strong>
-              <p>{topYear ? `${formatNumber(topYear.count)} mensajes hicieron de ${topYear.year} el capitulo mas activo.` : 'Aun no hay suficiente informacion para ver el anio mas intenso.'}</p>
+              <p>{topYear ? `${formatNumber(topYear.count)} mensajes hicieron de ${topYear.year} el capítulo más activo.` : 'Aún no hay suficiente información para ver el año más intenso.'}</p>
             </article>
           </div>
           <div className="chart-stage-card bar-stage">
@@ -404,7 +449,7 @@ function App() {
       <section className="chapters-section story-section depth-mid story-stage" data-reveal data-section="chapters">
         <div className="section-heading chapters-heading">
           <p className="story-kicker">La historia por etapas</p>
-          <h2>Capitulos faciles de leer a simple vista</h2>
+          <h2>Capítulos fáciles de leer a simple vista</h2>
         </div>
         <div className="chapter-cards">
           {story.chapters.map((chapter, index) => (
@@ -421,7 +466,7 @@ function App() {
         <div className="section-heading narrow">
           <p className="story-kicker">Todo lo que se mandaron</p>
           <h2>No solo fueron textos</h2>
-          <p>Tambien hubo fotos, audios, videos y stickers. La conversacion se fue contando en muchos formatos.</p>
+          <p>También hubo fotos, audios, videos y stickers. La conversación se fue contando en muchos formatos.</p>
         </div>
         <div className="media-summary-grid">
           {story.mediaCards.map((card) => (
@@ -442,7 +487,7 @@ function App() {
       <section className="moments-section story-section depth-strong story-stage" data-reveal data-section="moments">
         <div className="section-heading">
           <p className="story-kicker">Momentos que dicen mucho</p>
-          <h2>Pequenas escenas para contar una historia grande</h2>
+          <h2>Pequeñas escenas para contar una historia grande</h2>
         </div>
         <div className="moments-grid">
           {story.moments.map((moment) => (
@@ -456,9 +501,9 @@ function App() {
           ))}
           {story.topDay ? (
             <article className="moment-card moment-card-accent">
-              <p className="moment-label">Dia mas intenso</p>
+              <p className="moment-label">Día más intenso</p>
               <h3>{formatNumber(story.topDay.count)} mensajes</h3>
-              <p className="moment-detail">Fue uno de esos dias en los que la conversacion no quiso parar.</p>
+              <p className="moment-detail">Fue uno de esos días en los que la conversación no quiso parar.</p>
               <time>{formatDay(story.topDay.day)}</time>
             </article>
           ) : null}
@@ -467,10 +512,10 @@ function App() {
 
       <section className="closing-section story-section depth-mid story-stage closing-stage" data-reveal data-section="closing">
         <div className="closing-copy">
-          <p className="story-kicker">Y todavia sigue</p>
+          <p className="story-kicker">Y todavía sigue</p>
           <h2>Lo bonito de esta historia es que sigue creciendo.</h2>
           <p>
-            Aqui no esta todo lo que sienten, pero si se alcanza a ver algo precioso: la forma en que se buscan, se responden y se acompanian dia tras dia.
+            Aquí no está todo lo que sienten, pero sí se alcanza a ver algo precioso: la forma en que se buscan, se responden y se acompañan día tras día.
           </p>
           <div className="closing-ledger">
             <p><strong>{story.meLabel}</strong><span>{formatNumber(meMessages)} mensajes</span></p>
