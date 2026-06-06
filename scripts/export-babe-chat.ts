@@ -426,13 +426,20 @@ function buildPublishedSummary(exportData: ChatExport): ChatExport {
   } as ChatExport;
 }
 
+function attachStorySnapshot(exportData: ChatExport): ChatExport {
+  return {
+    ...exportData,
+    story: deriveStoryModel(exportData),
+  };
+}
+
 function main(): void {
   if (!commandExists('sqlite3')) {
     throw new Error('sqlite3 CLI is required to read the local WhatsApp archives.');
   }
 
   syncWacrawl();
-  const exportData = buildChatExport();
+  const exportData = attachStorySnapshot(buildChatExport());
   const publicSummary = buildPublishedSummary(exportData);
 
   mkdirSync(resolve('.private'), { recursive: true });

@@ -113,6 +113,7 @@ function App() {
   }, [data]);
 
   const story = useMemo(() => (data ? data.story ?? deriveStoryModel(data) : null), [data]);
+  const totalMessages = data?.metrics.totals.messages ?? data?.chat.messageCount ?? 0;
 
   if (error) {
     return (
@@ -186,13 +187,13 @@ function App() {
           </p>
           <div className="hero-meta">
             <MetaPill icon={<CalendarRange size={15} />} label={formatRangeLabel(data.chat.dateRange.start, data.chat.dateRange.end)} />
-            <MetaPill icon={<MessageCircleMore size={15} />} label={`${formatNumber(data.messages.length)} mensajes en total`} />
+            <MetaPill icon={<MessageCircleMore size={15} />} label={`${formatNumber(totalMessages)} mensajes en total`} />
           </div>
         </div>
         <div className="hero-visual">
           <div className="hero-floating-card stat-card-large">
             <span>mensajes entre los dos</span>
-            <strong>{formatNumber(data.messages.length)}</strong>
+            <strong>{formatNumber(totalMessages)}</strong>
           </div>
           <div className="hero-floating-card stat-card-small">
             <span>dias con algo que decir</span>
