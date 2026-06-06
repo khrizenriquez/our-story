@@ -1,6 +1,8 @@
-# Timeline privada de WhatsApp
+# Our Story
 
-Visor local para una conversacion especifica de WhatsApp Desktop, construido con React, Vite, Bulma y Chart.js.
+Proyecto personal, hecho just for fun, para probar hasta donde se puede llegar extrayendo informacion de una conversacion de WhatsApp y convertirla en una historia visual, clara y bonita.
+
+La idea no es hacer analitica “seria”, sino tomar mensajes, fechas y conteos reales para presentarlos de una forma que se sienta humana.
 
 ## Setup
 

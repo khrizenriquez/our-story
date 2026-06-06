@@ -349,22 +349,24 @@ function App() {
       </section>
 
       <section className="chart-section story-section depth-strong story-stage chart-stage-section" data-reveal data-section="monthly">
-        <div className="section-heading chart-heading">
+        <div className="section-heading chart-heading chart-heading-display">
           <p className="story-kicker">Como se fue moviendo</p>
           <h2>Mensajes por mes</h2>
           <p>Una linea viva para ver como fue creciendo el ritmo de la conversacion a traves del tiempo.</p>
         </div>
         <div className="chart-stage-layout">
-          <article className="chart-insight-card chart-insight-card-rose">
-            <p className="story-kicker">Pico del ritmo</p>
-            <strong>{topMonth ? formatNumber(topMonth.count) : formatNumber(0)}</strong>
-            <p>{topMonth ? `El mes mas intenso fue ${formatMonthLabel(topMonth.month)}.` : 'La historia sigue esperando su mes mas intenso.'}</p>
-          </article>
-          <article className="chart-insight-card chart-insight-card-neutral">
-            <p className="story-kicker">Promedio</p>
-            <strong>{formatNumber(averageMonthlyMessages)}</strong>
-            <p>En promedio, cada mes dejo esta cantidad de mensajes entre los dos.</p>
-          </article>
+          <div className="chart-stat-strip">
+            <article className="chart-insight-card chart-insight-card-rose">
+              <p className="story-kicker">Pico del ritmo</p>
+              <strong>{topMonth ? formatNumber(topMonth.count) : formatNumber(0)}</strong>
+              <p>{topMonth ? `El mes mas intenso fue ${formatMonthLabel(topMonth.month)}.` : 'La historia sigue esperando su mes mas intenso.'}</p>
+            </article>
+            <article className="chart-insight-card chart-insight-card-neutral">
+              <p className="story-kicker">Promedio</p>
+              <strong>{formatNumber(averageMonthlyMessages)}</strong>
+              <p>En promedio, cada mes dejo esta cantidad de mensajes entre los dos.</p>
+            </article>
+          </div>
           <div className="chart-stage-card line-stage">
             {isVisible('monthly') ? <Line data={monthlyChart} options={lineOptions(monthLabels, chartTextColor, chartTickColor, chartGridColor, progressiveDuration, progressiveDelay, previousY) as any} /> : null}
           </div>
@@ -372,17 +374,19 @@ function App() {
       </section>
 
       <section className="chart-section story-section depth-mid story-stage chart-stage-section" data-reveal data-section="yearly">
-        <div className="section-heading chart-heading">
+        <div className="section-heading chart-heading chart-heading-display">
           <p className="story-kicker">Los capitulos</p>
           <h2>Mensajes por año</h2>
           <p>Un vistazo amplio para sentir en que momentos la historia se acelero, se sostuvo o tomo fuerza.</p>
         </div>
         <div className="chart-stage-layout chart-stage-layout-yearly">
-          <article className="chart-insight-card chart-insight-card-teal">
-            <p className="story-kicker">Año mas intenso</p>
-            <strong>{topYear ? topYear.year : '—'}</strong>
-            <p>{topYear ? `${formatNumber(topYear.count)} mensajes hicieron de ${topYear.year} el capitulo mas activo.` : 'Aun no hay suficiente informacion para ver el anio mas intenso.'}</p>
-          </article>
+          <div className="chart-stat-strip chart-stat-strip-yearly">
+            <article className="chart-insight-card chart-insight-card-teal">
+              <p className="story-kicker">Año mas intenso</p>
+              <strong>{topYear ? topYear.year : '—'}</strong>
+              <p>{topYear ? `${formatNumber(topYear.count)} mensajes hicieron de ${topYear.year} el capitulo mas activo.` : 'Aun no hay suficiente informacion para ver el anio mas intenso.'}</p>
+            </article>
+          </div>
           <div className="chart-stage-card bar-stage">
             {isVisible('yearly') ? <Bar data={yearlyChart} options={barOptions(chartTextColor, chartTickColor, chartGridColor)} /> : null}
           </div>
@@ -390,13 +394,13 @@ function App() {
       </section>
 
       <section className="chapters-section story-section depth-mid story-stage" data-reveal data-section="chapters">
-        <div className="section-heading">
+        <div className="section-heading chapters-heading">
           <p className="story-kicker">La historia por etapas</p>
           <h2>Capitulos faciles de leer a simple vista</h2>
         </div>
         <div className="chapter-cards">
-          {story.chapters.map((chapter) => (
-            <article key={chapter.id} className="chapter-card">
+          {story.chapters.map((chapter, index) => (
+            <article key={chapter.id} className={`chapter-card chapter-card--${index % 5}`}>
               <span>{chapter.label}</span>
               <strong>{formatNumber(chapter.messages)}</strong>
               <p>{chapter.summary}</p>
