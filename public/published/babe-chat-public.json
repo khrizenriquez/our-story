@@ -3,8 +3,8 @@
     "jid": "published-story",
     "name": "Patty",
     "phone": "",
-    "exportedAt": "2026-06-06T16:21:16.909Z",
-    "messageCount": 9126,
+    "exportedAt": "2026-06-06T16:34:31.243Z",
+    "messageCount": 9128,
     "authorSignature": "Christofer Enríquez",
     "participantLabels": {
       "me": "Chris",
@@ -14,8 +14,8 @@
       "primarySource": "hybrid",
       "backupFound": true,
       "backupMessageCount": 7848,
-      "wacrawlMessageCount": 6201,
-      "mergedExtraCount": 1278
+      "wacrawlMessageCount": 6203,
+      "mergedExtraCount": 1280
     },
     "dateRange": {
       "start": "2020-05-22",
@@ -52,9 +52,9 @@
   "messages": [],
   "metrics": {
     "totals": {
-      "messages": 9126,
-      "textMessages": 8176,
-      "mediaMessages": 2119,
+      "messages": 9128,
+      "textMessages": 8178,
+      "mediaMessages": 2121,
       "imageMessages": 0,
       "teAmoCount": 43,
       "activeDays": 346
@@ -62,12 +62,12 @@
     "bySender": {
       "me": {
         "label": "Chris",
-        "messages": 4636,
-        "textMessages": 4020,
-        "mediaMessages": 1364,
+        "messages": 4638,
+        "textMessages": 4022,
+        "mediaMessages": 1366,
         "imageMessages": 0,
         "teAmoCount": 22,
-        "wordCount": 30738
+        "wordCount": 30743
       },
       "them": {
         "label": "Patty",
@@ -2842,10 +2842,10 @@
       },
       {
         "day": "2026-06-06",
-        "total": 28,
-        "fromMe": 13,
+        "total": 30,
+        "fromMe": 15,
         "fromThem": 15,
-        "media": 6,
+        "media": 8,
         "phaseId": "official"
       }
     ],
@@ -2869,8 +2869,8 @@
       {
         "phaseId": "official",
         "label": "Novios",
-        "total": 5347,
-        "fromMe": 2869,
+        "total": 5349,
+        "fromMe": 2871,
         "fromThem": 2478,
         "teAmoCount": 43
       }
@@ -2878,7 +2878,7 @@
     "mediaByType": {
       "photo": 1211,
       "sticker": 167,
-      "video": 285,
+      "video": 287,
       "document": 28,
       "audio": 354,
       "contact": 6,
@@ -2908,7 +2908,7 @@
     "wordsBySender": [
       {
         "label": "Chris",
-        "value": 30738
+        "value": 30743
       },
       {
         "label": "Patty",
@@ -2934,7 +2934,7 @@
       },
       {
         "year": "2026",
-        "count": 5773
+        "count": 5775
       }
     ],
     "monthlyCounts": [
@@ -3112,7 +3112,7 @@
       },
       {
         "month": "2026-06",
-        "count": 366
+        "count": 368
       }
     ],
     "chapters": [
@@ -3148,8 +3148,8 @@
         "id": "2026",
         "label": "2026",
         "range": "2026",
-        "messages": 5773,
-        "summary": "5773 mensajes en la etapa mas intensa de la conversacion."
+        "messages": 5775,
+        "summary": "5775 mensajes en la etapa mas intensa de la conversacion."
       }
     ],
     "gallery": [
@@ -3280,7 +3280,7 @@
       },
       {
         "label": "Videos y gifs",
-        "count": 306,
+        "count": 308,
         "tone": "gold"
       },
       {
