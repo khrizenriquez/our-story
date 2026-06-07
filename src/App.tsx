@@ -685,7 +685,7 @@ function App() {
         </div>
       </section>
 
-      <section className="milestones-section story-section story-stage is-visible" data-section="milestones">
+      <section className="milestones-section story-section depth-strong story-stage is-visible" data-reveal data-section="milestones">
         <div className="milestones-intro">
           <p className="story-kicker">Los hitos de esta historia</p>
           <h2>Un timeline para ver dónde fueron cambiando las cosas</h2>
@@ -777,9 +777,7 @@ function MilestoneRoadmap({
 
           {layout.points.map((point, index) => {
             const milestone = items[index];
-            const cardWidth = 280;
-            const cardLeft = Math.max(18, Math.min(layout.width - cardWidth - 18, point.x - cardWidth / 2));
-            const cardTop = point.row % 2 === 0 ? Math.max(26, point.y - 220) : point.y + 56;
+            const card = layout.cards[index];
 
             return (
               <div key={milestone.id} className="milestone-road-node-wrap">
@@ -794,10 +792,10 @@ function MilestoneRoadmap({
                 </div>
 
                 <article
-                  className={`milestone-card milestone-card-road milestone-card-road--${index % 4}`}
+                  className={`milestone-card milestone-card-road milestone-card-road--${index % 4} milestone-card-road--${card.side}`}
                   style={{
-                    left: `${cardLeft}px`,
-                    top: `${cardTop}px`,
+                    left: `${card.left}px`,
+                    top: `${card.top}px`,
                   }}
                 >
                   <div className="milestone-card-topline">
@@ -818,40 +816,49 @@ function MilestoneRoadmap({
 }
 
 function buildRoadmapLayout(itemCount: number) {
-  const columns = Math.min(3, Math.max(itemCount, 1));
-  const startY = 240;
-  const columnGap = 330;
-  const rowGap = 320;
-  const roadInset = 150;
-  const rows = Math.ceil(itemCount / columns);
-  const width = roadInset * 2 + (columns - 1) * columnGap;
-  const height = startY * 2 + Math.max(rows - 1, 0) * rowGap;
-  const canvasHeight = height + 320;
+  const width = 980;
+  const cardWidth = 318;
+  const cardMargin = 26;
+  const leftNodeX = 272;
+  const rightNodeX = 706;
+  const startY = 156;
+  const rowGap = 248;
+  const height = startY * 2 + Math.max(itemCount - 1, 0) * rowGap;
+  const canvasHeight = height + 180;
 
   const points = Array.from({ length: itemCount }, (_, index) => {
-    const row = Math.floor(index / columns);
-    const indexInRow = index % columns;
-    const col = row % 2 === 0 ? indexInRow : columns - 1 - indexInRow;
+    const isLeft = index % 2 === 0;
     return {
-      x: roadInset + col * columnGap,
-      y: startY + row * rowGap,
-      row,
-      col,
+      x: isLeft ? leftNodeX : rightNodeX,
+      y: startY + index * rowGap,
+      row: index,
+      side: isLeft ? 'left' : 'right',
     };
   });
 
   const path = points.reduce((accumulator, point, index) => {
     if (index === 0) return `M ${point.x} ${point.y}`;
-    const prev = points[index - 1];
-    if (prev.row === point.row) {
-      const curve = (point.x - prev.x) * 0.35;
-      return `${accumulator} C ${prev.x + curve} ${prev.y}, ${point.x - curve} ${point.y}, ${point.x} ${point.y}`;
-    }
-
-    const direction = prev.x > width / 2 ? 1 : -1;
-    const elbow = 92;
-    return `${accumulator} C ${prev.x + elbow * direction} ${prev.y + 44}, ${point.x + elbow * direction} ${point.y - 44}, ${point.x} ${point.y}`;
+    const previous = points[index - 1];
+    const horizontalCurve = Math.abs(point.x - previous.x) * 0.72;
+    const verticalDistance = point.y - previous.y;
+    const controlY1 = previous.y + verticalDistance * 0.34;
+    const controlY2 = previous.y + verticalDistance * 0.68;
+    const controlX1 = previous.side === 'left' ? previous.x + horizontalCurve : previous.x - horizontalCurve;
+    const controlX2 = point.side === 'left' ? point.x + horizontalCurve : point.x - horizontalCurve;
+    return `${accumulator} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${point.x} ${point.y}`;
   }, '');
+
+  const cards = points.map((point, index) => {
+    const side = point.side;
+    const left = side === 'left' ? cardMargin : width - cardWidth - cardMargin;
+    const top = Math.max(28, point.y - 124 + (index % 3 === 0 ? -10 : index % 3 === 1 ? 12 : -2));
+    return {
+      left,
+      top,
+      width: cardWidth,
+      side,
+    };
+  });
 
   return {
     width,
@@ -859,6 +866,7 @@ function buildRoadmapLayout(itemCount: number) {
     canvasHeight,
     points,
     path,
+    cards,
   };
 }
 

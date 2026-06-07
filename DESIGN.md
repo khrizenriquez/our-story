@@ -1,506 +1,446 @@
-# Línea Visual - Our Story
+# Linea Visual - Our Story
 
-Especificación completa de diseño para mantener consistencia visual en nuevas secciones y componentes.
+Documento rector del diseno del sitio. Toda nueva seccion, ajuste visual o decision de UI debe salir de aqui.
 
-## Paleta de Colores
+## 1. Proposito
 
-**Regla principal:** el modo claro manda. Toda nueva sección debe diseñarse primero en claro usando la paleta crema / vino / lavanda del proyecto. El modo oscuro es una reinterpretación de esa misma familia visual; no debe sentirse como otro producto.
+El sitio no es un dashboard tecnico. Es una historia presentada como experiencia single-page: grande, clara, emocional y muy visual.
 
-### Modo Claro (Default)
+La prioridad es:
+
+1. Entender la historia rapido.
+2. Sentirla como una presentacion cuidada.
+3. Mantener consistencia total entre desktop y mobile.
+4. Diseñar primero en claro y luego reinterpretar en oscuro.
+
+## 2. Principios
+
+### Single-page real
+
+- Cada seccion debe sentirse como un capitulo completo, no como una tarjeta aislada.
+- En desktop, la pagina debe respirar como showcase editorial: bloques amplios, encabezados pegajosos, contenido grande y ritmo de scroll.
+- En mobile, la lectura debe seguir siendo una sola columna clara, pero con profundidad visual y movimiento continuo.
+
+### Claro manda
+
+- El modo claro es la fuente de verdad del producto.
+- El modo oscuro no inventa otro lenguaje; solo reinterpreta la misma paleta, jerarquia y profundidad.
+
+### Informacion visible
+
+- La data debe poder entenderse de un vistazo.
+- Los numeros importantes siempre se presentan grandes.
+- Los textos secundarios no deben competir con la metrica principal.
+
+### Emocional, no tecnico
+
+- El copy evita palabras como archivo, dump, export, sync o DB en la experiencia visible.
+- Todo lo que se ve en UI debe sonar humano, presentacional y cercano.
+
+## 3. Tokens de color
+
+### Light (default)
 
 ```css
---paper: #f8eee5;           /* Fondo principal */
---paper-deep: #f1dfcf;      /* Fondo profundo */
---ink: #2f2622;             /* Texto principal */
---muted: #5f4a3f;           /* Texto secundario */
---line: rgba(47, 38, 34, 0.12);  /* Bordes sutiles */
---rose: #8f314b;            /* Acentos: "te amo", kickers */
---rose-soft: rgba(143, 49, 75, 0.09);  /* Rose con opacidad */
---teal: #355c7d;            /* Acentos secundarios */
---teal-soft: rgba(53, 92, 125, 0.09);  /* Teal con opacidad */
---gold: #c58b3f;            /* Acentos terciarios */
---plum: #6f5868;            /* Acentos cuaternarios */
---white: rgba(255, 251, 247, 0.82);  /* Texto sobre fondos oscuros internos */
---shadow: 0 30px 80px rgba(69, 35, 28, 0.12);  /* Sombra */
---surface: linear-gradient(180deg, rgba(255, 252, 248, 0.92), rgba(247, 237, 228, 0.94));
---surface-card: rgba(255, 255, 255, 0.7);
---surface-card-strong: rgba(255, 255, 255, 0.82);
+:root {
+  --paper: #f8eee5;
+  --paper-deep: #f1dfcf;
+  --paper-warm: #fbf5ef;
+  --ink: #2f2622;
+  --ink-soft: #4a3932;
+  --muted: #6b5448;
+  --line: rgba(47, 38, 34, 0.12);
+  --line-strong: rgba(143, 49, 75, 0.14);
+
+  --rose: #8f314b;
+  --rose-strong: #77263f;
+  --rose-soft: rgba(143, 49, 75, 0.1);
+
+  --lavender: #8e96ea;
+  --lavender-soft: rgba(142, 150, 234, 0.18);
+
+  --plum: #b67b93;
+  --teal: #5a7296;
+  --gold: #c58b3f;
+
+  --surface: linear-gradient(180deg, rgba(255, 252, 248, 0.95), rgba(244, 232, 220, 0.98));
+  --surface-soft: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.84);
+  --surface-tinted: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(248, 239, 230, 0.95));
+
+  --section-rose-wash: rgba(188, 126, 145, 0.18);
+  --section-lavender-wash: rgba(152, 168, 218, 0.14);
+
+  --shadow-soft: 0 24px 60px rgba(95, 62, 57, 0.1);
+  --shadow-strong: 0 32px 80px rgba(88, 58, 53, 0.14);
+}
 ```
 
-### Modo Oscuro (data-theme="dark")
+### Dark
 
 ```css
---paper: #170f14;           /* Fondo principal */
---paper-deep: #21161d;      /* Fondo profundo */
---ink: #f6e8dc;             /* Texto principal */
---muted: #d4c2b7;           /* Texto secundario */
---line: rgba(255, 236, 220, 0.14);  /* Bordes sutiles */
---rose: #ff8fb0;            /* Acentos: "te amo", kickers */
---rose-soft: rgba(255, 143, 176, 0.12);  /* Rose con opacidad */
---teal: #7ab8eb;            /* Acentos secundarios */
---teal-soft: rgba(122, 184, 235, 0.12);  /* Teal con opacidad */
---gold: #f0bc71;            /* Acentos terciarios */
---plum: #d0a7c4;            /* Acentos cuaternarios */
---white: rgba(39, 24, 31, 0.82);  /* Texto sobre fondos claros internos */
---shadow: 0 40px 90px rgba(0, 0, 0, 0.32);  /* Sombra */
---surface: linear-gradient(180deg, rgba(29, 19, 24, 0.92), rgba(20, 12, 18, 0.95));
---surface-card: rgba(34, 22, 29, 0.82);
---surface-card-strong: rgba(42, 28, 36, 0.9);
+html[data-theme='dark'] {
+  --paper: #1b1218;
+  --paper-deep: #271922;
+  --paper-warm: #20151c;
+  --ink: #f7e8dc;
+  --ink-soft: #ead7ca;
+  --muted: #d2beb2;
+  --line: rgba(255, 236, 220, 0.14);
+  --line-strong: rgba(247, 232, 220, 0.14);
+
+  --rose: #f1a4be;
+  --rose-strong: #ffbdd0;
+  --rose-soft: rgba(241, 164, 190, 0.14);
+
+  --lavender: #b7bdfc;
+  --lavender-soft: rgba(183, 189, 252, 0.18);
+
+  --plum: #d7a8bb;
+  --teal: #a4bdd7;
+  --gold: #f0bc71;
+
+  --surface: linear-gradient(180deg, rgba(38, 24, 31, 0.95), rgba(24, 15, 21, 0.98));
+  --surface-soft: rgba(62, 40, 50, 0.72);
+  --surface-strong: rgba(72, 46, 59, 0.86);
+  --surface-tinted: linear-gradient(180deg, rgba(52, 33, 43, 0.9), rgba(35, 22, 30, 0.96));
+
+  --section-rose-wash: rgba(126, 69, 91, 0.24);
+  --section-lavender-wash: rgba(111, 121, 216, 0.2);
+
+  --shadow-soft: 0 28px 70px rgba(0, 0, 0, 0.22);
+  --shadow-strong: 0 36px 90px rgba(0, 0, 0, 0.28);
+}
 ```
 
-## Tipografía
+## 4. Tipografia
 
-### Fuentes
+### Familias
 
-- **Títulos (h1, h2, h3)**: `Cormorant Garamond` (serif, elegante, poético)
-  - Weights: 400, 500, 600, 700
-- **Cuerpo (body, p, labels)**: `Instrument Sans` (sans-serif, legible, moderno)
-  - Weights: 400, 500, 600, 700
+- Titulos y acentos poeticos: `Cormorant Garamond`
+- Cuerpo, labels, metricas y UI: `Instrument Sans`
 
-### Escalas
+### Escala
 
 ```css
 h1 {
-  font-size: clamp(3.6rem, 15vw, 7.4rem);  /* Responsive */
-  line-height: 0.92;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: clamp(4.2rem, 18vw, 10rem);
+  line-height: 0.86;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(2.5rem, 11vw, 4.4rem);  /* Responsive */
-  line-height: 0.94;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: clamp(3rem, 13vw, 8rem);
+  line-height: 0.9;
+  font-weight: 700;
 }
 
 h3 {
-  font-size: clamp(1.8rem, 7vw, 2.4rem);   /* Responsive */
-  line-height: 1;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  line-height: 0.94;
+  font-weight: 600;
+}
+
+h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 3vw, 1.7rem);
+  line-height: 1.02;
+  font-weight: 600;
+}
+
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.72;
 }
 
 .story-kicker {
   font-size: 0.76rem;
+  line-height: 1;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 ```
 
-## Componentes Principales
+### Jerarquia
 
-### Roadmap / Timeline Visual
+- Hero: enorme y dominante.
+- Encabezados de seccion: grandes, pero siempre secundarios al hero.
+- Titulos de hitos: medianos; nunca deben competir con el h1 o los h2 principales.
+- Numeros: `Instrument Sans`, pesados y rapidos de leer.
 
-Para capítulos de historia o hitos importantes, usar un roadmap visual en vez de una tabla o una simple grilla:
+## 5. Layout y ritmo
 
-```css
-.milestones-section {
-  background:
-    radial-gradient(circle at 0% 14%, rgba(167, 92, 113, 0.24), transparent 18%),
-    radial-gradient(circle at 100% 18%, rgba(163, 174, 213, 0.24), transparent 18%),
-    linear-gradient(180deg, #fbf4ed 0%, #f0e4d8 100%);
-}
+### Reglas globales
 
-.milestone-phase {
-  background:
-    radial-gradient(circle at 84% 18%, rgba(250, 221, 230, 0.14), transparent 18%),
-    linear-gradient(145deg, #8f314b 0%, #8c3956 36%, #7c2f49 100%);
-}
+- Cada seccion importante ocupa al menos `100svh`.
+- En desktop, la mayoria de secciones trabajan entre `112svh` y `128svh`.
+- Las secciones viven como bandas full-width con contenido contenido adentro.
+- No usar secciones como tarjetas flotantes.
 
-.milestone-road-track {
-  stroke: #8892df;
-}
-
-.milestone-road-lane {
-  stroke: rgba(255, 255, 255, 0.82);
-  stroke-dasharray: 10 14;
-}
-
-.milestone-road-node {
-  background: linear-gradient(180deg, #ffb9cc, #ff9fb9);
-}
-```
-
-#### Desktop
-
-- La fase funciona como una banda grande con copy fijo a la izquierda.
-- A la derecha, el roadmap debe sentirse como una ruta serpenteante.
-- Los nodos van numerados.
-- Las tarjetas orbitan el camino, alternando arriba y abajo para dar ritmo visual.
-
-#### Mobile
-
-- Se convierte a una lectura vertical clara.
-- Se conserva la idea de carretera con una línea gruesa y nodos.
-- Cada hito debe seguir siendo escaneable con una sola mano.
-- En mobile, los títulos de etapa deben bajar de tamaño respecto a desktop para no comerse la pantalla.
-
-#### Curaduría de hitos
-
-- El timeline no es un dump cronológico: se puede podar cuando un hito rompe el ritmo visual o repite información.
-- Los hitos anclados por memoria compartida se pueden quitar si la escena no aporta claridad narrativa.
-
-#### Tono visual
-
-- Exterior claro y cálido.
-- Interior vino/rosa con reflejos fríos suaves.
-- Debe sentirse editorial, romántico y presentacional, no dashboard.
-
-### Secciones Base (.story-section)
-
-Toda sección sigue este patrón:
-
-```css
-/* Base */
-border: 1px solid var(--line);
-border-radius: 18px;
-background: var(--surface);
-box-shadow: var(--shadow);
-backdrop-filter: blur(10px);
-margin-top: 14px;
-padding: 20px;
-
-/* Animación de entrada */
-opacity: 0;
-transform: translate3d(0, 56px, 0) scale(0.975);
-transition: opacity 1.3s ease, 
-            transform 1.43s cubic-bezier(0.22, 1, 0.36, 1),
-            box-shadow 1.04s ease;
-```
-
-Cuando se hace visible (.is-visible):
-
-```css
-opacity: 1;
-transform: translate3d(0, 0, 0) scale(1);
-```
-
-### Efecto de Profundidad (Parallax)
-
-Las secciones tienen 3 niveles de parallax basados en scroll:
-
-```css
-.story-section.depth-soft::after {
-  transform: translate3d(0, calc(var(--scroll-px) * 0.02), 0) scale(1.08);
-}
-
-.story-section.depth-mid::after {
-  transform: translate3d(0, calc(var(--scroll-px) * -0.024), 0) scale(1.11);
-}
-
-.story-section.depth-strong::after {
-  transform: translate3d(0, calc(var(--scroll-px) * 0.03), 0) scale(1.14);
-}
-```
-
-**Cómo usar**: Agrega la clase `depth-soft`, `depth-mid` o `depth-strong` a la sección.
-
-### Tipos de Tarjetas
-
-#### Hero Metrics
-
-```css
-.hero-floating-card, .hero-metric {
-  background: var(--surface-card);
-  border-radius: 12px;
-  padding: 12px 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
-```
-
-#### Chapter Band / “Para empezar”
-
-- En modo claro debe usar contraste tipo `Lo que se ve al instante`: fondo claro cálido, texto oscuro y tarjetas blancas legibles.
-- Evitar texto blanco sobre superficies crema.
-- Los cuatro números deben leerse rápido en phone y tablet.
-
-#### Compare Cards / Impact Cards
-
-```css
-.compare-card, .impact-card {
-  background: var(--surface-card-strong);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 16px;
-  text-align: center;
-}
-```
-
-#### Media Summary Cards
-
-```css
-.media-summary-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  background: var(--surface-card);
-  border-radius: 12px;
-  padding: 20px;
-}
-```
-
-## Sistema de Animaciones
-
-### Hero flotante
-
-- `hero-shape-heart`, `hero-object-helmet`, `hero-object-star` y `hero-object-loop` deben moverse siempre con micro-animaciones lentas.
-- El movimiento tiene que sentirse orgánico: deriva lateral / vertical suave, sin saltos.
-- Respetar `prefers-reduced-motion`.
-
-### Entrada de Secciones
-
-Cuando una sección entra en viewport (.is-visible):
-
-```css
-/* Encabezados y copys */
-.section-heading, .chapter-band-copy, .closing-copy, .hero-copy {
-  animation: float-up 1.17s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-/* Tarjetas */
-.hero-floating-card, .hero-metric, .compare-card, .impact-card,
-.chapter-card, .media-summary-card, .moment-card, .closing-chart {
-  animation: settle-in 1.17s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-```
-
-### Stagger de Animación
-
-```css
-/* 1er elemento: sin delay */
-:nth-child(1) { animation-delay: 0s; }
-
-/* 2do elemento */
-:nth-child(2) { animation-delay: 0.08s; }
-
-/* 3er elemento */
-:nth-child(3) { animation-delay: 0.16s; }
-
-/* 4to elemento (solo algunas tarjetas) */
-:nth-child(4) { animation-delay: 0.24s; }
-```
-
-### Números animados
-
-- Los números grandes de `.chapter-card` y `.media-summary-card` deben contar desde `0` hasta su valor final.
-- La animación no debe pasar de `3s`.
-- Debe dispararse cuando la sección entra en viewport.
-- Si el usuario prefiere menos movimiento, el valor puede aparecer directo.
-
-## Espaciado y Layout
-
-### Contenedor Principal
+### Contenedor
 
 ```css
 .story-shell {
-  width: min(100%, 1540px);      /* Max width 1540px */
-  margin: 0 auto;                /* Centrado */
-  padding: 12px 12px 88px;       /* Padding responsivo */
-  overflow-x: clip;
+  width: 100%;
+  max-width: none;
+  padding: 0 0 120px;
 }
 ```
 
-### Secciones
+### Desktop split
+
+En desktop, cuando una seccion tiene encabezado + contenido, usar split editorial:
+
+- columna izquierda: copy o heading sticky
+- columna derecha: contenido grande, grafico o narrativo
+
+Aplica a:
+
+- compare
+- monthly
+- yearly
+- chapters
+- media
+- moments
+- milestones
+
+### Mobile
+
+- Una sola columna.
+- Metricas y tarjetas siempre a ancho completo si ayudan a leer mejor.
+- Evitar dos columnas si el texto pierde fuerza o se vuelve pequeno.
+
+## 6. Movimiento y parallax
+
+### Regla general
+
+El sitio debe sentirse vivo incluso quieto, y mas profundo cuando se hace scroll.
+
+### Capas
+
+1. Capa fija del shell: halos grandes de fondo.
+2. Capa de seccion: lavados de color o formas blandas que se desplazan lento.
+3. Capa de contenido: cards, graficas, objetos y timelines con drift propio.
+
+### Multiplicadores
+
+Usar `--scroll-px` y `--scroll-progress`.
 
 ```css
-.story-stage {
-  min-height: 100svh;            /* Full viewport */
-  display: grid;
-  align-content: center;         /* Centrado vertical */
-  padding-block: clamp(22px, 5vw, 54px);  /* Padding responsivo */
+.story-section.depth-soft::after {
+  transform: translate3d(0, calc(var(--scroll-px) * 0.026), 0) scale(1.12);
+}
+
+.story-section.depth-mid::after {
+  transform: translate3d(0, calc(var(--scroll-px) * -0.03), 0) scale(1.16);
+}
+
+.story-section.depth-strong::after {
+  transform: translate3d(0, calc(var(--scroll-px) * 0.036), 0) scale(1.2);
 }
 ```
 
-### Footer / cierre
+### Hero flotante
 
-- La sección `Y todavía sigue` en mobile debe sentirse más ligera que en desktop.
-- Reducir headline y altura cuando la pantalla es corta para que no se vea sobredimensionada.
+Los objetos del hero deben moverse siempre:
 
-## Texto configurable
+- `hero-shape-heart`
+- `hero-object-helmet`
+- `hero-object-star`
+- `hero-object-loop`
 
-- El label del home (`Nuestra historia`) debe ser configurable desde la data exportada.
-- Los nombres visibles (`Chris`, `Patty`) siguen viniendo de configuración privada.
-- Cuando se agregue nuevo copy visible y persistente, evaluar primero si debe vivir como texto fijo o como campo configurable.
-- El sello de `Importado` debe mostrar una fecha legible en español y reflejar el último `npm run publish` del resumen público.
+Movimiento esperado:
 
-### Márgenes Entre Secciones
+- deriva horizontal lenta
+- deriva vertical suave
+- combinacion de scroll + loop continuo
 
-```css
-.story-section {
-  margin-top: 14px;  /* Separación vertical */
-}
-```
+### Animaciones de entrada
 
-## Gradientes de Fondo
+- Las secciones aparecen con `float-up` o `settle-in`.
+- La animacion nunca debe ser mas rapida que la lectura.
+- Los contadores numericos tienen que llegar a su valor final en menos de 3 segundos.
 
-### Fondo Global
+### Reduced motion
 
-```css
-html {
-  background:
-    radial-gradient(circle at top left, rgba(143, 49, 75, 0.16), transparent 26%),
-    radial-gradient(circle at top right, rgba(53, 92, 125, 0.12), transparent 28%),
-    linear-gradient(180deg, #fbf5ef 0%, #f2e1d2 100%);
-}
+- Respetar `prefers-reduced-motion`.
+- Cuando este activo, quitar loops continuos y bajar mucho el parallax.
 
-html[data-theme='dark'] {
-  background:
-    radial-gradient(circle at top left, rgba(255, 143, 176, 0.16), transparent 26%),
-    radial-gradient(circle at top right, rgba(122, 184, 235, 0.14), transparent 28%),
-    linear-gradient(180deg, #120d12 0%, #1a1219 100%);
-}
-```
+## 7. Secciones canonicas
 
-### Efectos Flotantes (.story-shell pseudo-elements)
+### Hero
 
-```css
-.story-shell::before {
-  position: fixed;
-  z-index: -1;
-  width: 34vw;
-  height: 34vw;
-  border-radius: 50%;
-  filter: blur(42px);
-  top: -12vw;
-  left: -10vw;
-  background: rgba(143, 49, 75, 0.14);  /* Rose glow */
-}
+Debe incluir:
 
-.story-shell::after {
-  position: fixed;
-  z-index: -1;
-  width: 34vw;
-  height: 34vw;
-  border-radius: 50%;
-  filter: blur(42px);
-  right: -12vw;
-  bottom: 6vw;
-  background: rgba(53, 92, 125, 0.12);  /* Teal glow */
-}
-```
+- label de marca configurable
+- titulo poetico configurable
+- copy corto de apoyo
+- 3 metricas flotantes grandes
+- pills de metadata
 
-## Principios de Diseño
+Lenguaje:
 
-1. **Elegancia minimalista**: Mucho aire blanco, pocos elementos por sección
-2. **Narrativa visual**: Las secciones cuentan una historia progresivamente
-3. **Profundidad sutil**: Parallax y múltiples capas crean dimensión sin ruido
-4. **Accesibilidad**: Alto contraste, tipografía grande, animaciones suaves
-5. **Responsividad**: Todo con `clamp()` y viewport units para adaptarse
-6. **Temas oscuro/claro**: Matching colors que mantienen la identidad visual
+- muy grande
+- aireado
+- con objetos flotando
+- tono de portada
 
-## Cómo Agregar Secciones Nuevas
+### Para empezar
 
-### 1. Estructura HTML
+Regla obligatoria:
 
-```html
-<section 
-  class="mi-nueva-seccion story-section depth-soft story-stage" 
-  data-reveal 
-  data-section="mi-seccion"
->
-  <!-- Contenido aquí -->
-</section>
-```
+- En modo claro debe verse con contraste tipo `Lo que se ve al instante`.
+- Nunca usar texto casi blanco sobre crema.
 
-### 2. CSS Base
+Debe tener:
 
-```css
-.mi-nueva-seccion {
-  /* Hereda estilos base de .story-section automáticamente */
-}
+- h2 fuerte
+- 4 metricas clave
+- fondo claro y calido
+- lectura inmediata
 
-/* Si necesitas estilos específicos */
-.mi-nueva-seccion .algun-elemento {
-  color: var(--ink);
-  background: var(--surface-card);
-}
+### Compare / Love / Charts / Chapters / Media / Moments / Closing
 
-/* Si usas tarjetas, hereda de las clases base */
-.mi-nueva-seccion .mi-tarjeta {
-  background: var(--surface-card);
-  border-radius: 12px;
-  padding: 16px;
-  border: 1px solid var(--line);
-}
-```
+Todas deben seguir esta base:
 
-### 3. Animaciones
+- seccion grande
+- heading fuerte
+- contenido protagonista
+- parallax de fondo
+- tarjetas o graficas con suficiente espacio para respirar
 
-```css
-.story-section.is-visible .mi-encabezado {
-  animation: float-up 1.17s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
+## 8. Roadmap / timeline
 
-.story-section.is-visible .mi-tarjeta {
-  animation: settle-in 1.17s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
+El timeline no es una lista de hitos. Es un capitulo visual.
 
-.story-section.is-visible .mi-tarjeta:nth-child(2) {
-  animation-delay: 0.08s;
-}
-```
+### Estructura
 
-### 4. Registrar en App.tsx
+- Intro general del timeline.
+- Fases separadas:
+  - amigos
+  - pretendiente
+  - novios
+- Cada fase vive como banda grande propia.
 
-```typescript
-// En la variable sectionIds (línea 21 aprox)
-const sectionIds = ['hero', 'opening', 'compare', 'love', 'monthly', 'yearly', 'chapters', 'media', 'moments', 'mi-seccion', 'closing'] as const;
+### Desktop
 
-// En el JSX, agregar la sección en el lugar correspondiente
-```
+- La fase usa encabezado sticky a la izquierda.
+- A la derecha hay un roadmap alto y serpenteante.
+- El camino debe leerse como una ruta continua.
+- Las tarjetas orbitan la ruta y alternan de lado.
+- El texto de los hitos debe ser mas pequeno que el de los encabezados de seccion.
+- La ruta puede ser lavanda / rosa, pero siempre sobre la misma familia clara del sitio.
 
-### 5. TypeScript (si es necesario)
+### Mobile
 
-Si la sección requiere nuevos tipos de datos:
+- El roadmap se vuelve vertical.
+- Mantiene carretera, nodos y secuencia.
+- Los hitos deben ser claramente tocables/escaneables.
 
-```typescript
-// En src/types.ts
-export interface MiSeccionData {
-  // Tus campos aquí
-}
-```
+### Estilo
 
-### 6. Validación
+- Exterior de la fase: lavado crema / rosa / lavanda.
+- Tarjetas: claras, con texto oscuro.
+- Nodos: rosa suave con centro claro.
+- Linea de carretera: lavanda.
 
-- ✅ Usa variables CSS (`var(--ink)`, `var(--rose)`, etc)
-- ✅ Mantén `border-radius: 18px` (o múltiplo de 6px)
-- ✅ Aplica `backdrop-filter: blur(10px)` a fondos translúcidos
-- ✅ Usa animaciones con `cubic-bezier(0.22, 1, 0.36, 1)` (easing personalizado)
-- ✅ Respeta los 3 niveles de profundidad: `depth-soft`, `depth-mid`, `depth-strong`
-- ❌ No hard-code colores (siempre usa variables CSS)
-- ❌ No cambies el font-family base (Cormorant + Instrument)
-- ❌ No uses animaciones > 1.5s (se siente lento)
+### Curaduria
 
-## Chart.js Colores Personalizados
+- El timeline no es exhaustivo.
+- Se priorizan hitos legibles, visuales y emocionalmente utiles.
+- Si un hito repite otro sin sumar, se quita.
 
-Para gráficos, usa estos colores según el tema:
+## 9. Graficas
 
-### Modo Claro
-```javascript
-borderColor: '#7a9e00'          // Verde
-backgroundColor: 'rgba(122, 158, 0, 0.12)'
-```
+- Una grafica protagonista por seccion.
+- En desktop, apilar verticalmente en la pagina; no meter dos charts lado a lado.
+- Las lineas mensuales deben sentirse vivas y cinematograficas.
+- Los fondos de las graficas deben seguir la paleta crema / vino / lavanda.
 
-### Modo Oscuro
-```javascript
-borderColor: '#d8ff45'          // Verde fluorescente
-backgroundColor: 'rgba(216, 255, 69, 0.12)'
-```
+### Colores reservados
 
-**Consulta en App.tsx línea ~280** para ver ejemplos de cómo se usan en charts reales.
+- Totales: verde / oliva suave cuando aplique
+- Patty: rosa
+- Chris: azul
 
-## Referencias de Variables
+### Animacion
 
-| Var CSS | Claro | Oscuro | Uso |
-|---------|-------|--------|-----|
-| `--paper` | #f8eee5 | #170f14 | Fondo principal |
-| `--ink` | #2f2622 | #f6e8dc | Texto principal |
-| `--rose` | #8f314b | #ff8fb0 | Acentos románticos |
-| `--teal` | #355c7d | #7ab8eb | Acentos secundarios |
-| `--gold` | #c58b3f | #f0bc71 | Acentos terciarios |
-| `--line` | rgba(..., 0.12) | rgba(..., 0.14) | Bordes |
-| `--surface` | Gradiente claro | Gradiente oscuro | Fondos de tarjetas |
-| `--shadow` | Sombra suave | Sombra fuerte | Profundidad |
+- Line chart mensual: progresiva y lenta
+- Sin easing decorativo si la grafica pide lectura progresiva
+- Las animaciones de charts deben ser mas lentas que las de cards
 
----
+## 10. Componentes
 
-**Última actualización**: 2026-06-06  
-**Versión**: 1.0  
-**Mantenedor**: Asegúrate de actualizar este archivo cuando hagas cambios visuales significativos
+### Pills
+
+- redondeadas completas
+- altura minima 46px
+- borde muy sutil
+- texto corto
+
+### Floating stat cards
+
+- tipografia grande
+- forma blanda, casi objeto
+- deben sentirse suspendidas
+
+### Cards de capitulos
+
+- grandes
+- collage / metro editorial
+- no hacer una grilla rigida si rompe el ritmo
+
+### Media cards
+
+- icono claro
+- numero grande
+- label directo
+
+### Moment cards
+
+- quote o escena al centro
+- texto narrativo, no tecnico
+
+## 11. Configuracion visible
+
+La UI debe poder cambiarse desde configuracion / export sin tocar el layout.
+
+Valores configurables esperados:
+
+- marca corta del sitio
+- titulo poetico
+- nombres visibles de ambas personas
+- firma del footer
+- frase destacada a buscar (por defecto `te amo`)
+- icono o acento visual asociado a esa frase
+- hitos del timeline
+
+## 12. Reglas para futuro trabajo
+
+Toda nueva seccion debe responder estas preguntas antes de existir:
+
+1. Cual es su papel en la historia?
+2. Que metrica o momento es el protagonista?
+3. Como se ve en claro?
+4. Como se adapta en oscuro sin cambiar de identidad?
+5. Que parallax o movimiento aporta?
+6. Que parte queda sticky en desktop?
+7. Que decision se toma para mobile first?
+
+## 13. Checklist de validacion
+
+Antes de cerrar un cambio visual:
+
+- revisar desktop y mobile
+- comprobar contraste de texto en claro y oscuro
+- verificar que las secciones sigan la paleta oficial
+- confirmar que la pagina se siente single-page
+- confirmar que no hay dos estilos compitiendo
+- revisar que el timeline parezca parte del mismo producto
+- respetar `prefers-reduced-motion`
+

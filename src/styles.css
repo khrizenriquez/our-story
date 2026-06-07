@@ -3200,3 +3200,778 @@ html[data-theme='dark'] .chapter-band {
     gap: 10px;
   }
 }
+
+/* Authoritative single-page system */
+
+.story-shell {
+  position: relative;
+  overflow-x: clip;
+  padding: 0 0 120px;
+}
+
+.story-shell::before,
+.story-shell::after {
+  content: '';
+  position: fixed;
+  z-index: -2;
+  display: block;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(54px);
+  transition: transform 0.18s linear;
+}
+
+.story-shell::before {
+  top: -10vw;
+  left: -12vw;
+  width: 34vw;
+  height: 34vw;
+  background: var(--section-rose-wash);
+  transform: translate3d(calc(var(--scroll-progress) * -7vw), calc(var(--scroll-progress) * 3vw), 0);
+}
+
+.story-shell::after {
+  right: -10vw;
+  bottom: -4vw;
+  width: 32vw;
+  height: 32vw;
+  background: var(--section-lavender-wash);
+  transform: translate3d(calc(var(--scroll-progress) * 6vw), calc(var(--scroll-progress) * -4vw), 0);
+}
+
+.story-stage {
+  min-height: 104svh;
+  padding-block: clamp(72px, 11vw, 118px);
+}
+
+.story-section {
+  position: relative;
+}
+
+.story-section::before {
+  content: '';
+  position: absolute;
+  inset: auto auto 6% 6%;
+  z-index: 0;
+  width: min(34vw, 320px);
+  height: min(34vw, 320px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.42), transparent 64%);
+  opacity: 0.45;
+  pointer-events: none;
+  transform: translate3d(0, calc(var(--scroll-px) * -0.016), 0);
+}
+
+.story-section::after {
+  inset: -8% -4%;
+  background:
+    radial-gradient(circle at 14% 22%, rgba(143, 49, 75, 0.08), transparent 20%),
+    radial-gradient(circle at 84% 72%, rgba(142, 150, 234, 0.1), transparent 22%);
+}
+
+.story-section.depth-soft::after {
+  transform: translate3d(0, calc(var(--scroll-px) * 0.026), 0) scale(1.12);
+}
+
+.story-section.depth-mid::after {
+  transform: translate3d(0, calc(var(--scroll-px) * -0.03), 0) scale(1.16);
+}
+
+.story-section.depth-strong::after {
+  transform: translate3d(0, calc(var(--scroll-px) * 0.036), 0) scale(1.2);
+}
+
+.hero-story,
+.chapter-band,
+.compare-section,
+.impact-section,
+.chart-stage-section,
+.chapters-section,
+.gallery-section,
+.moments-section,
+.closing-section,
+.milestones-section {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(142, 150, 234, 0.1), transparent 20%),
+    radial-gradient(circle at 12% 22%, rgba(143, 49, 75, 0.08), transparent 18%),
+    linear-gradient(180deg, rgba(255, 252, 248, 0.96), rgba(244, 232, 220, 0.98));
+}
+
+html[data-theme='dark'] .hero-story,
+html[data-theme='dark'] .chapter-band,
+html[data-theme='dark'] .compare-section,
+html[data-theme='dark'] .impact-section,
+html[data-theme='dark'] .chart-stage-section,
+html[data-theme='dark'] .chapters-section,
+html[data-theme='dark'] .gallery-section,
+html[data-theme='dark'] .moments-section,
+html[data-theme='dark'] .closing-section,
+html[data-theme='dark'] .milestones-section {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(183, 189, 252, 0.15), transparent 20%),
+    radial-gradient(circle at 12% 22%, rgba(241, 164, 190, 0.12), transparent 18%),
+    linear-gradient(180deg, rgba(38, 24, 31, 0.96), rgba(24, 15, 21, 0.98));
+}
+
+.hero-copy,
+.chapter-band-copy,
+.compare-grid,
+.chart-stage-layout,
+.chapter-cards,
+.media-summary-grid,
+.moments-grid,
+.closing-chart,
+.milestone-phase-list {
+  will-change: transform;
+}
+
+.hero-copy {
+  transform: translate3d(0, calc(var(--scroll-px) * -0.012), 0);
+}
+
+.hero-visual {
+  transform: translate3d(0, calc(var(--scroll-px) * -0.036), 0);
+}
+
+.chapter-band-grid {
+  transform: translate3d(0, calc(var(--scroll-px) * 0.012), 0);
+}
+
+.compare-grid,
+.chart-stage-layout,
+.chapter-cards,
+.media-summary-grid,
+.moments-grid,
+.closing-chart,
+.milestone-phase-list {
+  transform: translate3d(0, calc(var(--scroll-px) * 0.008), 0);
+}
+
+.section-heading h2,
+.chart-heading-display h2,
+.chapters-heading h2,
+.chapter-band h2,
+.closing-section h2,
+.te-amo-card h2,
+.milestones-intro h2 {
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.hero-subtitle,
+.section-heading p:last-child,
+.chapter-band-copy p:last-child,
+.impact-card p:last-child,
+.closing-copy p:not(.closing-signature),
+.milestones-intro p:last-child {
+  color: var(--muted);
+}
+
+.hero-floating-card,
+.hero-metric,
+.compare-card,
+.chapter-card,
+.media-summary-card,
+.moment-card,
+.impact-card,
+.closing-chart,
+.chart-stage-card,
+.chart-insight-card,
+.meta-pill,
+.story-nav-pill,
+.theme-toggle {
+  background: var(--surface-strong);
+  border-color: var(--line-strong);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+
+.chapter-band .hero-metric,
+.chapter-band .hero-metric strong,
+.chapter-band .hero-metric span {
+  color: var(--ink);
+}
+
+.chapter-band .hero-metric {
+  background: var(--surface-strong);
+}
+
+.chapter-band-copy,
+.compare-section .section-heading,
+.chart-stage-section .chart-heading,
+.chapters-section .section-heading,
+.gallery-section .section-heading,
+.moments-section .section-heading,
+.milestones-intro {
+  position: relative;
+  z-index: 2;
+}
+
+.compare-section .section-heading h2,
+.chart-stage-section .chart-heading h2,
+.chapters-section .section-heading h2,
+.gallery-section .section-heading h2,
+.moments-section .section-heading h2 {
+  max-width: 8ch;
+}
+
+.chart-stage-card,
+.closing-chart {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(143, 49, 75, 0.08), transparent 20%),
+    radial-gradient(circle at 86% 78%, rgba(142, 150, 234, 0.12), transparent 24%),
+    var(--surface-strong);
+}
+
+.chapter-cards {
+  gap: 18px;
+}
+
+.chapter-card,
+.media-summary-card,
+.compare-card,
+.moment-card {
+  backdrop-filter: blur(10px);
+}
+
+.chapter-card strong,
+.compare-card strong,
+.media-summary-card strong,
+.chart-insight-card strong {
+  color: var(--ink);
+}
+
+.compare-card span,
+.chapter-card p,
+.media-summary-card p,
+.moment-detail,
+.moment-card time {
+  color: var(--muted);
+}
+
+.milestones-section {
+  padding-block: clamp(88px, 12vw, 132px);
+}
+
+.milestones-intro {
+  margin-bottom: 54px;
+}
+
+.milestones-intro h2 {
+  max-width: 7.5ch;
+  font-size: clamp(3.4rem, 12vw, 7.6rem);
+}
+
+.milestone-phase-list {
+  display: grid;
+  gap: 28px;
+}
+
+.milestone-phase {
+  border-radius: 36px;
+  border: 1px solid var(--line-strong);
+  padding: 24px;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(142, 150, 234, 0.12), transparent 22%),
+    radial-gradient(circle at 12% 72%, rgba(143, 49, 75, 0.08), transparent 20%),
+    var(--surface-tinted);
+  box-shadow: var(--shadow-strong);
+}
+
+.milestone-phase--courting {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(143, 49, 75, 0.12), transparent 22%),
+    radial-gradient(circle at 12% 72%, rgba(142, 150, 234, 0.12), transparent 20%),
+    var(--surface-tinted);
+}
+
+.milestone-phase--official {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(181, 123, 147, 0.14), transparent 22%),
+    radial-gradient(circle at 12% 72%, rgba(142, 150, 234, 0.12), transparent 20%),
+    var(--surface-tinted);
+}
+
+.milestone-phase-kicker,
+.milestone-phase-head p:last-child,
+.milestone-day,
+.milestone-card p:last-child,
+.milestone-tag,
+.milestone-evidence {
+  color: var(--muted);
+}
+
+.milestone-phase-kicker {
+  color: var(--rose);
+}
+
+.milestone-phase-head h3 {
+  max-width: 10ch;
+  color: var(--ink);
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: clamp(1.72rem, 4.2vw, 2.8rem);
+  font-weight: 700;
+  line-height: 0.94;
+}
+
+.milestone-phase-head p:last-child {
+  max-width: 36ch;
+}
+
+.milestone-roadmap-mobile::before {
+  background: linear-gradient(180deg, rgba(142, 150, 234, 0.92), rgba(183, 189, 252, 0.96));
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.36),
+    0 12px 28px rgba(112, 94, 153, 0.18);
+}
+
+.milestone-roadmap-mobile::after {
+  background: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.84) 0 10px, transparent 10px 18px);
+}
+
+.milestone-stack-index,
+.milestone-road-node {
+  border-color: rgba(255, 255, 255, 0.94);
+  background: linear-gradient(180deg, #f8c7d6, #eeb2c7);
+  color: var(--rose-strong);
+}
+
+.milestone-stack-card,
+.milestone-road-node-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.milestone-stack-body {
+  padding: 18px 18px 20px;
+  border: 1px solid rgba(143, 49, 75, 0.12);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.64)),
+    rgba(255, 255, 255, 0.58);
+  box-shadow: 0 22px 46px rgba(95, 62, 57, 0.1);
+}
+
+.milestone-stack-body h4 {
+  max-width: 15ch;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.28rem, 6vw, 2rem);
+  line-height: 1.06;
+}
+
+.milestone-stack-body p:last-child {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.milestone-stack-body .milestone-evidence {
+  color: var(--ink-soft);
+}
+
+.milestone-card {
+  min-height: 236px;
+  padding: 22px;
+  border-radius: 28px;
+  border: 1px solid rgba(143, 49, 75, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.62)),
+    rgba(255, 255, 255, 0.58);
+  box-shadow: 0 26px 54px rgba(95, 62, 57, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.milestone-card-topline {
+  align-items: flex-start;
+}
+
+.milestone-tag,
+.milestone-evidence {
+  min-height: 36px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(143, 49, 75, 0.12);
+}
+
+.milestone-tag {
+  color: var(--rose);
+}
+
+.milestone-evidence {
+  color: var(--ink-soft);
+}
+
+.milestone-evidence--anclado {
+  background: rgba(197, 139, 63, 0.1);
+}
+
+.milestone-evidence--inferido {
+  background: rgba(142, 150, 234, 0.1);
+}
+
+.milestone-day {
+  color: var(--rose);
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+}
+
+.milestone-card h4 {
+  max-width: 15ch;
+  color: var(--ink);
+  font-size: clamp(1.18rem, 2.2vw, 1.74rem);
+  line-height: 1.06;
+}
+
+.milestone-card p:last-child {
+  max-width: 32ch;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.milestone-roadmap-desktop {
+  display: none;
+}
+
+.milestone-road-shadow {
+  stroke: rgba(142, 150, 234, 0.18);
+  stroke-width: 88;
+  filter: blur(18px);
+}
+
+.milestone-road-track {
+  stroke: var(--lavender);
+  stroke-width: 70;
+}
+
+.milestone-road-lane {
+  stroke: rgba(255, 255, 255, 0.82);
+  stroke-width: 4;
+  stroke-dasharray: 12 18;
+}
+
+.milestone-road-node {
+  width: 62px;
+  height: 62px;
+  margin-left: -31px;
+  margin-top: -31px;
+  box-shadow:
+    0 18px 34px rgba(112, 78, 91, 0.18),
+    0 0 0 12px rgba(255, 255, 255, 0.16);
+}
+
+.milestone-card-road {
+  width: 318px;
+}
+
+.milestone-card-road::after {
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.milestone-card-road--left::after {
+  right: -9px;
+  left: auto;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.milestone-card-road--right::after {
+  left: -9px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+html[data-theme='dark'] .milestone-phase {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(183, 189, 252, 0.18), transparent 22%),
+    radial-gradient(circle at 12% 72%, rgba(241, 164, 190, 0.12), transparent 20%),
+    var(--surface-tinted);
+}
+
+html[data-theme='dark'] .milestone-card {
+  background:
+    linear-gradient(180deg, rgba(77, 50, 63, 0.76), rgba(60, 39, 49, 0.66)),
+    rgba(62, 40, 50, 0.64);
+  border-color: rgba(247, 232, 220, 0.12);
+}
+
+html[data-theme='dark'] .milestone-stack-body {
+  background:
+    linear-gradient(180deg, rgba(77, 50, 63, 0.78), rgba(60, 39, 49, 0.7)),
+    rgba(62, 40, 50, 0.68);
+  border-color: rgba(247, 232, 220, 0.12);
+}
+
+html[data-theme='dark'] .milestone-tag,
+html[data-theme='dark'] .milestone-evidence {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(247, 232, 220, 0.12);
+}
+
+html[data-theme='dark'] .milestone-tag {
+  color: var(--rose);
+}
+
+html[data-theme='dark'] .milestone-day {
+  color: var(--rose);
+}
+
+html[data-theme='dark'] .milestone-card h4,
+html[data-theme='dark'] .milestone-phase-head h3,
+html[data-theme='dark'] .milestones-intro h2,
+html[data-theme='dark'] .milestones-section h2 {
+  color: var(--ink);
+}
+
+html[data-theme='dark'] .milestone-card p:last-child,
+html[data-theme='dark'] .milestone-phase-head p:last-child,
+html[data-theme='dark'] .milestones-intro p:last-child,
+html[data-theme='dark'] .milestone-evidence {
+  color: var(--muted);
+}
+
+@media (max-width: 739px) {
+  .story-shell::before,
+  .story-shell::after {
+    width: 46vw;
+    height: 46vw;
+    filter: blur(42px);
+  }
+
+  .story-stage {
+    min-height: 100svh;
+    padding-block: 62px;
+  }
+
+  .hero-copy {
+    transform: translate3d(0, calc(var(--scroll-px) * -0.006), 0);
+  }
+
+  .hero-visual,
+  .chapter-band-grid,
+  .compare-grid,
+  .chart-stage-layout,
+  .chapter-cards,
+  .media-summary-grid,
+  .moments-grid,
+  .closing-chart,
+  .milestone-phase-list {
+    transform: translate3d(0, calc(var(--scroll-px) * 0.004), 0);
+  }
+
+  .chapter-band,
+  .compare-section,
+  .impact-section,
+  .chart-stage-section,
+  .chapters-section,
+  .gallery-section,
+  .moments-section,
+  .closing-section,
+  .milestones-section {
+    padding-inline: 18px;
+  }
+
+  .milestones-intro {
+    margin-bottom: 30px;
+  }
+
+  .milestone-phase {
+    border-radius: 30px;
+  }
+
+  .milestone-phase-head h3 {
+    font-size: clamp(1.44rem, 4.4vw, 1.92rem);
+  }
+}
+
+@media (min-width: 1100px) {
+  .story-stage {
+    min-height: 118svh;
+    padding-block: 124px;
+  }
+
+  .hero-story {
+    min-height: 128svh;
+  }
+
+  .hero-copy {
+    transform: translate3d(0, calc(var(--scroll-px) * -0.018), 0);
+  }
+
+  .hero-visual {
+    transform: translate3d(0, calc(var(--scroll-px) * -0.058), 0);
+  }
+
+  .chapter-band-grid {
+    transform: translate3d(0, calc(var(--scroll-px) * 0.016), 0);
+  }
+
+  .compare-grid,
+  .chart-stage-layout,
+  .chapter-cards,
+  .media-summary-grid,
+  .moments-grid,
+  .closing-chart,
+  .milestone-phase-list {
+    transform: translate3d(0, calc(var(--scroll-px) * 0.01), 0);
+  }
+
+  .chapter-band,
+  .compare-section,
+  .chart-stage-section,
+  .chapters-section,
+  .gallery-section,
+  .moments-section,
+  .milestones-section {
+    align-content: start;
+  }
+
+  .chapter-band {
+    grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+    gap: clamp(28px, 4vw, 68px);
+    align-items: start;
+  }
+
+  .chapter-band-copy,
+  .compare-section .section-heading,
+  .chart-stage-section .chart-heading,
+  .chapters-section .section-heading,
+  .gallery-section .section-heading,
+  .moments-section .section-heading,
+  .milestones-intro {
+    position: sticky;
+    top: 11vh;
+    align-self: start;
+  }
+
+  .chapter-band-grid,
+  .compare-grid,
+  .chart-stage-layout,
+  .chapter-cards,
+  .media-summary-grid,
+  .moments-grid {
+    margin-top: 0;
+    align-self: start;
+  }
+
+  .compare-section,
+  .chart-stage-section,
+  .chapters-section,
+  .gallery-section,
+  .moments-section {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.76fr) minmax(0, 1.24fr);
+    gap: clamp(28px, 4vw, 74px);
+    align-items: start;
+  }
+
+  .compare-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .compare-card-lead {
+    grid-column: 1 / -1;
+  }
+
+  .chart-stage-layout {
+    gap: 26px;
+  }
+
+  .chart-stage-card {
+    min-height: 108svh;
+  }
+
+  .chapter-cards,
+  .media-summary-grid,
+  .moments-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chapter-cards {
+    grid-auto-rows: minmax(220px, auto);
+  }
+
+  .chapter-card:nth-child(1) {
+    min-height: 420px;
+  }
+
+  .milestones-section {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.74fr) minmax(0, 1.26fr);
+    gap: clamp(32px, 4vw, 76px);
+    align-items: start;
+  }
+
+  .milestones-intro {
+    margin-bottom: 0;
+  }
+
+  .milestone-phase-list {
+    gap: 34px;
+  }
+
+  .milestone-phase {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.42fr) minmax(0, 1.58fr);
+    gap: 24px;
+    align-items: start;
+    padding: 30px;
+  }
+
+  .milestone-phase-head {
+    position: sticky;
+    top: 15vh;
+    margin-bottom: 0;
+  }
+
+  .milestone-roadmap-mobile {
+    display: none;
+  }
+
+  .milestone-roadmap-desktop {
+    position: relative;
+    display: block;
+    min-height: var(--road-canvas-height);
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  .milestone-roadmap-desktop::before,
+  .milestone-roadmap-desktop::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .milestone-roadmap-desktop::before {
+    top: 4%;
+    right: 4%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(142, 150, 234, 0.16), transparent 62%);
+    transform: translate3d(0, calc(var(--scroll-px) * -0.01), 0);
+  }
+
+  .milestone-roadmap-desktop::after {
+    left: 8%;
+    bottom: 8%;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(143, 49, 75, 0.14), transparent 62%);
+    transform: translate3d(0, calc(var(--scroll-px) * 0.012), 0);
+  }
+
+  .milestone-card-road--left {
+    transform: translate3d(0, calc(var(--scroll-px) * 0.006), 0) rotate(-1.2deg);
+  }
+
+  .milestone-card-road--right {
+    transform: translate3d(0, calc(var(--scroll-px) * -0.006), 0) rotate(1.2deg);
+  }
+}
