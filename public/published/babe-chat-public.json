@@ -3,8 +3,9 @@
     "jid": "published-story",
     "name": "Patty",
     "phone": "",
-    "exportedAt": "2026-06-07T06:16:38.720Z",
-    "messageCount": 9164,
+    "exportedAt": "2026-06-07T15:05:48.960Z",
+    "messageCount": 9165,
+    "storyBrand": "Nuestra historia",
     "authorSignature": "Christofer Enríquez",
     "participantLabels": {
       "me": "Chris",
@@ -14,12 +15,12 @@
       "primarySource": "hybrid",
       "backupFound": true,
       "backupMessageCount": 7848,
-      "wacrawlMessageCount": 6239,
-      "mergedExtraCount": 1316
+      "wacrawlMessageCount": 6240,
+      "mergedExtraCount": 1317
     },
     "dateRange": {
       "start": "2020-05-22",
-      "end": "2026-06-06"
+      "end": "2026-06-07"
     }
   },
   "relationship": {
@@ -52,22 +53,22 @@
   "messages": [],
   "metrics": {
     "totals": {
-      "messages": 9164,
-      "textMessages": 8213,
-      "mediaMessages": 2125,
+      "messages": 9165,
+      "textMessages": 8214,
+      "mediaMessages": 2126,
       "imageMessages": 0,
       "teAmoCount": 43,
-      "activeDays": 346
+      "activeDays": 347
     },
     "bySender": {
       "me": {
         "label": "Chris",
-        "messages": 4658,
-        "textMessages": 4042,
-        "mediaMessages": 1368,
+        "messages": 4659,
+        "textMessages": 4043,
+        "mediaMessages": 1369,
         "imageMessages": 0,
         "teAmoCount": 22,
-        "wordCount": 30858
+        "wordCount": 30864
       },
       "them": {
         "label": "Patty",
@@ -2847,6 +2848,14 @@
         "fromThem": 31,
         "media": 12,
         "phaseId": "official"
+      },
+      {
+        "day": "2026-06-07",
+        "total": 1,
+        "fromMe": 1,
+        "fromThem": 0,
+        "media": 1,
+        "phaseId": "official"
       }
     ],
     "phases": [
@@ -2869,14 +2878,14 @@
       {
         "phaseId": "official",
         "label": "Novios",
-        "total": 5385,
-        "fromMe": 2891,
+        "total": 5386,
+        "fromMe": 2892,
         "fromThem": 2494,
         "teAmoCount": 43
       }
     ],
     "mediaByType": {
-      "photo": 1213,
+      "photo": 1214,
       "sticker": 169,
       "video": 287,
       "document": 28,
@@ -2896,19 +2905,20 @@
     }
   },
   "story": {
+    "brandLabel": "Nuestra historia",
     "meLabel": "Chris",
     "themLabel": "Patty",
     "poeticTitle": "Nuestra historia, la que se escribe día a día",
-    "subtitle": "2020-05-22 - 2026-06-06",
+    "subtitle": "2020-05-22 - 2026-06-07",
     "totalSpanDays": 1361,
-    "activeDays": 346,
+    "activeDays": 347,
     "messageLeadLabel": "Chris",
     "messageLeadPercent": 3,
     "messageLeadSentence": "Chris escribio 3% mas mensajes que Patty.",
     "wordsBySender": [
       {
         "label": "Chris",
-        "value": 30858
+        "value": 30864
       },
       {
         "label": "Patty",
@@ -2934,7 +2944,7 @@
       },
       {
         "year": "2026",
-        "count": 5809
+        "count": 5810
       }
     ],
     "monthlyCounts": [
@@ -3112,7 +3122,7 @@
       },
       {
         "month": "2026-06",
-        "count": 402
+        "count": 403
       }
     ],
     "chapters": [
@@ -3148,8 +3158,8 @@
         "id": "2026",
         "label": "2026",
         "range": "2026",
-        "messages": 5809,
-        "summary": "5809 mensajes en la etapa mas intensa de la conversacion."
+        "messages": 5810,
+        "summary": "5810 mensajes en la etapa mas intensa de la conversacion."
       }
     ],
     "gallery": [
@@ -3258,9 +3268,9 @@
       {
         "label": "Mensaje mas reciente",
         "detail": "La historia sigue viva.",
-        "ts": 1780804935,
+        "ts": 1780842138,
         "text": "La historia sigue viva.",
-        "senderLabel": "Patty"
+        "senderLabel": "Chris"
       }
     ],
     "topDay": {
@@ -3270,7 +3280,7 @@
     "mediaCards": [
       {
         "label": "Fotos",
-        "count": 1197,
+        "count": 1198,
         "tone": "rose"
       },
       {
@@ -3377,15 +3387,6 @@
         "summary": "Desde aquí se siente el umbral: se ponen de acuerdo para el día siguiente, ajustan horarios y todo suena más a verse con intención que a un mensaje cualquiera.",
         "tag": "Preludio",
         "evidence": "inferido"
-      },
-      {
-        "id": "courting-2025-the-coffee",
-        "phaseId": "courting",
-        "day": "2025-12-27",
-        "title": "The Coffee y el inicio de la pretendida",
-        "summary": "Este es el hito que mejor funciona para marcar el arranque de esa nueva etapa. El encuentro existe, está en fecha, y coincide con el momento que tú recuerdas como el cambio real.",
-        "tag": "Inicio pretendiente",
-        "evidence": "anclado"
       },
       {
         "id": "courting-2026-new-year",
