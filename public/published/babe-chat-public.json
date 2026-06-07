@@ -3,8 +3,8 @@
     "jid": "published-story",
     "name": "Patty",
     "phone": "",
-    "exportedAt": "2026-06-07T17:26:11.228Z",
-    "messageCount": 9196,
+    "exportedAt": "2026-06-07T20:13:06.874Z",
+    "messageCount": 9208,
     "storyBrand": "Nuestra historia",
     "authorSignature": "Christofer Enríquez",
     "participantLabels": {
@@ -15,14 +15,14 @@
       "primarySource": "hybrid",
       "backupFound": true,
       "backupMessageCount": 7848,
-      "wacrawlMessageCount": 6271,
-      "mergedExtraCount": 1348
+      "wacrawlMessageCount": 6283,
+      "mergedExtraCount": 1360
     },
     "dateRange": {
       "start": "2020-05-22",
       "end": "2026-06-07"
     },
-    "publishedAt": "2026-06-07T17:26:11.421Z"
+    "publishedAt": "2026-06-07T20:13:07.070Z"
   },
   "relationship": {
     "timezone": "America/Guatemala",
@@ -54,9 +54,9 @@
   "messages": [],
   "metrics": {
     "totals": {
-      "messages": 9196,
-      "textMessages": 8244,
-      "mediaMessages": 2133,
+      "messages": 9208,
+      "textMessages": 8256,
+      "mediaMessages": 2134,
       "imageMessages": 0,
       "teAmoCount": 48,
       "activeDays": 347
@@ -64,21 +64,21 @@
     "bySender": {
       "me": {
         "label": "Chris",
-        "messages": 4676,
-        "textMessages": 4060,
+        "messages": 4680,
+        "textMessages": 4064,
         "mediaMessages": 1375,
         "imageMessages": 0,
         "teAmoCount": 25,
-        "wordCount": 30925
+        "wordCount": 30939
       },
       "them": {
         "label": "Patty",
-        "messages": 4520,
-        "textMessages": 4184,
-        "mediaMessages": 758,
+        "messages": 4528,
+        "textMessages": 4192,
+        "mediaMessages": 759,
         "imageMessages": 0,
         "teAmoCount": 23,
-        "wordCount": 23444
+        "wordCount": 23474
       }
     },
     "daily": [
@@ -2852,10 +2852,10 @@
       },
       {
         "day": "2026-06-07",
-        "total": 32,
-        "fromMe": 18,
-        "fromThem": 14,
-        "media": 8,
+        "total": 44,
+        "fromMe": 22,
+        "fromThem": 22,
+        "media": 9,
         "phaseId": "official"
       }
     ],
@@ -2879,14 +2879,14 @@
       {
         "phaseId": "official",
         "label": "Novios",
-        "total": 5417,
-        "fromMe": 2909,
-        "fromThem": 2508,
+        "total": 5429,
+        "fromMe": 2913,
+        "fromThem": 2516,
         "teAmoCount": 48
       }
     ],
     "mediaByType": {
-      "photo": 1217,
+      "photo": 1218,
       "sticker": 171,
       "video": 289,
       "document": 28,
@@ -2919,11 +2919,11 @@
     "wordsBySender": [
       {
         "label": "Chris",
-        "value": 30925
+        "value": 30939
       },
       {
         "label": "Patty",
-        "value": 23340
+        "value": 23370
       }
     ],
     "yearlyCounts": [
@@ -2945,7 +2945,7 @@
       },
       {
         "year": "2026",
-        "count": 5840
+        "count": 5851
       }
     ],
     "monthlyCounts": [
@@ -3123,7 +3123,7 @@
       },
       {
         "month": "2026-06",
-        "count": 433
+        "count": 444
       }
     ],
     "chapters": [
@@ -3159,8 +3159,8 @@
         "id": "2026",
         "label": "2026",
         "range": "2026",
-        "messages": 5840,
-        "summary": "5840 mensajes en la etapa mas intensa de la conversacion."
+        "messages": 5851,
+        "summary": "5851 mensajes en la etapa mas intensa de la conversacion."
       }
     ],
     "gallery": [
@@ -3269,7 +3269,7 @@
       {
         "label": "Mensaje mas reciente",
         "detail": "La historia sigue viva.",
-        "ts": 1780853160,
+        "ts": 1780861979,
         "text": "La historia sigue viva.",
         "senderLabel": "Patty"
       }
@@ -3281,7 +3281,7 @@
     "mediaCards": [
       {
         "label": "Fotos",
-        "count": 1201,
+        "count": 1202,
         "tone": "rose"
       },
       {
