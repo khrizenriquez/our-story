@@ -20,6 +20,20 @@ go install github.com/steipete/wacrawl/cmd/wacrawl@latest
 
 La configuracion privada y los insumos locales no forman parte del repositorio publico.
 
+Parte del copy visible del sitio tambien puede configurarse desde el export local, por ejemplo el label corto del home (`Nuestra historia`).
+
+## Diseño Visual
+
+La línea visual del proyecto está completamente documentada en [DESIGN.md](./DESIGN.md). Contiene:
+
+- **Paleta de colores** (light/dark modes)
+- **Sistema tipográfico** (Cormorant Garamond + Instrument Sans)
+- **Componentes base** y patrones de animación
+- **Cómo agregar secciones nuevas** manteniendo la consistencia visual
+- **Variables CSS** y referencias
+
+Cualquier sección nueva debe seguir esta especificación.
+
 ## Scripts
 
 ```bash

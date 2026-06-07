@@ -6,6 +6,7 @@ export interface ChatSummary {
   phone: string;
   exportedAt: string;
   messageCount: number;
+  storyBrand?: string;
   authorSignature?: string;
   participantLabels?: {
     me: string;
@@ -115,6 +116,7 @@ export interface ChatMetrics {
 }
 
 export interface StorySnapshot {
+  brandLabel: string;
   meLabel: string;
   themLabel: string;
   poeticTitle: string;

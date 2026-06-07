@@ -40,6 +40,7 @@ export interface StoryTimelineMilestone {
 }
 
 export interface StoryModel {
+  brandLabel: string;
   meLabel: string;
   themLabel: string;
   poeticTitle: string;
@@ -216,15 +217,6 @@ function buildTimelineMilestones(meLabel: string, themLabel: string): StoryTimel
       summary: 'Desde aquí se siente el umbral: se ponen de acuerdo para el día siguiente, ajustan horarios y todo suena más a verse con intención que a un mensaje cualquiera.',
       tag: 'Preludio',
       evidence: 'inferido',
-    },
-    {
-      id: 'courting-2025-the-coffee',
-      phaseId: 'courting',
-      day: '2025-12-27',
-      title: 'The Coffee y el inicio de la pretendida',
-      summary: 'Este es el hito que mejor funciona para marcar el arranque de esa nueva etapa. El encuentro existe, está en fecha, y coincide con el momento que tú recuerdas como el cambio real.',
-      tag: 'Inicio pretendiente',
-      evidence: 'anclado',
     },
     {
       id: 'courting-2026-new-year',
@@ -457,6 +449,7 @@ export function deriveStoryModel(data: ChatExport): StoryModel {
   ];
 
   return {
+    brandLabel: data.chat.storyBrand || 'Nuestra historia',
     meLabel,
     themLabel,
     poeticTitle: 'Nuestra historia, la que se escribe día a día',

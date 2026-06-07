@@ -385,6 +385,7 @@ function buildChatExport(): ChatExport {
       phone: config.chatPhone,
       exportedAt: new Date().toISOString(),
       messageCount: merged.messages.length,
+      storyBrand: config.storyBrand,
       authorSignature: config.authorSignature,
       participantLabels,
       archive: {

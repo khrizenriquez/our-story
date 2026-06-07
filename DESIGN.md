@@ -4,6 +4,8 @@ Especificación completa de diseño para mantener consistencia visual en nuevas 
 
 ## Paleta de Colores
 
+**Regla principal:** el modo claro manda. Toda nueva sección debe diseñarse primero en claro usando la paleta crema / vino / lavanda del proyecto. El modo oscuro es una reinterpretación de esa misma familia visual; no debe sentirse como otro producto.
+
 ### Modo Claro (Default)
 
 ```css
@@ -127,6 +129,12 @@ Para capítulos de historia o hitos importantes, usar un roadmap visual en vez d
 - Se convierte a una lectura vertical clara.
 - Se conserva la idea de carretera con una línea gruesa y nodos.
 - Cada hito debe seguir siendo escaneable con una sola mano.
+- En mobile, los títulos de etapa deben bajar de tamaño respecto a desktop para no comerse la pantalla.
+
+#### Curaduría de hitos
+
+- El timeline no es un dump cronológico: se puede podar cuando un hito rompe el ritmo visual o repite información.
+- Los hitos anclados por memoria compartida se pueden quitar si la escena no aporta claridad narrativa.
 
 #### Tono visual
 
@@ -196,6 +204,12 @@ Las secciones tienen 3 niveles de parallax basados en scroll:
 }
 ```
 
+#### Chapter Band / “Para empezar”
+
+- En modo claro debe usar contraste tipo `Lo que se ve al instante`: fondo claro cálido, texto oscuro y tarjetas blancas legibles.
+- Evitar texto blanco sobre superficies crema.
+- Los cuatro números deben leerse rápido en phone y tablet.
+
 #### Compare Cards / Impact Cards
 
 ```css
@@ -223,6 +237,12 @@ Las secciones tienen 3 niveles de parallax basados en scroll:
 ```
 
 ## Sistema de Animaciones
+
+### Hero flotante
+
+- `hero-shape-heart`, `hero-object-helmet`, `hero-object-star` y `hero-object-loop` deben moverse siempre con micro-animaciones lentas.
+- El movimiento tiene que sentirse orgánico: deriva lateral / vertical suave, sin saltos.
+- Respetar `prefers-reduced-motion`.
 
 ### Entrada de Secciones
 
@@ -257,6 +277,13 @@ Cuando una sección entra en viewport (.is-visible):
 :nth-child(4) { animation-delay: 0.24s; }
 ```
 
+### Números animados
+
+- Los números grandes de `.chapter-card` y `.media-summary-card` deben contar desde `0` hasta su valor final.
+- La animación no debe pasar de `3s`.
+- Debe dispararse cuando la sección entra en viewport.
+- Si el usuario prefiere menos movimiento, el valor puede aparecer directo.
+
 ## Espaciado y Layout
 
 ### Contenedor Principal
@@ -280,6 +307,17 @@ Cuando una sección entra en viewport (.is-visible):
   padding-block: clamp(22px, 5vw, 54px);  /* Padding responsivo */
 }
 ```
+
+### Footer / cierre
+
+- La sección `Y todavía sigue` en mobile debe sentirse más ligera que en desktop.
+- Reducir headline y altura cuando la pantalla es corta para que no se vea sobredimensionada.
+
+## Texto configurable
+
+- El label del home (`Nuestra historia`) debe ser configurable desde la data exportada.
+- Los nombres visibles (`Chris`, `Patty`) siguen viniendo de configuración privada.
+- Cuando se agregue nuevo copy visible y persistente, evaluar primero si debe vivir como texto fijo o como campo configurable.
 
 ### Márgenes Entre Secciones
 

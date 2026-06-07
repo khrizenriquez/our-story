@@ -7,6 +7,7 @@ export interface PrivateConfig {
   chatDisplayName: string;
   chatPhone: string;
   meDisplayName: string;
+  storyBrand: string;
   authorSignature: string;
   timezone: string;
 }
@@ -42,6 +43,7 @@ export function readPrivateConfig(): PrivateConfig {
     chatDisplayName: process.env.BABE_DISPLAY_NAME ?? process.env.BABE_CHAT_NAME ?? 'Patty',
     chatPhone: process.env.BABE_CHAT_PHONE ?? '',
     meDisplayName: process.env.ME_DISPLAY_NAME ?? 'Chris',
+    storyBrand: process.env.STORY_BRAND_LABEL ?? 'Nuestra historia',
     authorSignature: process.env.AUTHOR_SIGNATURE ?? 'Christofer Enríquez',
     timezone: process.env.WHATSAPP_TIMEZONE ?? 'America/Guatemala',
   };

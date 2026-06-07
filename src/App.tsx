@@ -51,6 +51,56 @@ function formatPreciseTimestamp(ts: number, timezone: string): string {
   }).format(new Date(ts * 1000));
 }
 
+function useAnimatedNumber(value: number, active: boolean, durationMs = 2400): number {
+  const [displayValue, setDisplayValue] = useState(() => (active ? value : 0));
+  const hasAnimatedRef = useRef(false);
+
+  useEffect(() => {
+    if (!active) {
+      setDisplayValue(0);
+      return;
+    }
+
+    if (hasAnimatedRef.current) {
+      setDisplayValue(value);
+      return;
+    }
+
+    hasAnimatedRef.current = true;
+
+    if (typeof window === 'undefined') {
+      setDisplayValue(value);
+      return;
+    }
+
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      setDisplayValue(value);
+      return;
+    }
+
+    const startedAt = window.performance.now();
+    let frameId = 0;
+
+    const step = (now: number) => {
+      const elapsed = Math.min(now - startedAt, durationMs);
+      const progress = elapsed / durationMs;
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplayValue(Math.round(value * eased));
+
+      if (elapsed < durationMs) {
+        frameId = window.requestAnimationFrame(step);
+      } else {
+        setDisplayValue(value);
+      }
+    };
+
+    frameId = window.requestAnimationFrame(step);
+    return () => window.cancelAnimationFrame(frameId);
+  }, [active, durationMs, value]);
+
+  return displayValue;
+}
+
 function App() {
   const shellRef = useRef<HTMLElement | null>(null);
   const [data, setData] = useState<LoadedChatExport | null>(null);
@@ -325,8 +375,7 @@ function App() {
               <SparklesIcon size={18} />
             </span>
             <div>
-              <strong>{story.meLabel} + {story.themLabel}</strong>
-              <span>Nuestra historia</span>
+              <strong>{story.brandLabel}</strong>
             </div>
           </div>
           <div className="story-nav-actions">
@@ -531,7 +580,7 @@ function App() {
           {story.chapters.map((chapter, index) => (
             <article key={chapter.id} className={`chapter-card chapter-card--${index % 5}`}>
               <span>{chapter.label}</span>
-              <strong>{formatNumber(chapter.messages)}</strong>
+              <strong><AnimatedCount value={chapter.messages} active={isVisible('chapters')} durationMs={2600} /></strong>
               <p>{chapter.summary}</p>
             </article>
           ))}
@@ -553,7 +602,7 @@ function App() {
                 {card.label === 'Videos y gifs' ? <PlayCircle size={20} /> : null}
                 {card.label === 'Stickers' ? <Sticker size={20} /> : null}
               </span>
-              <strong>{formatNumber(card.count)}</strong>
+              <strong><AnimatedCount value={card.count} active={isVisible('media')} durationMs={2400} /></strong>
               <p>{card.label}</p>
             </article>
           ))}
@@ -610,7 +659,7 @@ function App() {
           <p className="story-kicker">Los hitos de esta historia</p>
           <h2>Un timeline para ver dónde fueron cambiando las cosas</h2>
           <p>
-            Veintitrés momentos repartidos entre amigos, pretendiente y novios. Algunos salen claritos del chat, otros están anclados por la fecha que ustedes recuerdan y unos pocos se dejan leer por el ritmo de la conversación.
+            {formatNumber(story.timelineMilestones.length)} hitos repartidos entre amigos, pretendiente y novios. Algunos salen claritos del chat, otros están anclados por la fecha que ustedes recuerdan y unos pocos se dejan leer por el ritmo de la conversación.
           </p>
         </div>
 
@@ -798,6 +847,11 @@ function HeroMetric({ label, value }: { label: string; value: string }) {
       <strong>{value}</strong>
     </article>
   );
+}
+
+function AnimatedCount({ value, active, durationMs = 2400 }: { value: number; active: boolean; durationMs?: number }) {
+  const animatedValue = useAnimatedNumber(value, active, durationMs);
+  return <>{formatNumber(animatedValue)}</>;
 }
 
 function CompareCard({ label, value, detail, tone }: { label: string; value: string; detail: string; tone: 'teal' | 'rose' }) {
