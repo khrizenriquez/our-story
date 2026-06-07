@@ -55,7 +55,7 @@ function App() {
   const shellRef = useRef<HTMLElement | null>(null);
   const [data, setData] = useState<LoadedChatExport | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [theme, setTheme] = useState<ThemeMode>('dark');
+  const [theme, setTheme] = useState<ThemeMode>('light');
   const [visibleSections, setVisibleSections] = useState<Set<string>>(() => new Set(['hero']));
 
   useEffect(() => {
@@ -81,7 +81,7 @@ function App() {
       setTheme(stored);
       return;
     }
-    setTheme('dark');
+    setTheme('light');
   }, []);
 
   useEffect(() => {
