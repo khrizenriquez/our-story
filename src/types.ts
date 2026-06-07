@@ -5,6 +5,7 @@ export interface ChatSummary {
   name: string;
   phone: string;
   exportedAt: string;
+  publishedAt?: string;
   messageCount: number;
   storyBrand?: string;
   authorSignature?: string;

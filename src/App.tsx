@@ -51,6 +51,35 @@ function formatPreciseTimestamp(ts: number, timezone: string): string {
   }).format(new Date(ts * 1000));
 }
 
+function formatImportedLabel(value: string, timezone: string): string {
+  const date = new Date(value);
+  const parts = new Intl.DateTimeFormat('es-GT', {
+    weekday: 'long',
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: timezone,
+  }).formatToParts(date);
+
+  const lookup = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  const weekday = capitalizeWord(lookup.weekday ?? '');
+  const day = lookup.day ?? '';
+  const month = capitalizeWord(lookup.month ?? '');
+  const year = lookup.year ?? '';
+  const hour = lookup.hour ?? '';
+  const minute = lookup.minute ?? '';
+  const dayPeriod = (lookup.dayPeriod ?? '').replace(/\s+/g, '').toLowerCase();
+  return `${weekday} ${day} de ${month} ${year}, ${hour}:${minute}${dayPeriod}`;
+}
+
+function capitalizeWord(value: string): string {
+  if (!value) return value;
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
 function useAnimatedNumber(value: number, active: boolean, durationMs = 2400): number {
   const [displayValue, setDisplayValue] = useState(() => (active ? value : 0));
   const hasAnimatedRef = useRef(false);
@@ -362,6 +391,7 @@ function App() {
   ] as const;
 
   const isVisible = (id: (typeof sectionIds)[number]) => visibleSections.has(id);
+  const importedAt = data.chat.publishedAt ?? data.chat.exportedAt;
   const chartTextColor = theme === 'dark' ? '#f4e4d6' : '#312621';
   const chartGridColor = theme === 'dark' ? 'rgba(255, 239, 224, 0.12)' : 'rgba(58, 43, 35, 0.08)';
   const chartTickColor = theme === 'dark' ? '#dbc6b6' : '#735f55';
@@ -448,6 +478,7 @@ function App() {
             <div className="hero-meta">
               <MetaPill icon={<CalendarRange size={15} />} label={formatRangeLabel(data.chat.dateRange.start, data.chat.dateRange.end)} />
               <MetaPill icon={<MessageCircleMore size={15} />} label={`${formatNumber(totalMessages)} mensajes en total`} />
+              <MetaPill icon={<SparklesIcon size={15} />} label={`Importado ${formatImportedLabel(importedAt, data.relationship.timezone)}`} />
             </div>
             <div className="hero-rhythm">
               <p>Quién habló más, cuándo se intensificó todo, cuántas veces dijeron te amo y cómo se fue armando una historia real.</p>

@@ -417,6 +417,7 @@ function buildPublishedSummary(exportData: ChatExport): ChatExport {
       ...exportData.chat,
       jid: 'published-story',
       phone: '',
+      publishedAt: exportData.chat.exportedAt,
     },
     relationship: exportData.relationship,
     messages: [],

@@ -56,3 +56,5 @@ npm run publish
 ```
 
 Ese comando corre el export, publica el resumen seguro del sitio y empuja el cambio a `main` cuando hay actualizaciones.
+
+Ademas, `npm run publish` actualiza el sello visible de `Importado ...` que aparece en la interfaz publica.

@@ -1,6 +1,7 @@
 import { execFileSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import type { ChatExport } from '../src/types';
 
 const COMMIT_MESSAGE = 'Update published story data';
 const PUBLISHED_SUMMARY_PATH = 'public/published/babe-chat-public.json';
@@ -39,11 +40,19 @@ function hasStagedSummaryChanges(): boolean {
   return output.split(/\r?\n/).some((line) => line.trim() === PUBLISHED_SUMMARY_PATH);
 }
 
+function stampPublishedAt(): void {
+  const summaryPath = resolve(PUBLISHED_SUMMARY_PATH);
+  const summary = JSON.parse(readFileSync(summaryPath, 'utf8')) as ChatExport;
+  summary.chat.publishedAt = new Date().toISOString();
+  writeFileSync(summaryPath, `${JSON.stringify(summary, null, 2)}\n`);
+}
+
 function main(): void {
   ensureMainBranch();
 
   run(npmCommand(), ['run', 'export'], { stdio: 'inherit' });
   ensurePublishedSummaryExists();
+  stampPublishedAt();
 
   run('git', ['add', '--', PUBLISHED_SUMMARY_PATH], { stdio: 'inherit' });
 

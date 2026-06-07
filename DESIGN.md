@@ -318,6 +318,7 @@ Cuando una sección entra en viewport (.is-visible):
 - El label del home (`Nuestra historia`) debe ser configurable desde la data exportada.
 - Los nombres visibles (`Chris`, `Patty`) siguen viniendo de configuración privada.
 - Cuando se agregue nuevo copy visible y persistente, evaluar primero si debe vivir como texto fijo o como campo configurable.
+- El sello de `Importado` debe mostrar una fecha legible en español y reflejar el último `npm run publish` del resumen público.
 
 ### Márgenes Entre Secciones
 
