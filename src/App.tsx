@@ -22,7 +22,7 @@ import { deriveStoryModel } from './lib/story';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Tooltip, Legend, Filler);
 
 const numberFormatter = new Intl.NumberFormat('es-GT');
-const sectionIds = ['hero', 'opening', 'compare', 'love', 'monthly', 'yearly', 'chapters', 'media', 'moments', 'closing'] as const;
+const sectionIds = ['hero', 'opening', 'compare', 'love', 'monthly', 'yearly', 'chapters', 'media', 'moments', 'closing', 'milestones'] as const;
 type ThemeMode = 'light' | 'dark';
 
 function formatNumber(value: number): string {
@@ -153,7 +153,16 @@ function App() {
     return () => observer.disconnect();
   }, [data]);
 
-  const story = useMemo(() => (data ? data.story ?? deriveStoryModel(data) : null), [data]);
+  const derivedStory = useMemo(() => (data ? deriveStoryModel(data) : null), [data]);
+  const story = useMemo(() => {
+    if (!data || !derivedStory) return null;
+    if (!data.story) return derivedStory;
+    return {
+      ...derivedStory,
+      ...data.story,
+      timelineMilestones: data.story.timelineMilestones ?? derivedStory.timelineMilestones,
+    };
+  }, [data, derivedStory]);
   const totalMessages = data?.metrics.totals.messages ?? data?.chat.messageCount ?? 0;
 
   if (error) {
@@ -280,6 +289,27 @@ function App() {
       },
     ],
   };
+
+  const milestonePhases = [
+    {
+      id: 'before',
+      kicker: 'Etapa amigos',
+      title: 'Antes del 27 de diciembre de 2025',
+      range: 'Del primer rastro al momento en que todo empezó a acercarse más.',
+    },
+    {
+      id: 'courting',
+      kicker: 'Etapa pretendiente',
+      title: 'Del 27 de diciembre de 2025 al 7 de febrero de 2026',
+      range: 'Aquí fue donde ya se notó clarísimo que la historia estaba cambiando de tono.',
+    },
+    {
+      id: 'official',
+      kicker: 'Etapa novios',
+      title: 'Del 8 de febrero de 2026 hasta hoy',
+      range: 'El tramo donde el cariño ya se volvió lenguaje, rutina y vida compartida.',
+    },
+  ] as const;
 
   const isVisible = (id: (typeof sectionIds)[number]) => visibleSections.has(id);
   const chartTextColor = theme === 'dark' ? '#f4e4d6' : '#312621';
@@ -575,9 +605,54 @@ function App() {
         </div>
       </section>
 
+      <section className="milestones-section story-section story-stage is-visible" data-section="milestones">
+        <div className="milestones-intro">
+          <p className="story-kicker">Los hitos de esta historia</p>
+          <h2>Un timeline para ver dónde fueron cambiando las cosas</h2>
+          <p>
+            Veintitrés momentos repartidos entre amigos, pretendiente y novios. Algunos salen claritos del chat, otros están anclados por la fecha que ustedes recuerdan y unos pocos se dejan leer por el ritmo de la conversación.
+          </p>
+        </div>
+
+        <div className="milestone-phase-list">
+          {milestonePhases.map((phase) => {
+            const items = story.timelineMilestones.filter((milestone) => milestone.phaseId === phase.id);
+            return (
+              <section key={phase.id} className={`milestone-phase milestone-phase--${phase.id}`}>
+                <div className="milestone-phase-head">
+                  <p className="milestone-phase-kicker">{phase.kicker}</p>
+                  <h3>{phase.title}</h3>
+                  <p>{phase.range}</p>
+                </div>
+
+                <div className="milestone-grid">
+                  {items.map((milestone, index) => (
+                    <article key={milestone.id} className={`milestone-card milestone-card--${index % 5}`}>
+                      <div className="milestone-card-topline">
+                        <span className="milestone-tag">{milestone.tag}</span>
+                        <span className={`milestone-evidence milestone-evidence--${milestone.evidence}`}>{timelineEvidenceLabel(milestone.evidence)}</span>
+                      </div>
+                      <p className="milestone-day">{formatDay(milestone.day)}</p>
+                      <h4>{milestone.title}</h4>
+                      <p>{milestone.summary}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      </section>
+
       <footer className="story-footer">{`Con  ❤️, hecho por ${data.chat.authorSignature ?? story.meLabel} con Codex`}</footer>
     </main>
   );
+}
+
+function timelineEvidenceLabel(value: 'confirmado' | 'anclado' | 'inferido'): string {
+  if (value === 'confirmado') return 'Confirmado';
+  if (value === 'anclado') return 'Anclado por ustedes';
+  return 'Inferido por contexto';
 }
 
 function MetaPill({ icon, label }: { icon: ReactNode; label: string }) {

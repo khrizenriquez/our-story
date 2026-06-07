@@ -134,6 +134,15 @@ export interface StorySnapshot {
   topDay: { day: string; count: number } | null;
   mediaCards: Array<{ label: string; count: number; tone: string }>;
   firstMeaningful: { label: string; detail: string; ts: number; text: string; senderLabel: string } | null;
+  timelineMilestones: Array<{
+    id: string;
+    phaseId: RelationshipPhase['id'];
+    day: string;
+    title: string;
+    summary: string;
+    tag: string;
+    evidence: 'confirmado' | 'anclado' | 'inferido';
+  }>;
 }
 
 export interface ChatExport {
