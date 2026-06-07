@@ -617,29 +617,7 @@ function App() {
         <div className="milestone-phase-list">
           {milestonePhases.map((phase) => {
             const items = story.timelineMilestones.filter((milestone) => milestone.phaseId === phase.id);
-            return (
-              <section key={phase.id} className={`milestone-phase milestone-phase--${phase.id}`}>
-                <div className="milestone-phase-head">
-                  <p className="milestone-phase-kicker">{phase.kicker}</p>
-                  <h3>{phase.title}</h3>
-                  <p>{phase.range}</p>
-                </div>
-
-                <div className="milestone-grid">
-                  {items.map((milestone, index) => (
-                    <article key={milestone.id} className={`milestone-card milestone-card--${index % 5}`}>
-                      <div className="milestone-card-topline">
-                        <span className="milestone-tag">{milestone.tag}</span>
-                        <span className={`milestone-evidence milestone-evidence--${milestone.evidence}`}>{timelineEvidenceLabel(milestone.evidence)}</span>
-                      </div>
-                      <p className="milestone-day">{formatDay(milestone.day)}</p>
-                      <h4>{milestone.title}</h4>
-                      <p>{milestone.summary}</p>
-                    </article>
-                  ))}
-                </div>
-              </section>
-            );
+            return <MilestoneRoadmap key={phase.id} phase={phase} items={items} />;
           })}
         </div>
       </section>
@@ -653,6 +631,155 @@ function timelineEvidenceLabel(value: 'confirmado' | 'anclado' | 'inferido'): st
   if (value === 'confirmado') return 'Confirmado';
   if (value === 'anclado') return 'Anclado por ustedes';
   return 'Inferido por contexto';
+}
+
+function MilestoneRoadmap({
+  phase,
+  items,
+}: {
+  phase: { id: 'before' | 'courting' | 'official'; kicker: string; title: string; range: string };
+  items: Array<{
+    id: string;
+    phaseId: 'before' | 'courting' | 'official';
+    day: string;
+    title: string;
+    summary: string;
+    tag: string;
+    evidence: 'confirmado' | 'anclado' | 'inferido';
+  }>;
+}) {
+  const layout = buildRoadmapLayout(items.length);
+
+  return (
+    <section className={`milestone-phase milestone-phase--${phase.id}`}>
+      <div className="milestone-phase-head">
+        <p className="milestone-phase-kicker">{phase.kicker}</p>
+        <h3>{phase.title}</h3>
+        <p>{phase.range}</p>
+      </div>
+
+      <div className="milestone-roadmap">
+        <div className="milestone-roadmap-mobile">
+          {items.map((milestone, index) => (
+            <article key={milestone.id} className="milestone-stack-card">
+              <div className="milestone-stack-index">{String(index + 1).padStart(2, '0')}</div>
+              <div className="milestone-stack-body">
+                <div className="milestone-card-topline">
+                  <span className="milestone-tag">{milestone.tag}</span>
+                  <span className={`milestone-evidence milestone-evidence--${milestone.evidence}`}>{timelineEvidenceLabel(milestone.evidence)}</span>
+                </div>
+                <p className="milestone-day">{formatDay(milestone.day)}</p>
+                <h4>{milestone.title}</h4>
+                <p>{milestone.summary}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div
+          className="milestone-roadmap-desktop"
+          style={{
+            ['--road-width' as string]: `${layout.width}px`,
+            ['--road-height' as string]: `${layout.height}px`,
+            ['--road-canvas-height' as string]: `${layout.canvasHeight}px`,
+          }}
+        >
+          <svg
+            className="milestone-road-svg"
+            viewBox={`0 0 ${layout.width} ${layout.height}`}
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path className="milestone-road-shadow" d={layout.path} pathLength={100} />
+            <path className="milestone-road-track" d={layout.path} pathLength={100} />
+            <path className="milestone-road-lane" d={layout.path} pathLength={100} />
+          </svg>
+
+          {layout.points.map((point, index) => {
+            const milestone = items[index];
+            const cardWidth = 280;
+            const cardLeft = Math.max(18, Math.min(layout.width - cardWidth - 18, point.x - cardWidth / 2));
+            const cardTop = point.row % 2 === 0 ? Math.max(26, point.y - 220) : point.y + 56;
+
+            return (
+              <div key={milestone.id} className="milestone-road-node-wrap">
+                <div
+                  className="milestone-road-node"
+                  style={{
+                    left: `${point.x}px`,
+                    top: `${point.y}px`,
+                  }}
+                >
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                </div>
+
+                <article
+                  className={`milestone-card milestone-card-road milestone-card-road--${index % 4}`}
+                  style={{
+                    left: `${cardLeft}px`,
+                    top: `${cardTop}px`,
+                  }}
+                >
+                  <div className="milestone-card-topline">
+                    <span className="milestone-tag">{milestone.tag}</span>
+                    <span className={`milestone-evidence milestone-evidence--${milestone.evidence}`}>{timelineEvidenceLabel(milestone.evidence)}</span>
+                  </div>
+                  <p className="milestone-day">{formatDay(milestone.day)}</p>
+                  <h4>{milestone.title}</h4>
+                  <p>{milestone.summary}</p>
+                </article>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function buildRoadmapLayout(itemCount: number) {
+  const columns = Math.min(3, Math.max(itemCount, 1));
+  const startY = 240;
+  const columnGap = 330;
+  const rowGap = 320;
+  const roadInset = 150;
+  const rows = Math.ceil(itemCount / columns);
+  const width = roadInset * 2 + (columns - 1) * columnGap;
+  const height = startY * 2 + Math.max(rows - 1, 0) * rowGap;
+  const canvasHeight = height + 320;
+
+  const points = Array.from({ length: itemCount }, (_, index) => {
+    const row = Math.floor(index / columns);
+    const indexInRow = index % columns;
+    const col = row % 2 === 0 ? indexInRow : columns - 1 - indexInRow;
+    return {
+      x: roadInset + col * columnGap,
+      y: startY + row * rowGap,
+      row,
+      col,
+    };
+  });
+
+  const path = points.reduce((accumulator, point, index) => {
+    if (index === 0) return `M ${point.x} ${point.y}`;
+    const prev = points[index - 1];
+    if (prev.row === point.row) {
+      const curve = (point.x - prev.x) * 0.35;
+      return `${accumulator} C ${prev.x + curve} ${prev.y}, ${point.x - curve} ${point.y}, ${point.x} ${point.y}`;
+    }
+
+    const direction = prev.x > width / 2 ? 1 : -1;
+    const elbow = 92;
+    return `${accumulator} C ${prev.x + elbow * direction} ${prev.y + 44}, ${point.x + elbow * direction} ${point.y - 44}, ${point.x} ${point.y}`;
+  }, '');
+
+  return {
+    width,
+    height,
+    canvasHeight,
+    points,
+    path,
+  };
 }
 
 function MetaPill({ icon, label }: { icon: ReactNode; label: string }) {

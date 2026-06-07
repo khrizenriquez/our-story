@@ -2382,40 +2382,40 @@ html[data-theme='light'] .theme-toggle {
   min-height: 100svh;
   padding: 88px 18px;
   background:
-    radial-gradient(circle at 0% 20%, rgba(177, 77, 103, 0.2), transparent 18%),
-    radial-gradient(circle at 100% 24%, rgba(146, 168, 206, 0.18), transparent 18%),
-    linear-gradient(180deg, #f4ede5 0%, #efe5db 100%);
-  color: #2f1b20;
+    radial-gradient(circle at 0% 14%, rgba(167, 92, 113, 0.24), transparent 18%),
+    radial-gradient(circle at 100% 18%, rgba(163, 174, 213, 0.24), transparent 18%),
+    linear-gradient(180deg, #fbf4ed 0%, #f0e4d8 100%);
+  color: #312521;
 }
 
 .milestones-section .story-kicker {
-  color: #8c3551;
+  color: #8f314b;
 }
 
 .milestones-section h2,
 .milestones-section h3,
 .milestones-section h4 {
-  color: #2f1b20;
+  color: #312521;
 }
 
 .milestones-intro {
   position: relative;
   z-index: 1;
-  max-width: 1120px;
-  margin: 0 auto 34px;
+  max-width: 1180px;
+  margin: 0 auto 42px;
 }
 
 .milestones-intro h2 {
-  max-width: 11ch;
+  max-width: 10ch;
   font-family: 'Instrument Sans', sans-serif;
-  font-size: clamp(3rem, 14vw, 6.6rem);
+  font-size: clamp(3rem, 13vw, 6.8rem);
   font-weight: 700;
-  line-height: 0.9;
+  line-height: 0.88;
 }
 
 .milestones-intro p:last-child {
-  max-width: 62ch;
-  color: rgba(67, 45, 49, 0.78);
+  max-width: 58ch;
+  color: rgba(74, 56, 49, 0.78);
   font-size: 1.06rem;
   line-height: 1.8;
 }
@@ -2423,34 +2423,39 @@ html[data-theme='light'] .theme-toggle {
 .milestone-phase-list {
   display: grid;
   gap: 26px;
-  max-width: 1280px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .milestone-phase {
   position: relative;
   overflow: hidden;
+  width: 100%;
   border-radius: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 22px;
   background:
-    radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.08), transparent 16%),
-    linear-gradient(140deg, #8c3551 0%, #7b3049 42%, #6d293e 100%);
+    radial-gradient(circle at 84% 18%, rgba(250, 221, 230, 0.14), transparent 18%),
+    radial-gradient(circle at 10% 82%, rgba(255, 255, 255, 0.08), transparent 18%),
+    linear-gradient(145deg, #8f314b 0%, #8c3956 36%, #7c2f49 100%);
   box-shadow:
-    0 32px 70px rgba(111, 43, 65, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 32px 70px rgba(120, 61, 78, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .milestone-phase--courting {
   background:
-    radial-gradient(circle at 84% 16%, rgba(255, 255, 255, 0.08), transparent 18%),
-    linear-gradient(140deg, #9d4460 0%, #883951 46%, #733146 100%);
+    radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.12), transparent 16%),
+    radial-gradient(circle at 16% 78%, rgba(223, 175, 194, 0.14), transparent 20%),
+    linear-gradient(145deg, #9a3d5c 0%, #a14c69 36%, #8a3c59 100%);
 }
 
 .milestone-phase--official {
   background:
-    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.08), transparent 18%),
-    linear-gradient(140deg, #7b3049 0%, #67293d 45%, #532231 100%);
+    radial-gradient(circle at 86% 20%, rgba(201, 216, 255, 0.18), transparent 16%),
+    radial-gradient(circle at 14% 82%, rgba(252, 219, 228, 0.12), transparent 20%),
+    linear-gradient(145deg, #7b3049 0%, #6d2840 40%, #572232 100%);
 }
 
 .milestone-phase-head {
@@ -2481,14 +2486,9 @@ html[data-theme='light'] .theme-toggle {
 .milestone-phase-head p:last-child {
   max-width: 48ch;
   margin-top: 12px;
-  color: rgba(255, 242, 235, 0.76);
+  color: rgba(255, 242, 235, 0.78);
   font-size: 1rem;
   line-height: 1.72;
-}
-
-.milestone-grid {
-  display: grid;
-  gap: 16px;
 }
 
 .milestone-card {
@@ -2498,10 +2498,10 @@ html[data-theme='light'] .theme-toggle {
   border-radius: 26px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.07)),
     rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
-  box-shadow: 0 20px 32px rgba(57, 20, 34, 0.14);
+  box-shadow: 0 20px 32px rgba(57, 20, 34, 0.12);
 }
 
 .milestone-card-topline {
@@ -2526,7 +2526,7 @@ html[data-theme='light'] .theme-toggle {
 }
 
 .milestone-tag {
-  background: rgba(255, 248, 241, 0.16);
+  background: rgba(255, 248, 241, 0.18);
   color: #fff7ef;
 }
 
@@ -2573,24 +2573,212 @@ html[data-theme='light'] .theme-toggle {
   line-height: 1.72;
 }
 
+.milestone-roadmap {
+  min-width: 0;
+}
+
+.milestone-roadmap-mobile {
+  position: relative;
+  display: grid;
+  gap: 14px;
+}
+
+.milestone-roadmap-mobile::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  bottom: 8px;
+  width: 10px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(195, 202, 255, 0.9), rgba(162, 137, 231, 0.92));
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.18),
+    0 12px 24px rgba(72, 59, 117, 0.22);
+}
+
+.milestone-roadmap-mobile::after {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0 10px, transparent 10px 18px);
+  opacity: 0.7;
+}
+
+.milestone-stack-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.milestone-stack-index {
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  margin-left: 0;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.88);
+  background: linear-gradient(180deg, #ffb5c7, #ffa3bb);
+  color: #702742;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  box-shadow: 0 14px 26px rgba(94, 35, 57, 0.2);
+}
+
+.milestone-stack-body {
+  min-width: 0;
+}
+
+.milestone-roadmap-desktop {
+  display: none;
+}
+
+.milestone-road-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.milestone-road-shadow,
+.milestone-road-track,
+.milestone-road-lane {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.milestone-road-shadow {
+  stroke: rgba(73, 81, 167, 0.18);
+  stroke-width: 82;
+  filter: blur(14px);
+}
+
+.milestone-road-track {
+  stroke: #8b92ea;
+  stroke-width: 64;
+}
+
+.milestone-road-lane {
+  stroke: rgba(255, 255, 255, 0.82);
+  stroke-width: 3.2;
+  stroke-dasharray: 12 16;
+}
+
+.milestone-road-node-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.milestone-road-node {
+  position: absolute;
+  z-index: 2;
+  width: 58px;
+  height: 58px;
+  margin-left: -29px;
+  margin-top: -29px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.94);
+  background: linear-gradient(180deg, #ffb9cc, #ff9fb9);
+  box-shadow:
+    0 16px 28px rgba(89, 54, 121, 0.26),
+    0 0 0 10px rgba(255, 255, 255, 0.08);
+  color: #6e2941;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.milestone-road-node span {
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.milestone-card-road {
+  position: absolute;
+  z-index: 3;
+  width: 280px;
+}
+
+.milestone-card-road::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: inherit;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  transform: rotate(45deg);
+}
+
+.milestone-card-road--0::after,
+.milestone-card-road--2::after {
+  left: 32px;
+  bottom: -8px;
+}
+
+.milestone-card-road--1::after,
+.milestone-card-road--3::after {
+  left: 32px;
+  top: -8px;
+}
+
 @media (max-width: 739px) {
   .milestones-section {
     padding: 72px 18px;
   }
 
+  .milestones-intro h2 {
+    max-width: 9ch;
+  }
+
   .milestone-phase {
-    padding: 20px;
+    padding: 18px;
     border-radius: 28px;
   }
 
-  .milestone-card {
-    min-height: 210px;
+  .milestone-phase-head h3 {
+    max-width: 10ch;
+  }
+
+  .milestone-card h4 {
+    max-width: 12ch;
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
   }
 }
 
 @media (min-width: 740px) {
-  .milestone-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .milestone-roadmap-mobile::before {
+    left: 26px;
+  }
+
+  .milestone-roadmap-mobile::after {
+    left: 30px;
+  }
+
+  .milestone-stack-card {
+    grid-template-columns: 62px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 739px) {
+  .milestone-tag,
+  .milestone-evidence {
+    font-size: 0.66rem;
   }
 }
 
@@ -2601,39 +2789,36 @@ html[data-theme='light'] .theme-toggle {
 
   .milestone-phase {
     display: grid;
-    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(250px, 0.44fr) minmax(0, 1.56fr);
     gap: 24px;
     align-items: start;
-    padding: 30px;
+    padding: 28px;
   }
 
   .milestone-phase-head {
     position: sticky;
     top: 90px;
     margin-bottom: 0;
-    padding-right: 12px;
+    padding-right: 14px;
   }
 
-  .milestone-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(220px, auto);
+  .milestone-roadmap-mobile {
+    display: none;
   }
 
-  .milestone-card--0,
-  .milestone-card--4 {
-    transform: translateY(10px);
+  .milestone-roadmap-desktop {
+    position: relative;
+    display: block;
+    min-height: var(--road-canvas-height);
   }
 
-  .milestone-card--1 {
-    grid-column: span 2;
-    min-height: 250px;
+  .milestone-card-road--0,
+  .milestone-card-road--2 {
+    transform: rotate(-1deg);
   }
 
-  .milestone-card--2 {
-    transform: translateY(26px);
-  }
-
-  .milestone-card--3 {
-    transform: translateY(-8px);
+  .milestone-card-road--1,
+  .milestone-card-road--3 {
+    transform: rotate(1deg);
   }
 }

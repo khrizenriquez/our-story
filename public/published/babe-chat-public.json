@@ -3,8 +3,8 @@
     "jid": "published-story",
     "name": "Patty",
     "phone": "",
-    "exportedAt": "2026-06-07T05:38:46.457Z",
-    "messageCount": 9128,
+    "exportedAt": "2026-06-07T05:41:00.608Z",
+    "messageCount": 9164,
     "authorSignature": "Christofer Enríquez",
     "participantLabels": {
       "me": "Chris",
@@ -14,8 +14,8 @@
       "primarySource": "hybrid",
       "backupFound": true,
       "backupMessageCount": 7848,
-      "wacrawlMessageCount": 6203,
-      "mergedExtraCount": 1280
+      "wacrawlMessageCount": 6239,
+      "mergedExtraCount": 1316
     },
     "dateRange": {
       "start": "2020-05-22",
@@ -52,9 +52,9 @@
   "messages": [],
   "metrics": {
     "totals": {
-      "messages": 9128,
-      "textMessages": 8178,
-      "mediaMessages": 2121,
+      "messages": 9164,
+      "textMessages": 8213,
+      "mediaMessages": 2125,
       "imageMessages": 0,
       "teAmoCount": 43,
       "activeDays": 346
@@ -62,21 +62,21 @@
     "bySender": {
       "me": {
         "label": "Chris",
-        "messages": 4638,
-        "textMessages": 4022,
-        "mediaMessages": 1366,
+        "messages": 4658,
+        "textMessages": 4042,
+        "mediaMessages": 1368,
         "imageMessages": 0,
         "teAmoCount": 22,
-        "wordCount": 30743
+        "wordCount": 30858
       },
       "them": {
         "label": "Patty",
-        "messages": 4490,
-        "textMessages": 4156,
-        "mediaMessages": 755,
+        "messages": 4506,
+        "textMessages": 4171,
+        "mediaMessages": 757,
         "imageMessages": 0,
         "teAmoCount": 21,
-        "wordCount": 23338
+        "wordCount": 23384
       }
     },
     "daily": [
@@ -2842,10 +2842,10 @@
       },
       {
         "day": "2026-06-06",
-        "total": 30,
-        "fromMe": 15,
-        "fromThem": 15,
-        "media": 8,
+        "total": 66,
+        "fromMe": 35,
+        "fromThem": 31,
+        "media": 12,
         "phaseId": "official"
       }
     ],
@@ -2869,15 +2869,15 @@
       {
         "phaseId": "official",
         "label": "Novios",
-        "total": 5349,
-        "fromMe": 2871,
-        "fromThem": 2478,
+        "total": 5385,
+        "fromMe": 2891,
+        "fromThem": 2494,
         "teAmoCount": 43
       }
     ],
     "mediaByType": {
-      "photo": 1211,
-      "sticker": 167,
+      "photo": 1213,
+      "sticker": 169,
       "video": 287,
       "document": 28,
       "audio": 354,
@@ -2900,7 +2900,7 @@
     "themLabel": "Patty",
     "poeticTitle": "Nuestra historia, la que se escribe día a día",
     "subtitle": "2020-05-22 - 2026-06-06",
-    "totalSpanDays": 1360,
+    "totalSpanDays": 1361,
     "activeDays": 346,
     "messageLeadLabel": "Chris",
     "messageLeadPercent": 3,
@@ -2908,11 +2908,11 @@
     "wordsBySender": [
       {
         "label": "Chris",
-        "value": 30743
+        "value": 30858
       },
       {
         "label": "Patty",
-        "value": 23234
+        "value": 23280
       }
     ],
     "yearlyCounts": [
@@ -2934,7 +2934,7 @@
       },
       {
         "year": "2026",
-        "count": 5775
+        "count": 5809
       }
     ],
     "monthlyCounts": [
@@ -3112,7 +3112,7 @@
       },
       {
         "month": "2026-06",
-        "count": 368
+        "count": 402
       }
     ],
     "chapters": [
@@ -3148,8 +3148,8 @@
         "id": "2026",
         "label": "2026",
         "range": "2026",
-        "messages": 5775,
-        "summary": "5775 mensajes en la etapa mas intensa de la conversacion."
+        "messages": 5809,
+        "summary": "5809 mensajes en la etapa mas intensa de la conversacion."
       }
     ],
     "gallery": [
@@ -3258,9 +3258,9 @@
       {
         "label": "Mensaje mas reciente",
         "detail": "La historia sigue viva.",
-        "ts": 1780761346,
+        "ts": 1780804935,
         "text": "La historia sigue viva.",
-        "senderLabel": "Chris"
+        "senderLabel": "Patty"
       }
     ],
     "topDay": {
@@ -3270,7 +3270,7 @@
     "mediaCards": [
       {
         "label": "Fotos",
-        "count": 1195,
+        "count": 1197,
         "tone": "rose"
       },
       {
@@ -3285,7 +3285,7 @@
       },
       {
         "label": "Stickers",
-        "count": 167,
+        "count": 169,
         "tone": "plum"
       }
     ],
